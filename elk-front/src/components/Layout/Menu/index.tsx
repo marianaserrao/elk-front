@@ -3,7 +3,6 @@ import React from 'react';
 import { 
   Container,
   Logo,
-  Tab
 } from './styles';
 
 interface TabProps {
