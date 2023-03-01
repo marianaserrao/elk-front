@@ -7,19 +7,30 @@ export default {
         success: '#4BB543',
         error: '#c53030',
     },
+    opacities:{
+        ninety:'E6',
+        eigthy:'CC',
+        seventy:'B3',
+        sixty:'99',
+        fifty:'80',
+        forty:'66',
+        thirty:'4D',
+        twenty:'33',
+        ten:'1A',
+    },
     fontSizes: {
         default: '14px',
         large: '16px',
         small: '12px',
         tiny: '10px',
     },
-    spacing: {
+    spacings: {
         default: '16px',
         vertical: '16px 0',
         horizontal: '0 16px',
         large: '24px',
     },
-    transition: {
+    transitions: {
         default: '180ms ease-in-out',
     },
     radius: {

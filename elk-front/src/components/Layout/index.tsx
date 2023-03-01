@@ -1,6 +1,6 @@
 import React from 'react';
 import {Outlet} from "react-router-dom"
-import Menu from "./Menu"
+import Navbar from "./Navbar"
 
 const Layout: React.FC = () => {
   const user = true
@@ -8,7 +8,7 @@ const Layout: React.FC = () => {
     user
     ? (
       <div style={{display:'flex'}}>
-        <Menu/>
+        <Navbar/>
         <Outlet/>
       </div>
     )

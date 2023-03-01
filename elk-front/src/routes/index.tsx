@@ -5,6 +5,8 @@ import {
   Navigate 
 } from 'react-router-dom';
 
+import {privateRoutes} from '../routes/routes'
+
 import Dashboard from '../pages/Dashboard'
 import Layout from '../components/Layout';
 import ProtectAuth from './ProtectAuth';
@@ -15,8 +17,11 @@ const Routes: React.FC = () => {
       <Route path='/' element={<Layout/>}>
         {/* private routes */}
         <Route element = {<ProtectAuth isPrivate/>}>
-          <Route path="/" element={<Dashboard/>} />
-          <Route path="/dashboard" element={<Dashboard/>} />
+          {
+            privateRoutes.map(route=>(
+              <Route path={`/${route[0]}`} element={route[2]}/>
+            ))
+          }
         </Route>
 
         {/* public routes */}

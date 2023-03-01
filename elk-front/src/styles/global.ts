@@ -15,7 +15,7 @@ export default createGlobalStyle`
 	}
 
 	body, input, button, small {
-		font-family: 'Noto Sans', sans-serif;
+		font-family: 'Poppins', sans-serif;
 		font-size: 16px;
 	}
 
