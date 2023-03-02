@@ -14,8 +14,8 @@ const Navbar: React.FC = () => {
     <Container>
       <Logo/>
       {
-        privateRoutes.map(route => (
-            <Navtab route={route}/>
+        privateRoutes.map((route, index) => (
+            <Navtab key={index} route={route}/>
         ))
       }
     </Container>

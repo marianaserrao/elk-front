@@ -18,8 +18,8 @@ const Routes: React.FC = () => {
         {/* private routes */}
         <Route element = {<ProtectAuth isPrivate/>}>
           {
-            privateRoutes.map(route=>(
-              <Route path={`/${route[0]}`} element={route[2]}/>
+            privateRoutes.map((route, index)=>(
+              <Route key={index} path={`/${route[0]}`} element={route[2]}/>
             ))
           }
         </Route>

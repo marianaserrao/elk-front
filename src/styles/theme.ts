@@ -4,10 +4,12 @@ export default {
         secondary: '#D1E1FA',
         light: '#FDFDFD',
         dark: '#121212',
+        grey: '#757575',
         background:'#FAFAFA',
         cardBackground:'#FFFFFF',
         success: '#009A8A',
         error: '#c53030',
+        chart: ['#759FBC','#b592a0','#8CAE68', '#59594A', "F2A65A"]
     },
     opacities:{
         ninety:'E6',

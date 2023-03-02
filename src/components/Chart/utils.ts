@@ -16,11 +16,12 @@ export const tariffs={
   },
 }
 
-export const lineChart = {
-  lineColors:{
-    uv: theme.colors.primary,
-    pv: theme.colors.success
-  },
+export const lineColors = {
+  uv: theme.colors.primary,
+  pv: theme.colors.success
+}
+
+export const lineChartData = {
   data : [
     {
       date: 'set/23',
@@ -67,7 +68,7 @@ export const lineChart = {
   ]
 };
 
-export const barChart = {
+export const barChartData = {
   data : [
     {
       hour: '1',

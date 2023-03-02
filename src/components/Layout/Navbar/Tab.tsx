@@ -24,7 +24,7 @@ const Navtab: React.FC<{route:Route}> = ({route}) => {
             transition={{ duration: 0.8 }}
         />
       }
-      <img src={require(`../../../assets/icons/${route[0]}.png`)}  alt='Elk Sockets logo'/>
+      <img src={require(`../../../assets/icons/${route[0]}.png`)}  alt={`${route[1]} Icon`}/>
       <p>{route[1]}</p>
     </Tab>
 
