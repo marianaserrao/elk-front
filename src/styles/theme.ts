@@ -4,7 +4,9 @@ export default {
         secondary: '#D1E1FA',
         light: '#FDFDFD',
         dark: '#121212',
-        success: '#4BB543',
+        background:'#FAFAFA',
+        cardBackground:'#FFFFFF',
+        success: '#009A8A',
         error: '#c53030',
     },
     opacities:{
@@ -23,6 +25,9 @@ export default {
         large: '16px',
         small: '12px',
         tiny: '10px',
+    },
+    fontFamily: {
+        default: 'Poppins'
     },
     spacings: {
         default: '16px',

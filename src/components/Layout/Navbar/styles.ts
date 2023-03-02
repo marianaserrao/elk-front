@@ -6,8 +6,8 @@ import NameLogo from '../../../assets/images/name-logo-light.png'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 250px;
+  /* height: 100%; */
+  width: 220px;
   min-width: 150px;
   background-color: ${({theme})=>theme.colors.dark};
 `;
@@ -15,7 +15,7 @@ export const Container = styled.div`
 export const Logo = styled.div`
   display: flex;
   justify-self: center;
-  width: 80%;
+  width: 70%;
   height: 40px;
 
   margin: 35px auto;
@@ -48,11 +48,12 @@ position:relative;
 
 p{
   position: relative;
+  font-size: 14px;
 }
 
 img{
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   margin-right: 10px;
   position: relative;
 }
