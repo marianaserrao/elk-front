@@ -4,10 +4,10 @@ import MaterialReactTable, { MRT_ColumnDef } from 'material-react-table';
 import {RiErrorWarningLine} from 'react-icons/ri'
 import {FiCheck, FiTrash2} from 'react-icons/fi'
 import { HiOutlineEye } from 'react-icons/hi';
+import { MenuItem } from '@mui/material';
 
 import { equipamentData, categories } from './utils';
 import Switch from '../Switch';
-import { ActionButton } from './styles';
 
 const Example: React.FC = () => {
   const {colors, shadows, radius} = useTheme()
@@ -73,61 +73,74 @@ const Example: React.FC = () => {
     [switchEquipament, colors],
   );
 
-  return <MaterialReactTable 
-    columns={columns} 
-    data={equipamentData.data}     
-    muiTablePaperProps={{
-      sx: {
-        backgroundColor:colors.cardBackground,
-        boxShadow: shadows.default,
-        borderRadius: radius.default
-      },
-    }}
-    muiTopToolbarProps={{
-      sx: {
-        backgroundColor:colors.cardBackground,
-        borderRadius: radius.default
-      },
-    }}
-    muiTableHeadRowProps={{
-      sx: {
-        backgroundColor:colors.cardBackground,
-        borderRadius: radius.default
-      },
-    }}
-    muiTableBodyRowProps={{
-      sx: {
-        backgroundColor:colors.cardBackground
-      },
-    }}
-    muiBottomToolbarProps={{
-      sx: {
-        backgroundColor:colors.cardBackground,
-        borderRadius: radius.default
-      },
-    }}
-    enableFilters={false}
-    enableRowActions
-    positionActionsColumn='last'
-    renderRowActions={({ row }) => (
-             <div style={{ display: 'flex', flexWrap: 'nowrap', gap: '0.5rem' }}>
-               <ActionButton
-                  onClick={() => {
-                    console.info('View Profile', row);
-                  }}
-                >
-                  <HiOutlineEye size={22} color={colors.grey}/>
-                </ActionButton>
-                <ActionButton
-                  onClick={() => {
-                    console.info('Remove', row);
-                  }}
-                >
-                  <FiTrash2 size={22} color={colors.grey}/>
-                </ActionButton>
-              </div>
-            )}
-  />;
+  return (
+    <MaterialReactTable 
+      columns={columns} 
+      data={equipamentData.data}     
+      muiTablePaperProps={{
+        sx: {
+          backgroundColor:colors.cardBackground,
+          boxShadow: shadows.default,
+          borderRadius: radius.default
+        },
+      }}
+      muiTopToolbarProps={{
+        sx: {
+          backgroundColor:colors.cardBackground,
+          borderRadius: radius.default
+        },
+      }}
+      muiTableHeadRowProps={{
+        sx: {
+          backgroundColor:colors.cardBackground,
+          borderRadius: radius.default
+        },
+      }}
+      muiTableBodyRowProps={{
+        sx: {
+          backgroundColor:colors.cardBackground
+        },
+      }}
+      muiBottomToolbarProps={{
+        sx: {
+          backgroundColor:colors.cardBackground,
+          borderRadius: radius.default
+        },
+      }}
+      enableFilters={false}
+      enableRowActions
+      positionActionsColumn='last'
+      renderRowActionMenuItems={({ row, closeMenu }) => [
+        <MenuItem
+          key={0}
+          disableGutters={false}
+          onClick={() => {
+            console.info('View Profile', row);
+            closeMenu()
+          }}
+        >
+          <HiOutlineEye 
+            size={22} 
+            color={colors.grey} 
+            style={{marginRight:'5px'}}
+          /> Ver Detalhes
+        </MenuItem>,
+        <MenuItem
+          key={1}
+          onClick={() => {
+            console.info('Remove', row);
+            closeMenu()
+          }}
+        >
+          <FiTrash2 
+            size={22} 
+            color={colors.grey} 
+            style={{marginRight:'5px'}}
+          /> Deletar
+        </MenuItem>
+    ]}
+    />
+  )
 };
 
 export default Example;
