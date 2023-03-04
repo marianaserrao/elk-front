@@ -25,4 +25,4 @@ export const TopContainer = styled.div`
 
 export const AnalyticContainer = styled.div`
  display: flex;
-`
+`;

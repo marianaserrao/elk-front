@@ -9,6 +9,7 @@ export default {
         cardBackground:'#FFFFFF',
         success: '#009A8A',
         error: '#c53030',
+        green: '#193233',
         chart: ['#759FBC','#b592a0','#8CAE68', '#59594A', "F2A65A"]
     },
     opacities:{
@@ -36,6 +37,7 @@ export default {
         vertical: '16px 0',
         horizontal: '0 16px',
         large: '24px',
+        medium: '12px'
     },
     transitions: {
         default: '180ms ease-in-out',

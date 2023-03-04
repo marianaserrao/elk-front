@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { privateRoutes } from '../../../routes/routes';
-import Navtab from './Tab';
+import Navtab from './tab';
 
 import { 
   Container,
