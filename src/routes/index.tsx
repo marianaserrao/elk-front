@@ -14,7 +14,7 @@ import ProtectAuth from './ProtectAuth';
 const Routes: React.FC = () => {
   return (
     <ReactRoutes>
-      <Route path='/' element={<Layout/>}>
+      <Route element={<Layout/>}>
         {/* private routes */}
         <Route element = {<ProtectAuth isPrivate/>}>
           {

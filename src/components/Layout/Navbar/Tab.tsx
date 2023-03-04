@@ -21,7 +21,7 @@ const Navtab: React.FC<{route:Route}> = ({route}) => {
             layoutId="background"
             initial={false}
             animate={{ backgroundColor: `${colors.light}${opacities.twenty}`, borderLeft: `3px solid ${colors.light}${opacities.ninety}` }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
         />
       }
       <img src={require(`../../../assets/icons/${route[0]}.png`)}  alt={`${route[1]} Icon`}/>

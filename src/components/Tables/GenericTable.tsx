@@ -11,7 +11,8 @@ interface TableProps{
   title: string,
   allowActions?: boolean,
   allowDelete?: boolean,
-  allowView?: boolean
+  allowView?: boolean,
+  initialColumnVisibility?: {}
 }
 
 const Table: React.FC<TableProps> = ({
@@ -20,7 +21,8 @@ const Table: React.FC<TableProps> = ({
   title,
   allowActions = true,
   allowDelete = true,
-  allowView = true
+  allowView = true,
+  initialColumnVisibility={}
 }) => {
   const {colors, shadows, radius, fontFamily} = useTheme()
 
@@ -49,6 +51,7 @@ const Table: React.FC<TableProps> = ({
         muiTableHeadRowProps={{ sx: overwriteStyle }}
         muiTopToolbarProps={{ sx: overwriteStyle }}
         muiBottomToolbarProps={{ sx: overwriteStyle }}
+        muiTableHeadCellProps={{ sx: { fontWeight: 600} }}
         muiTablePaperProps={{
           sx: {
             boxShadow: shadows.default,
@@ -106,8 +109,9 @@ const Table: React.FC<TableProps> = ({
         renderTopToolbarCustomActions={() => {
           return (
             <h4 style={{
-                margin: '10px 0 10px 5px',
-                fontSize: '22px'
+                margin: '10px 0',
+                fontSize: '18px',
+                fontWeight: 600,
               }}
             >
               {title}
@@ -117,6 +121,7 @@ const Table: React.FC<TableProps> = ({
         //setting initial format
         initialState={{
           density: 'compact',
+          columnVisibility:initialColumnVisibility
         }}
       />
     </ThemeProvider>

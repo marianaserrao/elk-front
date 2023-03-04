@@ -80,6 +80,10 @@ const CategoryTable: React.FC = () => {
         data={categoryData.data}
         title='Categorias'
         allowView={false}
+        initialColumnVisibility={{
+          usageMean:false,
+          equipamentOn:false
+        }}
     />
   )
 };
