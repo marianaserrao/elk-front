@@ -15,6 +15,8 @@ export const Container = styled.div`
 export const Content = styled.div`
   width: inherit;
   position: fixed;
+
+  height:100vh;
 `;
 
 export const Logo = styled.div`
@@ -62,4 +64,23 @@ img{
   margin-right: 10px;
   position: relative;
 }
+`;
+
+export const LogoutButton = styled.button`
+  display: flex;
+  align-items: center;
+
+  position:absolute;
+  bottom: 0;
+
+  background-color:transparent ;
+  text-decoration:none ;
+  border:none ;
+
+  gap: 5px;
+
+  color: ${({theme})=>theme.colors.light};
+  font-size: 14px;;
+
+  margin: 20px 10px;
 `;

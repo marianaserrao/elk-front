@@ -34,7 +34,7 @@ const Routes: React.FC = () => {
       </Route>
 
       {/* catch all for unexisting endpoints */}
-      <Route path="*" element={<Navigate to='/login'/>} />
+      <Route path="*" element={<Navigate to='/home'/>} />
     </ReactRoutes>
 
     
