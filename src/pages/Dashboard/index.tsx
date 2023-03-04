@@ -8,7 +8,7 @@ import PageTitle from '../../components/PageTitle';
 
 import * as S from './styles';
 
-const menu: React.FC = () => {
+const Dashboard: React.FC = () => {
   return (
     <S.Container>
       <PageTitle title='Dashboard'/>
@@ -43,4 +43,4 @@ const menu: React.FC = () => {
   );
 }
 
-export default menu;
+export default Dashboard;
