@@ -26,6 +26,7 @@ const Routes: React.FC = () => {
 
         {/* public routes */}
         <Route element = {<ProtectAuth/>}>
+          <Route path="/login" element={<Dashboard/>} />
           {
             publicRoutes.map(route=>(
               <Route path={`/${route[0]}`} element={route[2]}/>

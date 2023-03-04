@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { privateRoutes } from '../../../routes/routes';
-import { Route } from '../../../routes/interfaces';
+import { privateRoutes, publicRoutes } from '../../../routes/routes';
 import Navtab from './tab';
 
 import { 

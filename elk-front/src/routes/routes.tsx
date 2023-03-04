@@ -7,7 +7,7 @@ export const privateRoutes = [
   ['equipaments', 'Equipamentos', <Dashboard/>],
   ['suggestions', 'Sugestões', <Dashboard/>],
   ['spaces', 'Espaços', <Dashboard/>],
-  ['sustentatibility', 'Sustentabilidade', <Dashboard/>] 
+  ['sustainability', 'Sustentabilidade', <Dashboard/>] 
 ] as Routes
 
 
