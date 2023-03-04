@@ -5,7 +5,7 @@ import {
   Navigate 
 } from 'react-router-dom';
 
-import {privateRoutes} from '../routes/routes'
+import {privateRoutes, publicRoutes} from '../routes/routes'
 
 import Dashboard from '../pages/Dashboard'
 import Layout from '../components/Layout';
@@ -26,7 +26,10 @@ const Routes: React.FC = () => {
 
         {/* public routes */}
         <Route element = {<ProtectAuth/>}>
-          <Route path="/login" element={<Dashboard/>} />
+          {
+            publicRoutes.map(route=>(
+              <Route path={`/${route[0]}`} element={route[2]}/>
+            ))}
         </Route>
 
         {/* catch all for unexisting endpoints */}

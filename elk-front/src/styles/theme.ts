@@ -6,6 +6,7 @@ export default {
         dark: '#121212',
         success: '#4BB543',
         error: '#c53030',
+        green: '#193233'
     },
     opacities:{
         ninety:'E6',
@@ -29,6 +30,7 @@ export default {
         vertical: '16px 0',
         horizontal: '0 16px',
         large: '24px',
+        medium: '12px'
     },
     transitions: {
         default: '180ms ease-in-out',
