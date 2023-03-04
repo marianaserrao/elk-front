@@ -5,6 +5,7 @@ import Navtab from './Tab';
 
 import { 
   Container,
+  Content,
   Logo,
 } from './styles';
 
@@ -12,12 +13,14 @@ const Navbar: React.FC = () => {
 
   return (
     <Container>
-      <Logo/>
-      {
-        privateRoutes.map((route, index) => (
+      <Content>        
+        <Logo/>
+        {
+          privateRoutes.map((route, index) => (
             <Navtab key={index} route={route}/>
-        ))
-      }
+            ))
+        }
+      </Content>
     </Container>
   );
 }

@@ -6,23 +6,7 @@ export const Container = styled.div`
   flex: 1;
   min-width: 0;
 
+  gap: 30px;
+
   margin: 20px 8%;
 `;
-
-export const TopContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  
-  width: 100%;
-
-  margin-bottom: 20px;
-
-  >div{
-    display:flex;
-  }
-
-`;
-
-export const AnalyticContainer = styled.div`
- display: flex;
-`

@@ -12,6 +12,11 @@ export const Container = styled.div`
   background-color: ${({theme})=>theme.colors.dark};
 `;
 
+export const Content = styled.div`
+  width: inherit;
+  position: fixed;
+`;
+
 export const Logo = styled.div`
   display: flex;
   justify-self: center;
