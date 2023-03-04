@@ -5,20 +5,19 @@ import {
   useLocation
 } from 'react-router-dom';
 
-// import { useAuth } from '../hooks/auth';
+import { useAuth } from '../hooks/auth';
 
 interface RouteProps {
     isPrivate?: boolean;
 }
 
 const ProtectAuth: React.FC<RouteProps> = ({ isPrivate = false, ...rest }) => {
-    // const user = useAuth();
-    const user = true
+    const {user} = useAuth();
     const location = useLocation();
     if (!user === isPrivate){
       return (
         isPrivate
-        ? <Navigate to='/login' state={{from: location}} replace/>
+        ? <Navigate to='/home' state={{from: location}} replace/>
         : <Navigate to='/dashboard' state={{from: location}} replace/>
       )
     }

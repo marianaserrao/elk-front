@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { NavbarEnd, NavBarHome, Button, LogoDefault, Container, Description, Row, ImageDisplay } from './styles';
-import theme from '../../styles/theme';
 import { HBox, VBox } from '../../styles/spacing';
-import { Link, Location, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from 'styled-components';
+import { useAuth } from '../../hooks/auth';
 
 const Home: React.FC = () => {
   const { colors } = useTheme();
-  const location = useLocation();
+  const { login } = useAuth();
+
+  const handleLogin = useCallback((event:any)=>{
+    event.preventDefault();
+    login()
+  },[login])
 
   return <Container><NavBarHome>
     <p><b>About Us</b></p>
@@ -15,7 +20,7 @@ const Home: React.FC = () => {
     <p>Blog</p>
     <p>Contact Us</p>
     <NavbarEnd>
-      <Link to='/dashboard' state={{location}}><p>Log In</p></Link>
+      <a onClick={handleLogin}><p>Log In</p></a>
       <Button background={colors.green}>Sign Up</Button>
     </NavbarEnd>
   </NavBarHome>

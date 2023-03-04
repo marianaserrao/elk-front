@@ -14,29 +14,30 @@ import ProtectAuth from './ProtectAuth';
 const Routes: React.FC = () => {
   return (
     <ReactRoutes>
+      {/* private routes */}
       <Route path='/' element={<Layout/>}>
-        {/* private routes */}
         <Route element = {<ProtectAuth isPrivate/>}>
           {
             privateRoutes.map(route=>(
               <Route path={`/${route[0]}`} element={route[2]}/>
             ))
           }
-        </Route>
-
-        {/* public routes */}
-        <Route element = {<ProtectAuth/>}>
-          <Route path="/login" element={<Dashboard/>} />
-          {
-            publicRoutes.map(route=>(
-              <Route path={`/${route[0]}`} element={route[2]}/>
-            ))}
-        </Route>
-
-        {/* catch all for unexisting endpoints */}
-        <Route path="*" element={<Navigate to='/login'/>} />
+        </Route>        
       </Route>
+
+      {/* public routes */}
+      <Route element = {<ProtectAuth/>}>
+        {
+          publicRoutes.map(route=>(
+            <Route path={`/${route[0]}`} element={route[2]}/>
+          ))}
+      </Route>
+
+      {/* catch all for unexisting endpoints */}
+      <Route path="*" element={<Navigate to='/login'/>} />
     </ReactRoutes>
+
+    
   );
 }
 
