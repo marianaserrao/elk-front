@@ -3,12 +3,6 @@ import { useTheme } from 'styled-components';
 import { Props } from 'recharts/types/component/DefaultLegendContent';
 import {CategoricalChartProps as RechartProps} from 'recharts/types/chart/generateCategoricalChart'
 
-import {
-  lineChartData, 
-  barChartData, 
-  tariffs
-} from './utils'
-
 import { 
   LegendItem,
   ChartEntry
@@ -33,8 +27,11 @@ import { ChartContainer } from './styles';
 
 interface ChartProps extends HTMLAttributes<HTMLDivElement>{
   type:"bar"|"line",
+  xAxis: string,
   title:string,
-  customLegend?: LegendItem[]
+  customLegend?: LegendItem[],
+  data: ChartEntry[],
+  dataColors?: string[]
 }
 
 interface ChartNodeProps extends RechartProps{
@@ -52,9 +49,16 @@ const ChartNode: React.FC<ChartNodeProps>=(({type, ...rest})=>(
   :<LineChart {...rest}/>
 ))
 
-const Chart: React.FC<ChartProps> = ({type='line', title, customLegend=false, ...rest}) => {
+const Chart: React.FC<ChartProps> = ({
+  type='line', 
+  xAxis,
+  title, 
+  customLegend=false, 
+  data,
+  dataColors=[],
+  ...rest
+}) => {
   const {fontFamily, colors } = useTheme()
-  const [data, setData] = useState([] as ChartEntry[])
   const [lineLabels, setLineLabels] = useState([] as string[])
 
   //function for custom chart legend param
@@ -93,21 +97,14 @@ const Chart: React.FC<ChartProps> = ({type='line', title, customLegend=false, ..
 
   useEffect(()=>{
     // update after backend integration
-    switch(type){
-      case 'bar':
-        setData(barChartData.data)
-        break;
-      case 'line':
-        // get keys of a entry
-        let labels = Object.keys(lineChartData.data[0])
-        // remove date from keys to get line labels
-        labels.splice(labels.indexOf('date'), 1)
-        
-        setLineLabels(labels)
-        setData(lineChartData.data)
-        break;
+    if(type==='line'){
+      // get keys of a entry
+      let labels = Object.keys(data[0])
+      // remove date from keys to get line labels
+      labels.splice(labels.indexOf('date'), 1)        
+      setLineLabels(labels)
     }
-  },[type])
+  },[type, data])
 
   return (
     <ChartContainer {...rest}>
@@ -118,7 +115,7 @@ const Chart: React.FC<ChartProps> = ({type='line', title, customLegend=false, ..
         >
           <CartesianGrid vertical={false} opacity={0.5}/>
           <XAxis 
-            dataKey={type==='bar'? 'hour': 'date'} 
+            dataKey={xAxis} 
             axisLine={false} 
             tickLine={false} 
             tick={{fontFamily:fontFamily.default, 
@@ -150,7 +147,7 @@ const Chart: React.FC<ChartProps> = ({type='line', title, customLegend=false, ..
             ?
             <Bar dataKey="amt" type="stepAfter" animationDuration={1800}>
             {data.map((entry, index) => (
-              <Cell  key={index} fill={tariffs[entry.tariff as keyof typeof tariffs].color} />
+              <Cell  key={index} fill={dataColors[index] ||'undefined'} />
             ))}
             </Bar>
             :
@@ -170,7 +167,6 @@ const Chart: React.FC<ChartProps> = ({type='line', title, customLegend=false, ..
         </ChartNode>
       </ResponsiveContainer>
     </ChartContainer>
-    // <div></div>
   );
 }
 

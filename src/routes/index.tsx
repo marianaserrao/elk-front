@@ -7,7 +7,6 @@ import {
 
 import {privateRoutes, publicRoutes} from '../routes/routes'
 
-import Dashboard from '../pages/Dashboard'
 import Layout from '../components/Layout';
 import ProtectAuth from './ProtectAuth';
 

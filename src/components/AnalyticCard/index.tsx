@@ -1,62 +1,61 @@
-import React, {HTMLAttributes, useCallback} from 'react';
-import {BiUpArrowAlt, BiDownArrowAlt} from 'react-icons/bi';
+import React, {HTMLAttributes, useCallback, useMemo} from 'react';
+import { motion } from 'framer-motion';
+import {BiUpArrowAlt} from 'react-icons/bi';
+import { useTheme } from 'styled-components';
+
 import * as S from './styles';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement>{
   mainText: string,
   description: string,
   percentage: number,
-  color: 'red'|'green'
+  realtime?: boolean
 }
 
-const AnalyticCard: React.FC<CardProps> = ({mainText, description, percentage, color='green', ...rest}) => {
-  const divideSuperstrings = useCallback((str: string)=>{
+const AnalyticCard: React.FC<CardProps> = ({mainText, description, percentage, realtime=false, ...rest}) => {
+  const {colors} = useTheme()
+  const improved = useMemo(()=>(percentage<0),[percentage])
+  
+  const getSuperstringSentenceComponent = useCallback((str: string)=>{
     let sentenceArray = str.split('_')
-    return sentenceArray
+    let sentenceComponent = sentenceArray.map((str,index)=>(
+      index%2===0
+      ? str
+      : <sup key={index}>{str}</sup>  
+    ))
+    return sentenceComponent
   },[])
 
   return (
-    <S.Container>
-      <S.CardMain>
+    <S.Container {...rest}>
+      <S.CardInfo>
         <span>
-          <img src={require(`../../assets/icons/signal-${color}.png`)} alt={`${color} circle`}/>
+          {getSuperstringSentenceComponent(description)}
         </span>
-        <h3>{
-        divideSuperstrings(mainText).map((str,index)=>(
-          index%2===0
-          ? str
-          : <sup>{str}</sup>
-        ))  
-        }</h3>
-      </S.CardMain>
-      <S.CardFooter>
-        <div>
-          {
-            divideSuperstrings(description).map((str,index)=>(
-              index%2===0
-              ? str
-              : <sup>{str}</sup>  
-            ))
-          }
-        </div>
-        <div>
-          {
-            percentage>0
-            ? (
-              <div>
-                <BiUpArrowAlt size={14}/>
-                <p>{percentage}%</p>
-              </div>
-            )
-            : (
-              <div>
-                <BiDownArrowAlt size={14}/>
-                <p>{-percentage}%</p>
-              </div>
-            )
-          }
-        </div>
-      </S.CardFooter>
+      </S.CardInfo>
+
+      <S.CardMain>
+        <h3>{getSuperstringSentenceComponent(mainText)}</h3>
+      </S.CardMain>  
+
+      <S.CardInfo>
+        <motion.div
+          className="improvement-arrow"
+          animate={{
+            rotate: improved ? 180 : 0
+          }}
+        >
+          <BiUpArrowAlt size={14} color={improved?colors.success:colors.error}/>
+        </motion.div>
+        <span
+          style={{
+            color:improved?colors.success:colors.error,
+            fontWeight: 600
+          }}
+        >{Math.abs(percentage)}%&nbsp;</span>
+        <span>{realtime ? 'vs média mensal' : 'vs último mês'}</span>
+      </S.CardInfo>
+      
     </S.Container>
   );
 }

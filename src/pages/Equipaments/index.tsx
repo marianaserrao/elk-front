@@ -5,17 +5,18 @@ import CategoryTable from '../../components/Tables/CategoryTable';
 import PageTitle from '../../components/PageTitle';
 
 import * as S from './styles';
+import SlidingContainer from '../../components/AnimatedContainers/SlidingContainer';
 
 const Equipaments: React.FC = () => {
   return (
-    <S.Container>
+    <SlidingContainer>
       <PageTitle title='Equipamentos'/>
       <S.Content>
         <EquipamentTable/>
         <CategoryTable/>
       </S.Content>
       
-    </S.Container>
+    </SlidingContainer>
   );
 }
 

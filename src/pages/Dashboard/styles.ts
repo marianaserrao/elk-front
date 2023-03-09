@@ -5,8 +5,6 @@ export const Container = styled.div`
   flex-direction: column;
   flex: 1;
   min-width: 0;
-
-  margin: 20px 8%;
 `;
 
 export const TopContainer = styled.div`

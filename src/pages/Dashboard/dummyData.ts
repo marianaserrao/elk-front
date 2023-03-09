@@ -16,12 +16,7 @@ export const tariffs={
   },
 }
 
-export const lineColors = {
-  uv: theme.colors.primary,
-  pv: theme.colors.success
-}
-
-export const lineChartData = {
+export const usageByCategory = {
   data : [
     {
       date: 'set/23',
@@ -68,7 +63,7 @@ export const lineChartData = {
   ]
 };
 
-export const barChartData = {
+export const usageByTime = {
   data : [
     {
       hour: '1',
@@ -196,3 +191,24 @@ export const barChartData = {
   ]
 };
 
+export const mainAnalytics = [
+  {
+    value:'90 kW',
+    description:'Consumo Atual',
+    variation:-12,
+    realtime: true
+  },
+  {
+    value:'250 kWh',
+    description:'Consumo Mensal',
+    variation:-24,
+    realtime: false
+  },
+  {
+    value:'1,5 ton CO_2_e',
+    description:'Carbono Mensal',
+    variation:35,
+    realtime: false
+  },
+
+]

@@ -12,7 +12,7 @@ export const Container = styled.div`
     box-shadow: ${({theme})=>theme.shadows.default};
 
     border-radius: ${({theme})=>theme.radius.default};
-    padding: 20px;
+    padding: 15px;
 
     margin-right: 15px;
 `;
@@ -20,43 +20,22 @@ export const Container = styled.div`
 export const CardMain = styled.div`
   display: flex;
 
-  span{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-
-    background-color: #E0F2F1;
-
-    img{
-      width: 17px;
-      height: 17px;
-    }
-  }
-
   h3{
     font-size: 18px;
     font-weight: 600;
 
-    margin-left: 10px;
+    /* margin:5px 0 ; */
   }
 `;
 
-export const CardFooter = styled.div`
+export const CardInfo = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-
   div{
+    display: flex;
+    align-items:center ;
+  }
+  span{
     color:${({theme})=>theme.colors.grey};
     font-size: 11px;
-    font-weight: 600;
-
-    div{
-      display: flex;
-    }
   }
 `;
