@@ -9,7 +9,7 @@ interface TitleProps {
 const Title = styled.p`
   font-weight: 700;
   font-size: 22px;
-  padding-bottom: 18px;
+  padding-bottom: ${({theme})=>theme.spacings.default};
 `;
 
 const PageTitle: React.FC<TitleProps> = ({title}) => {

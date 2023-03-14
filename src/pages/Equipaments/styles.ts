@@ -12,5 +12,5 @@ export const Content = styled(motion.div)`
   display: flex;
   flex-direction: column;
 
-  gap: 30px;
+  gap: ${({theme})=>theme.spacings.large};
 `;
