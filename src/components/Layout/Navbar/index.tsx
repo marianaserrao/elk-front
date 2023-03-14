@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
   const handleLogout = useCallback((event: any)=>{
     event.preventDefault();
     logout();
-  },[])
+  },[logout])
 
   return (
     <S.Container>

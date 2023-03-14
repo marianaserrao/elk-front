@@ -13,8 +13,6 @@ export const Container = styled.div`
 
     border-radius: ${({theme})=>theme.radius.default};
     padding: 15px;
-
-    margin-right: 15px;
 `;
 
 export const CardMain = styled.div`
@@ -23,8 +21,6 @@ export const CardMain = styled.div`
   h3{
     font-size: 18px;
     font-weight: 600;
-
-    /* margin:5px 0 ; */
   }
 `;
 

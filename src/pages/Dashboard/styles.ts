@@ -7,20 +7,18 @@ export const Container = styled.div`
   min-width: 0;
 `;
 
-export const TopContainer = styled.div`
+export const AnalyticsContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  
-  width: 100%;
+  width: fit-content;
 
-  margin-bottom: 20px;
+  margin-bottom: ${({theme})=>theme.spacings.default};
 
-  >div{
-    display:flex;
-  }
-
+  gap: ${({theme})=>theme.spacings.default};
 `;
 
-export const AnalyticContainer = styled.div`
- display: flex;
+export const ChartContainer = styled.div`
+  display: flex;
+  flex-direction:column ;
+  
+  gap: ${({theme})=>theme.spacings.large};
 `;

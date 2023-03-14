@@ -27,8 +27,8 @@ const Routes: React.FC = () => {
       {/* public routes */}
       <Route element = {<ProtectAuth/>}>
         {
-          publicRoutes.map(route=>(
-            <Route path={`/${route[0]}`} element={route[2]}/>
+          publicRoutes.map((route, index)=>(
+            <Route key={index} path={`/${route[0]}`} element={route[2]}/>
           ))}
       </Route>
 

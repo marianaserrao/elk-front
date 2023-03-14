@@ -22,7 +22,7 @@ import {
   ResponsiveContainer 
 } from 'recharts';
 
-import CustomHeader from './Legend';
+import CustomHeader from './Header';
 import { ChartContainer } from './styles';
 
 interface ChartProps extends HTMLAttributes<HTMLDivElement>{

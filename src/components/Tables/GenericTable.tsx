@@ -68,10 +68,6 @@ const Table: React.FC<TableProps> = ({
             <MenuItem
               key={0}
               disableGutters={false}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}
               onClick={() => {
                 console.info('View Profile', row);
                 closeMenu()
@@ -79,7 +75,8 @@ const Table: React.FC<TableProps> = ({
             >
               <HiOutlineEye 
                 size={22} 
-                color={colors.grey} 
+                color={colors.grey}
+                style={{marginRight:5}}
               /> 
               Ver Detalhes
             </MenuItem>
@@ -88,9 +85,6 @@ const Table: React.FC<TableProps> = ({
             <MenuItem
               key={0}
               disableGutters={false}
-              style={{
-                alignItems: 'center' 
-              }}
               onClick={() => {
                 console.info('View Profile', row);
                 closeMenu()
@@ -99,6 +93,7 @@ const Table: React.FC<TableProps> = ({
               <FiTrash2 
                 size={22} 
                 color={colors.grey} 
+                style={{marginRight:5}}
               /> 
               Deletar
             </MenuItem>

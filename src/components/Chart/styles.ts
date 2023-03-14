@@ -7,8 +7,6 @@ export const ChartContainer = styled.div`
   padding: 15px 25px 20px 10px;
 
   box-shadow: ${({ theme }) => theme.shadows.default};
-
-  margin-bottom: 24px;
 `;
 
 export const Title = styled.p`
@@ -24,14 +22,19 @@ export const HeaderContainer = styled.div`
   margin-bottom: 30px;
 `;
 
+export const HeaderInfoContainer = styled.div`
+  
+`;
+
 export const LegendContainer = styled.ul`
   display: flex;
+  margin: 10px 0;
+  gap: 10px;
 `;
 
 export const LegendItemContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 10px;
 
   span{
     height: 8px;
@@ -46,3 +49,7 @@ export const LegendItemContainer = styled.div`
   }
 `
 
+export const PeriodSelectorContainer = styled.div`
+  display: flex;
+  width: 80px;
+`

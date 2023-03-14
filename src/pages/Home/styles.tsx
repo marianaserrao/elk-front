@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import theme from '../../styles/theme';
 import NameLogo from '../../assets/images/name-logo-default.png';
 
-import Socket from '../../assets/images/socket.png';
+import AnimatedContainer from '../../components/AnimatedContainers/Generic';
 
-export const NavBarHome = styled.div`
+export const NavBarHome = styled(AnimatedContainer)`
     flex-direction: row;
     display: flex;  
     gap: 45px;
@@ -25,13 +25,13 @@ export const NavbarEnd = styled.div`
     padding-right: 54px;
 `;
 
-interface Button {
+interface ButtonProps {
     background?: string;
     color?: string;
     border?: string;
 }
 
-export const Button = styled.button<Button>`
+export const Button = styled.button<ButtonProps>`
     padding-top: ${theme.spacings.medium};
     padding-bottom: ${theme.spacings.medium};
     color: ${(props) => props.color ?? theme.colors.light};
@@ -40,9 +40,9 @@ export const Button = styled.button<Button>`
     padding-right: ${theme.spacings.large};
     border-radius: ${theme.spacings.default};
     border: ${(props) => props.border};
-}`;
+`;
 
-export const LogoDefault = styled.div`
+export const LogoDefault = styled(AnimatedContainer)`
     display: flex;
     height: 111px;
 
@@ -56,17 +56,17 @@ export const Container = styled.div`
     margin-left: 100px;
 `;
 
-export const Description = styled.div`
+export const Description = styled(AnimatedContainer)`
     width: 590px;
     padding-top: 47px;
 `;
 
-export const Row = styled.div`
+export const Row = styled(AnimatedContainer)`
     display: flex;
     flex-direction: row;
 `;
 
-export const ImageDisplay = styled.div`
+export const ImageDisplay = styled(AnimatedContainer)`
     justify-content: end;
     display: flex;
     top: 72px;

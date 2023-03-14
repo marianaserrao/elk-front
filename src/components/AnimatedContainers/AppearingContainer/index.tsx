@@ -4,44 +4,36 @@ import { useTheme } from 'styled-components'
 import { Container } from './styles';
 
 interface AppearingContainerProps extends PropsWithChildren {
-    displayCondition: boolean,
+    displayCondition?: boolean,
+    initialOpacity?:number,
+    initialHeight?:string|number,
     duration?: number,
-    textColor?: string,
-    fontSize?: string,
-    flexDirection?: string,
-    alignItems?: string
 }
 
 const AppearingContainer: React.FC<AppearingContainerProps> = ({
-    displayCondition,
-    duration = 0.6,
-    textColor,
-    fontSize = '14px',
-    flexDirection = 'column',
-    alignItems = 'center',
+    displayCondition=true,
+    initialOpacity=0,
+    initialHeight=0,
+    duration = false,
     children
 }) => {
-    const { colors } = useTheme()
+    const {transitions}=useTheme()
 
     const containerVariant = {
         hidden: {
-            height: 0,
-            opacity: 0
+            height: initialHeight,
+            opacity: initialOpacity
         },
         display: {
             height: 'fit-content',
             opacity: 1,
-            transition: { duration: duration }
+            transition: { duration: duration||transitions.motionDefault}
         }
     }
 
     return (
         <Container
-            textColor={textColor || colors.error}
-            fontSize={fontSize}
-            flexDirection={flexDirection}
-            alignItems={alignItems}
-            initial={false}
+            initial='hidden'
             animate={displayCondition ? 'display' : 'hidden'}
             exit='hidden'
             variants={containerVariant}

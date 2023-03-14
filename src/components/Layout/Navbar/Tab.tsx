@@ -12,7 +12,7 @@ import {
 
 const Navtab: React.FC<{route:Route}> = ({route}) => {
   const location = useLocation()
-  const { colors, opacities } = useTheme();
+  const { colors, opacities, animations, transitions } = useTheme();
 
   return (
     <Tab to={`/${route[0]}`} state={{from: location}}>
@@ -21,7 +21,7 @@ const Navtab: React.FC<{route:Route}> = ({route}) => {
             layoutId="background"
             initial={false}
             animate={{ backgroundColor: `${colors.light}${opacities.twenty}`, borderLeft: `3px solid ${colors.light}${opacities.ninety}` }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: animations.navabar ?  transitions.motionDefault : 0}}
         />
       }
       <img src={require(`../../../assets/icons/${route[0]}.png`)}  alt={`${route[1]} Icon`}/>

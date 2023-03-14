@@ -41,6 +41,8 @@ export default {
     },
     transitions: {
         default: '180ms ease-in-out',
+        motionDefault:0.8,
+        motionExit:0.8,
     },
     radius: {
         default: '8px',
@@ -49,5 +51,11 @@ export default {
     shadows: {
         default: '8px 4px 15px rgba(141, 154, 253, 0.1)',
         strong: '0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)',
+    },
+    animations: {
+        home: true,
+        navabar: true,
+        privateContainers: true,
+        equpamentTables: false
     }
 } as const;
