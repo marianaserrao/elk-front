@@ -22,10 +22,6 @@ export const HeaderContainer = styled.div`
   margin-bottom: 30px;
 `;
 
-export const HeaderInfoContainer = styled.div`
-  
-`;
-
 export const LegendContainer = styled.ul`
   display: flex;
   margin: 10px 0;
@@ -47,9 +43,8 @@ export const LegendItemContainer = styled.div`
     display: flex;
     font-size: 12px;
   }
-`
+`;
 
 export const PeriodSelectorContainer = styled.div`
   display: flex;
-  width: 80px;
-`
+`;

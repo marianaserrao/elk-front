@@ -1,25 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import * as S from './styles';
 
-import { LegendProps } from './interfaces';
+import { HeaderProps } from './interfaces';
 import Select from '../Select';
 
-const periodOptions = [
-  'weekly',
-  'montly',
-  'yearly'
-]
-
-const Legend: React.FC<LegendProps> = ({payload, title}) => {
-  const [period, setPeriod] = useState('montly')
+const Header: React.FC<HeaderProps> = ({legend, title, setChartPeriod, chartPeriod, chartPeriodOptions}) => {
   return (
     <S.HeaderContainer>
-      <S.HeaderInfoContainer>
+      <div>
         <S.Title>{title}</S.Title>
         <S.LegendContainer>
           {
-            payload.map((entry, index) => (
+            legend.map((entry, index) => (
               <S.LegendItemContainer key={index}>
                 <span style={{backgroundColor: entry.color}}/>
                 <li key={`item-${index}`}>{entry.value}</li>
@@ -27,13 +20,13 @@ const Legend: React.FC<LegendProps> = ({payload, title}) => {
             ))
           }
         </S.LegendContainer>
-      </S.HeaderInfoContainer>
+      </div>
       <S.PeriodSelectorContainer>
         <Select
-          setFunction={setPeriod}
-          value={period}
+          setFunction={setChartPeriod}          
+          value={chartPeriod}
         >
-          {periodOptions.map((option, index) => (
+          {chartPeriodOptions.map((option, index) => (
               <option key={index} value={option}>{option}</option>
           ))}
         </Select>
@@ -42,4 +35,4 @@ const Legend: React.FC<LegendProps> = ({payload, title}) => {
   );;
 }
 
-export default Legend;
+export default Header;

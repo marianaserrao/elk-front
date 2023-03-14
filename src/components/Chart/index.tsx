@@ -1,4 +1,4 @@
-import React, {  HTMLAttributes, ReactNode, useCallback, useEffect, useState} from 'react';
+import React, {  HTMLAttributes, ReactNode, useCallback, useEffect, useMemo, useState} from 'react';
 import { useTheme } from 'styled-components';
 import { Props } from 'recharts/types/component/DefaultLegendContent';
 import {CategoricalChartProps as RechartProps} from 'recharts/types/chart/generateCategoricalChart'
@@ -30,8 +30,8 @@ interface ChartProps extends HTMLAttributes<HTMLDivElement>{
   xAxis: string,
   title:string,
   customLegend?: LegendItem[],
-  data: ChartEntry[],
-  dataColors?: string[]
+  data: Record<string,ChartEntry[]>,
+  dataColors?: Record<string,string[]>
 }
 
 interface ChartNodeProps extends RechartProps{
@@ -59,33 +59,37 @@ const Chart: React.FC<ChartProps> = ({
   ...rest
 }) => {
   const {fontFamily, colors } = useTheme()
-  const [lineLabels, setLineLabels] = useState([] as string[])
+
+  const [lineLabels, setLineLabels] = useState([] as string[])  
+
+  const periodOptions = useMemo(()=>(Object.keys(data)),[data])
+
+  const [period, setPeriod] = useState(periodOptions[1])
+
+  const current = useMemo(()=>({
+    data: data[period],
+    dataColors: dataColors[period as keyof typeof dataColors] as string[]
+  }),[period, data, dataColors])
 
   //function for custom chart legend param
   const getHeaderFromLegend = useCallback((props: Props):ReactNode=>{
     const payload= customLegend || props.payload
-    return <CustomHeader title={title} payload={payload as LegendItem[]}/>
-  },[title, customLegend])
+    return (
+      <CustomHeader 
+        title={title} 
+        legend={payload as LegendItem[]} 
+        chartPeriod={period} 
+        chartPeriodOptions={periodOptions} 
+        setChartPeriod={setPeriod}
+      />
+    )
+  },[title, customLegend, period, periodOptions])
 
   //function for custom tooltip label
   const formatTooltipLabel = useCallback((label:string)=>{
-    const getTimeInterval=(hour: string)=>{
-      let interval=''
-      switch(true){
-        case(+hour<12):
-          interval = `${hour}a.m. - ${+hour+1}a.m.`;
-          break;
-        case(+hour===12):
-          interval = `${hour}a.m. - 1p.m.`;
-          break;
-        case(+hour<24):
-          interval = `${hour}p.m. - ${+hour+1}p.m.`;
-          break;
-        case(+hour===24):
-          interval = `${12}p.m. - 1a.m.`;
-          break;
-        }
-      return interval
+    const getTimeInterval=(time: string)=>{
+      let hour = +time.replace('h','')
+      return `${hour}h - ${hour<24 ? hour+1+'h' : '1h'}`     
     }
     return type==='bar'? getTimeInterval(label): label
   },[type])
@@ -99,19 +103,19 @@ const Chart: React.FC<ChartProps> = ({
     // update after backend integration
     if(type==='line'){
       // get keys of a entry
-      let labels = Object.keys(data[0])
+      let labels = Object.keys(current.data[0])
       // remove date from keys to get line labels
       labels.splice(labels.indexOf('date'), 1)        
       setLineLabels(labels)
     }
-  },[type, data])
+  },[type, current.data])
 
   return (
     <ChartContainer {...rest}>
       <ResponsiveContainer>
         <ChartNode
           type={type}
-          data={data}
+          data={current.data}
         >
           <CartesianGrid vertical={false} opacity={0.5}/>
           <XAxis 
@@ -146,8 +150,11 @@ const Chart: React.FC<ChartProps> = ({
             type === "bar"
             ?
             <Bar dataKey="amt" type="stepAfter" animationDuration={1800}>
-            {data.map((entry, index) => (
-              <Cell  key={index} fill={dataColors[index] ||'undefined'} />
+            {current.data.map((entry, index) => (
+              <Cell  
+                key={index} 
+                fill={current.dataColors[index]||undefined}
+               />
             ))}
             </Bar>
             :

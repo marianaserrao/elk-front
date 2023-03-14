@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import { mainAnalytics, tariffs, usageByTime, usageByCategory  } from './dummyData';
 
@@ -10,6 +10,15 @@ import SlidingContainer from '../../components/AnimatedContainers/RouteSlidingCo
 import * as S from './styles';
 
 const Dashboard: React.FC = () => {
+  const dataColors = useMemo(()=>{
+    let colors = {} as Record<string,string[]>
+    Object.keys(usageByTime).forEach(period=>{
+      colors[period]=usageByTime[period as keyof typeof usageByTime].map((entry)=>(tariffs[entry.tariff as keyof typeof tariffs].color))
+    })
+    return colors
+  },[])
+  console.log(dataColors)
+
   return (
     <SlidingContainer>
       <PageTitle title='Dashboard'/>
@@ -31,7 +40,7 @@ const Dashboard: React.FC = () => {
           title='Uso por categoria' 
           xAxis='date'
           type='line' 
-          data={usageByCategory.data}
+          data={usageByCategory}
           style={{width:'100%', height: 400}}
         />
         <Chart 
@@ -39,9 +48,9 @@ const Dashboard: React.FC = () => {
           xAxis='hour'
           type='bar' 
           customLegend={Object.values(tariffs)}
-          data={usageByTime.data} 
+          data={usageByTime} 
           style={{width:'100%', height: 400}}
-          dataColors={usageByTime.data.map((entry)=>(tariffs[entry.tariff as keyof typeof tariffs].color))}
+          dataColors={dataColors}
           />
         </S.ChartContainer>
     </SlidingContainer>
