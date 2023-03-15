@@ -5,6 +5,7 @@ import { useTheme } from 'styled-components';
 import { useLocation } from 'react-router-dom';
 
 import { Route } from '../../../routes/interfaces';
+import { removeLastBar } from '../../../utils/paths';
 
 import { 
   Tab
@@ -15,8 +16,8 @@ const Navtab: React.FC<{route:Route}> = ({route}) => {
   const { colors, opacities, animations, transitions } = useTheme();
 
   return (
-    <Tab to={`/${route[0]}`} state={{from: location}}>
-      {`/${route[0]}`===location.pathname &&
+    <Tab to={route.path} state={{from: location}}>
+      {route.path===removeLastBar(location.pathname) &&
         <motion.div
             layoutId="background"
             initial={false}
@@ -24,8 +25,8 @@ const Navtab: React.FC<{route:Route}> = ({route}) => {
             transition={{ duration: animations.navabar ?  transitions.motionDefault : 0}}
         />
       }
-      <img src={require(`../../../assets/icons/${route[0]}.png`)}  alt={`${route[1]} Icon`}/>
-      <p>{route[1]}</p>
+      <img src={require(`../../../assets/icons/${route.icon}`)}  alt={`${route.title} Icon`}/>
+      <p>{route.title}</p>
     </Tab>
 
   );

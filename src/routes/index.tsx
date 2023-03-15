@@ -18,7 +18,7 @@ const Routes: React.FC = () => {
         <Route element = {<ProtectAuth isPrivate/>}>
           {
             privateRoutes.map((route, index)=>(
-              <Route key={index} path={`/${route[0]}`} element={route[2]}/>
+              <Route key={index} path={route.path} element={route.element}/>
             ))
           }
         </Route>        
@@ -28,12 +28,12 @@ const Routes: React.FC = () => {
       <Route element = {<ProtectAuth/>}>
         {
           publicRoutes.map((route, index)=>(
-            <Route key={index} path={`/${route[0]}`} element={route[2]}/>
+            <Route key={index} path={route.path} element={route.element}/>
           ))}
       </Route>
 
       {/* catch all for unexisting endpoints */}
-      <Route path="*" element={<Navigate to='/home'/>} />
+      <Route path="/*" element={<Navigate to='/home'/>} />
     </ReactRoutes>
 
     
