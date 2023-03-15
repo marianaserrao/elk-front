@@ -4,8 +4,6 @@ import { useTheme } from 'styled-components';
 
 import EquipamentTable from '../../components/Tables/EquipamentTable'
 import CategoryTable from '../../components/Tables/CategoryTable';
-import PageTitle from '../../components/PageTitle';
-import SlidingContainer from '../../components/AnimatedContainers/RouteSlidingContainer';
 
 import * as S from './styles';
 
@@ -23,8 +21,8 @@ const Equipaments: React.FC = () => {
 
   const itemVariant = {
     hidden: { 
-      y: animations.equpamentTables ? 50 : 0, 
-      opacity: animations.equpamentTables ? 0 : 1 
+      y: 50, 
+      opacity: 0 
     },
     visible: {
         y: 0,
@@ -38,30 +36,26 @@ const Equipaments: React.FC = () => {
   ]),[])
 
   return (
-    <SlidingContainer>
-      <PageTitle title='Equipamentos'/>
-      <S.Content
-        variants={containerVariant}
-        initial="hidden"
-        animate="visible"
-      >
-        <AnimatePresence>
-          {
-            tables.map((table, index)=>(
-              <motion.div
-                key={index}
-                variants={itemVariant}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                {table}
-              </motion.div>
-            ))
-          }
-        </AnimatePresence>
-      </S.Content>
-      
-    </SlidingContainer>
+    <S.Container
+      variants={containerVariant}
+      initial={animations.equpamentTables ? "hidden" : "visible"}
+      animate="visible"
+    >
+      <AnimatePresence>
+        {
+          tables.map((table, index)=>(
+            <motion.div
+              key={index}
+              variants={itemVariant}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              {table}
+            </motion.div>
+          ))
+        }
+      </AnimatePresence>
+    </S.Container>      
   );
 }
 

@@ -24,7 +24,9 @@ const RouteSlidingContainer: React.FC<PropsWithChildren> = ({ children }) => {
 
     return (
         <Container 
-            initialY={animations.privateContainers ? getInitialY() : 0}
+            key={pathname}
+            initialY={getInitialY()}
+            animateEntry={animations.privateContainers}
         >
             {children}
         </Container>

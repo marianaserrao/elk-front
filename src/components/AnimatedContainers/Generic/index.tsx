@@ -8,7 +8,9 @@ interface AnimatedContainerProps extends MotionProps{
     initialOpacity?: number,
     exitOpacity?: number,
     duration?:number,
-    exitDuration?:number
+    exitDuration?:number,
+    animateEntry?: boolean,
+    animateExit?: boolean
 }
 
 const AnimatedContainer: React.FC<PropsWithChildren<AnimatedContainerProps>> = ({ 
@@ -18,6 +20,8 @@ const AnimatedContainer: React.FC<PropsWithChildren<AnimatedContainerProps>> = (
     duration=false,
     exitOpacity=1,
     exitDuration=false,
+    animateEntry=true,
+    animateExit=true,
     children,
     ...rest
 }) => {
@@ -43,9 +47,9 @@ const AnimatedContainer: React.FC<PropsWithChildren<AnimatedContainerProps>> = (
 
     return (
         <motion.div
-            initial='initial'
+            initial={ animateEntry ? 'initial' : 'final' }
             animate='final'
-            exit='exit'
+            exit={animateExit ? 'exit' : 'final'}
             variants={containerVariant}
             {...rest}
         >

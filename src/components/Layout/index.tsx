@@ -1,15 +1,28 @@
-import React from 'react';
-import {Outlet} from "react-router-dom"
+import React, { useMemo } from 'react';
+import {Outlet, useLocation} from "react-router-dom"
 import { useTheme } from 'styled-components';
+
+import {privateRoutes} from '../../routes/routes'
+
+import RouteSlidingContainer from '../AnimatedContainers/RouteSlidingContainer';
+import PageTitle from '../PageTitle';
 import Navbar from "./Navbar"
 
 const Layout: React.FC = () => {
-  const user = true
   const {colors} = useTheme()
+  const {pathname} = useLocation()
+
+  const route = useMemo(()=>(
+    privateRoutes.filter((route)=>route[0]===pathname.replace('/',''))[0]
+  ),[pathname])
+
   return (
     <div style={{display:'flex', minHeight: '100vh', backgroundColor:colors.background}}>
-      {user && <Navbar/>}
-      <Outlet/>
+      <Navbar/>
+      <RouteSlidingContainer>
+        <PageTitle title={route[1]}/>
+        <Outlet/>
+      </RouteSlidingContainer>
     </div>
   );
 }

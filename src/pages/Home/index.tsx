@@ -13,9 +13,9 @@ const Home: React.FC = () => {
   const animation = useMemo(()=>({
     xLeft: -disloc,
     xRight: disloc,
-    duration: animations.home? 1 : 0,
+    duration: 1,
     opacity: 0
-  }),[animations])
+  }),[])
 
   const handleLogin = useCallback((event:any)=>{
     event.preventDefault();
@@ -26,6 +26,7 @@ const Home: React.FC = () => {
     <Container>
       <NavBarHome
         duration={animation.duration}
+        animateEntry={animations.home}
         initialOpacity={animation.opacity} 
       >
         <p><b>About Us</b></p>
@@ -39,11 +40,13 @@ const Home: React.FC = () => {
       </NavBarHome>
       <LogoDefault 
         duration={animation.duration}
+        animateEntry={animations.home}
         initialX={animation.xLeft}  
         initialOpacity={animation.opacity}    
       />
       <Description
         duration={animation.duration}
+        animateEntry={animations.home}
         initialX={animation.xLeft}   
         initialOpacity={animation.opacity} 
       >
@@ -56,6 +59,7 @@ const Home: React.FC = () => {
       
       <Row
         duration={animation.duration}
+        animateEntry={animations.home}
         initialX={animation.xLeft}
         initialOpacity={animation.opacity} 
       >
@@ -65,6 +69,7 @@ const Home: React.FC = () => {
       </Row>
       <ImageDisplay
         duration={animation.duration}
+        animateEntry={animations.home}
         initialX={animation.xRight}
         initialOpacity={animation.opacity}  
       >

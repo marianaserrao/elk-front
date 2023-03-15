@@ -4,8 +4,6 @@ import { mainAnalytics, tariffs, usageByTime, usageByCategory  } from './dummyDa
 
 import AnalyticCard from '../../components/AnalyticCard';
 import Chart from '../../components/Chart';
-import PageTitle from '../../components/PageTitle';
-import SlidingContainer from '../../components/AnimatedContainers/RouteSlidingContainer';
 
 import * as S from './styles';
 
@@ -20,8 +18,7 @@ const Dashboard: React.FC = () => {
   console.log(dataColors)
 
   return (
-    <SlidingContainer>
-      <PageTitle title='Dashboard'/>
+    <S.Container>
       <S.AnalyticsContainer>
           {
             mainAnalytics.map((item, index)=>(
@@ -53,7 +50,7 @@ const Dashboard: React.FC = () => {
           dataColors={dataColors}
           />
         </S.ChartContainer>
-    </SlidingContainer>
+    </S.Container>
   );
 }
 
