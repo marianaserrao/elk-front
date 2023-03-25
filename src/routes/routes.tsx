@@ -1,6 +1,7 @@
 import Dashboard from '../pages/Dashboard'
 import Equipaments from '../pages/Equipaments'
 import Home from '../pages/Home';
+import { EquipamentDetail } from '../pages/Equipaments/detail';
 
 export const privateRoutes = [
   {
@@ -20,6 +21,12 @@ export const privateRoutes = [
     title: 'Sugestões',
     icon: 'suggestions.png',
     element:  <Dashboard />
+  },
+  {
+    path: '/equipaments/details', 
+    title: 'HF3-R1200',
+    icon: 'equipaments.png',
+    element:  <EquipamentDetail />
   },
   {
     path: '/spaces', 
