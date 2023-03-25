@@ -7,4 +7,6 @@ export type Route = {
   title: string,
   element: ReactNode,
   icon?: string,
+  onNavBar?: boolean,
+  subRoutes?: Route[]
 }

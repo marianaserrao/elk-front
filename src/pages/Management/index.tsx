@@ -7,7 +7,7 @@ import CategoryTable from '../../components/Tables/CategoryTable';
 
 import * as S from './styles';
 
-const Equipaments: React.FC = () => {
+const Management: React.FC = () => {
   const {animations} = useTheme()
 
   const containerVariant = {
@@ -59,4 +59,4 @@ const Equipaments: React.FC = () => {
   );
 }
 
-export default Equipaments;
+export default Management;

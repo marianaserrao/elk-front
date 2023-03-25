@@ -4,6 +4,9 @@ import MaterialReactTable, { MRT_ColumnDef } from 'material-react-table';
 import {FiTrash2} from 'react-icons/fi'
 import { HiOutlineEye } from 'react-icons/hi';
 import { createTheme, MenuItem, ThemeProvider } from '@mui/material';
+import { useNavigate, useLocation } from 'react-router-dom';
+
+import {Equipament} from './interfaces'
 
 interface TableProps{
   columns: MRT_ColumnDef[],
@@ -25,6 +28,8 @@ const Table: React.FC<TableProps> = ({
   initialColumnVisibility={}
 }) => {
   const {colors, shadows, radius, fontFamily} = useTheme()
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const materialTheme = createTheme({
     palette: {
@@ -70,7 +75,11 @@ const Table: React.FC<TableProps> = ({
               disableGutters={false}
               onClick={() => {
                 console.info('View Profile', row);
-                closeMenu()
+                let item = row.original as Equipament
+                navigate(
+                  '/management/equipament',
+                  {state:{from: location, equipament: row.original, title: item.name}}
+                );
               }}
             >
               <HiOutlineEye 
@@ -83,10 +92,10 @@ const Table: React.FC<TableProps> = ({
           )
           allowDelete && actionButtons.push(
             <MenuItem
-              key={0}
+              key={1}
               disableGutters={false}
               onClick={() => {
-                console.info('View Profile', row);
+                console.info('Delete', row);
                 closeMenu()
               }}
             >

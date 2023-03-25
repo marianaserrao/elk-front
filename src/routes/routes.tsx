@@ -1,44 +1,62 @@
 import Dashboard from '../pages/Dashboard'
-import Equipaments from '../pages/Equipaments'
+import Management from '../pages/Management'
 import Home from '../pages/Home';
-import { EquipamentDetail } from '../pages/Equipaments/detail';
+import { EquipamentDetail } from '../pages/EquipamentDetail';
 
 export const privateRoutes = [
   {
     path: '/dashboard', 
     title: 'Dashboard',
     icon: 'dashboard.png',
-    element:  <Dashboard />
+    element:  <Dashboard />,
+    onNavBar: true
   },
   {
-    path: '/equipaments', 
-    title: 'Equipamentos',
+    path: '/management', 
+    title: 'Gerenciamento',
     icon: 'equipaments.png',
-    element:  <Equipaments />
+    element:  <Management />,
+    onNavBar: true
   },
   {
     path: '/suggestions', 
     title: 'Sugestões',
     icon: 'suggestions.png',
-    element:  <Dashboard />
+    element:  <Dashboard />,
+    onNavBar: true
   },
   {
-    path: '/equipaments/details', 
-    title: 'HF3-R1200',
-    icon: 'equipaments.png',
-    element:  <EquipamentDetail />
-  },
-  {
-    path: '/spaces', 
-    title: 'Espaços',
+    path: '/suggestions/tariffs', 
+    title: 'Tarifários',
     icon: 'spaces.png',
-    element:  <Dashboard />
+    element:  <Dashboard />,
+    onNavBar: true
+  },
+  {
+    path: '/suggestions/equipament-change', 
+    title: 'Equipamentos',
+    icon: 'spaces.png',
+    element:  <Dashboard />,
+    onNavBar: true
+  },
+  {
+    path: '/suggestions/usage-period-change', 
+    title: 'Horário de Uso',
+    icon: 'spaces.png',
+    element:  <Dashboard />,
+    onNavBar: true
+  },
+  {
+    path: '/management/equipament', 
+    title: 'Equipament Details',
+    element:  <EquipamentDetail/>,
   },
   {
     path: '/sustainability', 
     title: 'Sustentabilidade',
     icon: 'sustainability.png',
-    element:  <Dashboard />
+    element:  <Dashboard />,
+    onNavBar: true
   },
 ]
 

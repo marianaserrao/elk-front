@@ -24,6 +24,7 @@ const Navbar: React.FC = () => {
         <S.Logo/>
         {
           privateRoutes.map((route, index) => (
+            route.onNavBar &&
             <Navtab key={index} route={route}/>
             ))
         }

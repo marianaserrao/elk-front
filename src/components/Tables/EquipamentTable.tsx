@@ -8,8 +8,10 @@ import Table from './GenericTable'
 import Switch from '../Switch';
 
 import { equipamentData, categories } from './dummyData';
+import { useLocation } from 'react-router-dom';
 
 const EquipamentTable: React.FC = () => {
+  const location = useLocation()
   const {colors} = useTheme()
 
   const switchEquipament = useCallback((switchState: boolean, id: string)=>{
