@@ -6,6 +6,7 @@ import { privateRoutes } from '../../../routes/routes';
 import { useAuth } from '../../../hooks/auth';
 
 import Navtab from './Tab';
+import Toggle from './Toggle'
 
 import * as S from './styles';
 
@@ -24,8 +25,12 @@ const Navbar: React.FC = () => {
         <S.Logo/>
         {
           privateRoutes.map((route, index) => (
-            route.onNavBar &&
-            <Navtab key={index} route={route}/>
+            route.onNavBar && (
+              route.isToggle
+              ? <Toggle key={index} route={route}/>
+              : <Navtab key={index} route={route}/>
+              
+            )
             ))
         }
         <S.LogoutButton onClick={handleLogout}>

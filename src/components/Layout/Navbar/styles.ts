@@ -9,7 +9,7 @@ export const Container = styled.div`
   /* height: 100%; */
   width: 220px;
   min-width: 150px;
-  background-color: ${({theme})=>theme.colors.dark};
+  background-color: ${({theme})=>theme.colors.primary};
 `;
 
 export const Content = styled.div`
@@ -22,7 +22,7 @@ export const Content = styled.div`
 export const Logo = styled.div`
   display: flex;
   justify-self: center;
-  width: 70%;
+  width: 80%;
   height: 40px;
 
   margin: 35px auto;
@@ -51,6 +51,38 @@ position:relative;
   left:0;
 
   border-left: 2px solid white;
+}
+
+p{
+  position: relative;
+  font-size: 14px;
+}
+
+img{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  position: relative;
+}
+`;
+export const Toggle = styled.button`
+/* width:100% ; */
+display: flex;
+color: ${({theme})=>theme.colors.light};
+background-color:transparent ;
+border: none;
+
+padding: 14px 20px;
+position:relative;
+
+>div{
+  display:flex;
+  height: 100%;
+  align-items: center;
+
+  position: absolute;
+  right: -10px;
+  top: 0;
 }
 
 p{

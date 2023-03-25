@@ -1,33 +1,46 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useTheme } from 'styled-components';
 
-import { useLocation } from 'react-router-dom';
+import {IoIosArrowDown} from "react-icons/io"
 
 import { Route } from '../../../routes/interfaces';
-import { removeLastBar } from '../../../utils/paths';
 
 import { 
-  Tab
+  Tab, Toggle
 } from './styles';
 
 const Navtab: React.FC<{route:Route}> = ({route}) => {
-  const location = useLocation()
-  const { colors, opacities, animations, transitions } = useTheme();
+  const { animations, transitions } = useTheme();
+
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Tab to={route.path} state={{from: location}}>
-      {route.path===removeLastBar(location.pathname) &&
+    <div>
+      <Toggle onClick={()=>setIsOpen(!isOpen)}>
+        <img src={require(`../../../assets/icons/${route.icon}`)}  alt={`${route.title} Icon`}/>
+        <p>{route.title}</p>
         <motion.div
-            layoutId="background"
-            initial={false}
-            animate={{ backgroundColor: `${colors.light}${opacities.twenty}`, borderLeft: `3px solid ${colors.light}${opacities.ninety}` }}
+            animate={{rotate: isOpen ? 180 : 0}}
             transition={{ duration: animations.navabar ?  transitions.motionDefault : 0}}
-        />
-      }
-      <img src={require(`../../../assets/icons/${route.icon}`)}  alt={`${route.title} Icon`}/>
-      <p>{route.title}</p>
-    </Tab>
+            >
+          <IoIosArrowDown/>
+        </motion.div>
+      </Toggle>
+      <AnimatePresence>
+        {isOpen && 
+          <motion.div
+            layoutId="toggle-routes"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: animations.navabar ?  transitions.motionDefault : 0}}
+          >
+            <IoIosArrowDown/>
+          </motion.div>
+        }
+      </AnimatePresence>
+    </div>
 
   );
 }

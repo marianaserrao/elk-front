@@ -8,5 +8,6 @@ export type Route = {
   element: ReactNode,
   icon?: string,
   onNavBar?: boolean,
+  isToggle?:boolean,
   subRoutes?: Route[]
 }

@@ -2,6 +2,9 @@ import Dashboard from '../pages/Dashboard'
 import Management from '../pages/Management'
 import Home from '../pages/Home';
 import { EquipamentDetail } from '../pages/EquipamentDetail';
+import PeriodChange from '../pages/Sugestions/PeriodChange';
+import TariffChange from '../pages/Sugestions/TariffChange';
+import EquipamentChange from '../pages/Sugestions/EquipamentChange';
 
 export const privateRoutes = [
   {
@@ -23,40 +26,57 @@ export const privateRoutes = [
     title: 'Sugestões',
     icon: 'suggestions.png',
     element:  <Dashboard />,
-    onNavBar: true
+    onNavBar: true,
+    isToggle: true,
+    subRoutes: [
+      {
+        path: '/suggestions/tariffs', 
+        title: 'Tarifários',
+        icon: 'spaces.png',
+        element:  <TariffChange/>,
+        onNavBar: true
+      },
+      {
+        path: '/suggestions/equipament-change', 
+        title: 'Equipamentos',
+        icon: 'spaces.png',
+        element:  <EquipamentChange />,
+        onNavBar: true
+      },
+      {
+        path: '/suggestions/usage-period-change', 
+        title: 'Horário de Uso',
+        icon: 'spaces.png',
+        element:  <PeriodChange />,
+        onNavBar: true
+      },
+    ]
   },
   {
     path: '/suggestions/tariffs', 
     title: 'Tarifários',
     icon: 'spaces.png',
-    element:  <Dashboard />,
+    element:  <TariffChange/>,
     onNavBar: true
   },
   {
     path: '/suggestions/equipament-change', 
     title: 'Equipamentos',
     icon: 'spaces.png',
-    element:  <Dashboard />,
+    element:  <EquipamentChange />,
     onNavBar: true
   },
   {
     path: '/suggestions/usage-period-change', 
     title: 'Horário de Uso',
     icon: 'spaces.png',
-    element:  <Dashboard />,
+    element:  <PeriodChange />,
     onNavBar: true
   },
   {
     path: '/management/equipament', 
     title: 'Equipament Details',
     element:  <EquipamentDetail/>,
-  },
-  {
-    path: '/sustainability', 
-    title: 'Sustentabilidade',
-    icon: 'sustainability.png',
-    element:  <Dashboard />,
-    onNavBar: true
   },
 ]
 

@@ -21,7 +21,7 @@ const Navtab: React.FC<{route:Route}> = ({route}) => {
         <motion.div
             layoutId="background"
             initial={false}
-            animate={{ backgroundColor: `${colors.light}${opacities.twenty}`, borderLeft: `3px solid ${colors.light}${opacities.ninety}` }}
+            animate={{ backgroundColor: `${colors.dark}${opacities.twenty}`, borderLeft: `3px solid ${colors.light}${opacities.ninety}` }}
             transition={{ duration: animations.navabar ?  transitions.motionDefault : 0}}
         />
       }
