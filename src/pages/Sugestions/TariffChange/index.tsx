@@ -5,12 +5,12 @@ import Card from './Card';
 
 import { tariffChangeData } from './service';
 
-import { Container } from './styles';
+import { CardListContainer } from './styles';
 
 const PeriodChange: React.FC = () => {
   const {spacings} = useTheme();
   const [rankingPriority, setRankingPriority] = useState('')
-  const options = ['Econômicas','Sustentáveis','Semelhantes ao meu perfil']
+  const options = ['Sustentáveis','Econômicas', 'Semelhantes ao meu perfil']
   return (
     <div>
       <Select
@@ -29,7 +29,7 @@ const PeriodChange: React.FC = () => {
         ))
       }
       </Select>
-      <Container>
+      <CardListContainer>
         {
           tariffChangeData.map(({
             chartData,
@@ -44,7 +44,7 @@ const PeriodChange: React.FC = () => {
             />
           ))
         }
-      </Container>
+      </CardListContainer>
     </div>
   );
 }
