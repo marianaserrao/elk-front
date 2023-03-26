@@ -3,7 +3,7 @@ import { ResponsiveContainer, LineChart, CartesianGrid, XAxis, YAxis, Tooltip, L
 import Switch from '../../components/Switch';
 import { HBox, VBox } from '../../styles/spacing';
 import { Row } from '../Home/styles';
-import { data } from './service';
+import { data, mainAnalytics, usageByCategory } from './dummyData';
 import { Card, Padding} from "./style"
 import ReactSpeedometer from "react-d3-speedometer"
 import Chart from '../../components/Chart';
