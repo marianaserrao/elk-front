@@ -1,10 +1,29 @@
 import React from 'react';
 import Card from './Card';
-
-// import { Container } from './styles';
+import { periodChangeSuggestions } from './service';
+import { Container } from './styles';
 
 const PeriodChange: React.FC = () => {
-  return <Card/>;
+  return (
+    <Container>
+      { periodChangeSuggestions.map(({
+          chartData,
+          currentInterval,
+          savings,
+          suggestedInterval,
+          equipament
+        }, index)=>(
+          <Card
+            key = {index}
+            chartData={chartData}
+            currentInterval={currentInterval}
+            savings={savings}
+            suggestedInterval={suggestedInterval}
+            equipament={equipament}
+          />
+      ))}
+    </Container>
+  )
 }
 
 export default PeriodChange;

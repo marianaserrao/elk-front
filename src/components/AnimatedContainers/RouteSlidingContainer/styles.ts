@@ -7,5 +7,5 @@ export const Container = styled(SlidingContainer)`
     flex: 1;
     min-width: 0;
 
-    margin: ${({theme})=>theme.spacings.large+' 5%'};
+    padding: ${({theme})=>theme.spacings.large+' 5%'};
 `;

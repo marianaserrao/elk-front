@@ -4,7 +4,7 @@ import { MRT_ColumnDef } from 'material-react-table';
 import Table from './GenericTable'
 import Switch from '../Switch';
 
-import { categoryData } from './dummyData';
+import { categoryData } from './service';
 
 const CategoryTable: React.FC = () => {
   const switchCategory = useCallback((switchState: boolean, id: string)=>{

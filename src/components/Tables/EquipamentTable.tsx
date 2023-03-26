@@ -7,7 +7,7 @@ import {FiCheck} from 'react-icons/fi'
 import Table from './GenericTable'
 import Switch from '../Switch';
 
-import { equipamentData, categories } from './dummyData';
+import { equipamentData, categories } from './service';
 import { useLocation } from 'react-router-dom';
 
 const EquipamentTable: React.FC = () => {
@@ -35,7 +35,7 @@ const EquipamentTable: React.FC = () => {
       },
       {
         accessorKey: 'usage',
-        header: 'Uso',
+        header: 'Uso esse mês',
         Cell: ({renderedCellValue}) => {
           return renderedCellValue+' kWh';
         },

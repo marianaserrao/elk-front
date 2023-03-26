@@ -1,41 +1,41 @@
 export const equipamentData = {
   data: [
     {
-      id: 'ASDFGH12',
-      name: 'HF3-R1200',
-      usage: 30,
+      id: 'ASD2143H2',
+      name: 'HF3-R1223',
+      usage: 33,
       categoryId: 1,
       status: 0,
       isOn: true
     },
     {
-      id: 'ASDFGH12',
-      name: 'HF3-R1200',
-      usage: 30,
+      id: 'SDBIQ3412',
+      name: 'HL3-F4200',
+      usage: 21,
       categoryId: 1,
       status: 1,
       isOn: true
     },
     {
-      id: 'ASDFGH12',
-      name: 'HF3-R1200',
-      usage: 30,
+      id: 'DQER434RI',
+      name: 'SF1-LS200',
+      usage: 0,
       categoryId: 1,
       status: 0,
       isOn: false
     },
     {
-      id: 'ASDFGH12',
-      name: 'HF3-R1200',
-      usage: 30,
+      id: 'DQW4E3EF',
+      name: 'DF4-MN200',
+      usage: 50,
       categoryId: 1,
       status: 1,
       isOn: true
     },
     {
-      id: 'ASDFGH12',
-      name: 'HF3-R1200',
-      usage: 30,
+      id: 'QODK3988',
+      name: 'LF3-OIA00',
+      usage: 29,
       categoryId: 1,
       status: 1,
       isOn: true

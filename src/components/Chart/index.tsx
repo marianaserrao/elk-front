@@ -131,6 +131,7 @@ const Chart: React.FC<ChartProps> = ({
             tickLine={false} 
             tick={{fontFamily:fontFamily.default, fontSize:`${tick.size}px`}} 
             tickMargin={tick.margin}
+            tickFormatter={(label)=>`${label}kW`}
           />
           <Tooltip 
             itemStyle={{padding:'2px 0', fontFamily:fontFamily.default, fontSize:'12px'}}

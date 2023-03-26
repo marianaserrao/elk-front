@@ -5,6 +5,7 @@ import { EquipamentDetail } from '../pages/EquipamentDetail';
 import PeriodChange from '../pages/Sugestions/PeriodChange';
 import TariffChange from '../pages/Sugestions/TariffChange';
 import EquipamentChange from '../pages/Sugestions/EquipamentChange';
+import { Navigate } from 'react-router-dom';
 
 export const privateRoutes = [
   {
@@ -25,22 +26,22 @@ export const privateRoutes = [
     path: '/suggestions', 
     title: 'Sugestões',
     icon: 'suggestions.png',
-    element:  <Dashboard />,
+    element:   <Navigate to='/suggestions/equipament-change'/>,
     onNavBar: true,
     isToggle: true,
     subRoutes: [3,4,5]
-  },
-  {
-    path: '/suggestions/tariffs', 
-    title: 'Tarifários',
-    icon: 'eletricity.png',
-    element:  <TariffChange/>,
   },
   {
     path: '/suggestions/equipament-change', 
     title: 'Equipamentos',
     icon: 'equipament.png',
     element:  <EquipamentChange />,
+  },
+  {
+    path: '/suggestions/tariffs', 
+    title: 'Tarifários',
+    icon: 'eletricity.png',
+    element:  <TariffChange/>,
   },
   {
     path: '/suggestions/usage-period-change', 

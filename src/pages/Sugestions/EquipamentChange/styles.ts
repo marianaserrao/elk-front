@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const CardContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    
 
     background-color: ${({theme})=>theme.colors.cardBackground};
     box-shadow: ${({theme})=>theme.shadows.default};
@@ -48,6 +47,7 @@ export const CardInfoContainer = styled.div`
 
 export const CardChart = styled.div`
   display: flex;
+  flex-direction: column;
   width: 45%;
   padding-top: 30px;
   height: 180px;

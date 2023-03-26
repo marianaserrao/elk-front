@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { mainAnalytics, tariffs, usageByTime, usageByCategory  } from './dummyData';
+import { mainAnalytics, tariffs, usageByTime, usageByCategory  } from './service';
 
 import AnalyticCard from '../../components/AnalyticCard';
 import Chart from '../../components/Chart';
