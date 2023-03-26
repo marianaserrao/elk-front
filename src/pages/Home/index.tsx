@@ -35,7 +35,7 @@ const Home: React.FC = () => {
         <p>Contact Us</p>
         <NavbarEnd>
           <Button color={colors.dark} border='none' onClick={handleLogin}><p>Log In</p></Button>
-          <Button background={colors.green}>Sign Up</Button>
+          <Button background={colors.dark}>Sign Up</Button>
         </NavbarEnd>
       </NavBarHome>
       <LogoDefault 
@@ -65,7 +65,7 @@ const Home: React.FC = () => {
       >
         <Button color={colors.primary} border={`${colors.primary} 4px solid`}>Our products</Button>
         <HBox />
-        <Button background={colors.primary}>Contact us!</Button>
+        <Button background={colors.primary}  border={`${colors.primary}`}>Contact us!</Button>
       </Row>
       <ImageDisplay
         duration={animation.duration}

@@ -37,7 +37,8 @@ export default {
         vertical: '16px 0',
         horizontal: '0 16px',
         large: '24px',
-        medium: '12px'
+        medium: '12px',
+        small: '6px'
     },
     transitions: {
         default: '180ms ease-in-out',

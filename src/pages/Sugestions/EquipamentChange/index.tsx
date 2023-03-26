@@ -1,10 +1,30 @@
 import React from 'react';
 import Card from './Card';
 
-// import { Container } from './styles';
+import { equipamentChangeData } from './service';
+
+import { Container } from './styles';
 
 const PeriodChange: React.FC = () => {
-  return <Card/>;
+  return (
+    <Container>
+      {
+        equipamentChangeData.map(({
+          chartData,
+          equipament,
+          payback,
+          savings
+        })=>(
+          <Card
+            chartData={chartData}
+            equipament={equipament}
+            payback={payback}
+            savings={savings}
+          />
+        ))
+      }
+    </Container>
+  );
 }
 
 export default PeriodChange;
