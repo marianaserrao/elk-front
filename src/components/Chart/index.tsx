@@ -32,6 +32,7 @@ interface ChartProps extends HTMLAttributes<HTMLDivElement>{
   customLegend?: LegendItem[],
   data: Record<string,ChartEntry[]>,
   dataColors?: Record<string,string[]>
+  initialPeriodIndex?: number
 }
 
 interface ChartNodeProps extends RechartProps{
@@ -56,6 +57,7 @@ const Chart: React.FC<ChartProps> = ({
   customLegend=false, 
   data,
   dataColors=[],
+  initialPeriodIndex=1,
   ...rest
 }) => {
   const {fontFamily, colors } = useTheme()
@@ -64,7 +66,7 @@ const Chart: React.FC<ChartProps> = ({
 
   const periodOptions = useMemo(()=>(Object.keys(data)),[data])
 
-  const [period, setPeriod] = useState(periodOptions[1])
+  const [period, setPeriod] = useState(periodOptions[initialPeriodIndex])
 
   const current = useMemo(()=>({
     data: data[period],
