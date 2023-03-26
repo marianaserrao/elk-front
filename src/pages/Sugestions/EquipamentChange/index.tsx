@@ -5,7 +5,7 @@ import Card from './Card';
 
 import { equipamentChangeData } from './service';
 
-import { CardListContainer } from './styles';
+import { CardListContainer, SelectContainer } from './styles';
 
 const PeriodChange: React.FC = () => {
   const {spacings} = useTheme();
@@ -13,22 +13,22 @@ const PeriodChange: React.FC = () => {
   const options = ['Sustentáveis', 'Econômicas', 'Semelhantes ao meu perfil']
   return (
     <div>
-      <Select
-        style={{
-          width: 'fit-content',
-          position: 'absolute',
-          top: spacings.large,
-          right: '5%',
-          margin: 0
-        }}
-        setFunction={setRankingPriority}
-      > 
-        {
-          options.map((opt)=>(
-            <option value={opt}>{opt}</option>
-          ))
-        }
-      </Select>
+      <SelectContainer>
+        <Select
+          style={{
+            width: 'fit-content',
+            margin: 0
+          }}
+          labelText='Priorizo Sugestões:'
+          setFunction={setRankingPriority}
+        > 
+          {
+            options.map((opt)=>(
+              <option value={opt}>{opt}</option>
+            ))
+          }
+        </Select>
+      </SelectContainer>
       <CardListContainer>
         {
           equipamentChangeData.map(({
