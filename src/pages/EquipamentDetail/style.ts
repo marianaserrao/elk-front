@@ -1,8 +1,25 @@
 import styled from "styled-components";
+import { Row } from "../Home/styles";
 
 interface CardInterface {
     fullSize? : boolean;
 }
+
+export const MainCardContainer = styled(Row)`
+    gap: ${({theme})=>theme.spacings.large};
+    >div{
+        flex: 1;
+        max-height: 370px;
+    }
+`;
+
+export const SwitchContainer = styled(Row)`
+    align-items:center;
+
+    h3{
+        font-size: 16px;
+    }
+`;
 
 export const Card = styled.div<CardInterface>`
     display: flex;

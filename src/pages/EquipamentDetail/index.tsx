@@ -4,7 +4,7 @@ import Switch from '../../components/Switch';
 import { HBox, VBox } from '../../styles/spacing';
 import { Row } from '../Home/styles';
 import { data, mainAnalytics, usageByCategory } from './dummyData';
-import { Card, Padding} from "./style"
+import { Card, MainCardContainer, Padding, SwitchContainer} from "./style"
 import ReactSpeedometer from "react-d3-speedometer"
 import Chart from '../../components/Chart';
 import AnalyticCard from '../../components/AnalyticCard';
@@ -53,7 +53,10 @@ export const EquipamentDetail: React.FC = () => {
 
     return(<div>
         <Position type={'absolute'} top={16} right={60}> 
-            <Switch requestFunction={switchEquipament} initialState={information?.status as boolean} itemId={''} />
+            <SwitchContainer>
+                <h3>ON/OFF</h3>
+                <Switch requestFunction={switchEquipament} initialState={information?.status as boolean} itemId={''} />
+            </SwitchContainer>
         </Position>
         <Row>
         {
@@ -72,7 +75,7 @@ export const EquipamentDetail: React.FC = () => {
           }
         </Row>
         <VBox />
-        <Row>
+        <MainCardContainer>
             <Card fullSize={true} >
                 <p>Uso em tempo real (Watts)</p>
                 <Padding top={100}>            
@@ -85,17 +88,14 @@ export const EquipamentDetail: React.FC = () => {
                     />
                 </Padding>
             </Card>
-            <HBox />
-            <Card fullSize={true} >
-                <Chart 
+            <Chart 
                 title='Uso por categoria' 
                 xAxis='date'
                 type='line' 
                 data={usageByCategory}
                 style={{width:'100%', height: 500}}
                 initialPeriodIndex={0}
-                />
-            </Card>
-        </Row>
+            />
+        </MainCardContainer>
     </div>)
 }
