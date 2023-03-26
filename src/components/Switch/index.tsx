@@ -70,6 +70,10 @@ const CustomSwitch = styled((props: MaterialSwitchProps) => (
 const Switch: React.FC<SwitchProps>=({itemId, initialState, requestFunction, ...rest }) =>{
   const [switchState, setSwitchState]=useState(initialState)
 
+  useEffect(()=>{
+    setSwitchState(initialState)
+  },[initialState])
+
   const handleChange=useCallback(async ()=>{
     let currentState = await requestFunction(switchState, itemId)
     setSwitchState(currentState)

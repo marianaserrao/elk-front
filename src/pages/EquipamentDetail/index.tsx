@@ -18,48 +18,42 @@ interface Information {
 }
 
 export const EquipamentDetail: React.FC = () => {
-    const [isSocketOn, setIsSocketOn] = useState(false);
     const [information, setInformation] =useState<Information>();
-    const [timerCounter, setTimerCounter] = useState(0);
-    const [nextSampledValue, setNextSampledValue] =useState(0);
-    const [currentSampledValue, setCurrentSampledValue] =useState(0);
     
     const switchEquipament = useCallback((switchState: boolean, id: string)=>{
-        //request to switch equpament
-        let updatedState=!switchState
+        const request = api.get('/toggle');
+        
+        let updatedState=switchState
+        request.then(response => {
+            if(response.status == 200){
+                updatedState = !switchState
+            }
+            console.log(response)
+        })
         return updatedState
       },[]);
+    
+    const fetchData = React.useCallback(() => {
+        const request = api.get('/status');
+        request.then((response) => {
+            setInformation(response.data)
+        })
+    }, []);
+    
+    React.useEffect(() => {
+        fetchData();
+    }, [])
 
     React.useEffect(() => {
         const intervalId = setInterval(() => { 
-            setCurrentSampledValue(nextSampledValue);
-            if(timerCounter === 0) {
-                setCurrentSampledValue(nextSampledValue);
-                const request = api.get('/status');
-                request.then((response) => {
-                    setNextSampledValue(response.data.power);
-                    setInformation(response.data)
-                })
-                console.log(currentSampledValue)
-            } else {
-                let power = currentSampledValue + timerCounter*(currentSampledValue - nextSampledValue)/9;
-                setInformation({
-                    power: power,
-                    equipment: information?.equipment ?? 'Geladeira',
-                    status: information?.status ?? false
-                })
-                console.log(`coisa ${power}, ${currentSampledValue}, ${nextSampledValue}`)
-            }
-            let coisa = timerCounter + 1
-            setTimerCounter(coisa)
-            if(timerCounter === 9) setTimerCounter(0)
-        }, 1000);
+            fetchData();
+        }, 10000);
         return () => clearInterval(intervalId);//
-    }, [timerCounter, nextSampledValue, currentSampledValue, information]);
+    }, []);
 
     return(<div>
         <Position type={'absolute'} top={16} right={60}> 
-            <Switch requestFunction={switchEquipament} initialState={information?.status ?? false} itemId={''} />
+            <Switch requestFunction={switchEquipament} initialState={information?.status as boolean} itemId={''} />
         </Position>
         <Row>
         {
