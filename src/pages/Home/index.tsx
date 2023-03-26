@@ -73,7 +73,7 @@ const Home: React.FC = () => {
         initialX={animation.xRight}
         initialOpacity={animation.opacity}  
       >
-        <img alt="Elk Socket" src={require('../../assets/images/socket.png')} />
+        <img alt="Elk Socket" src={require('../../assets/images/elk-ellipse-background.png')} />
       </ImageDisplay>
     </Container>
   );
