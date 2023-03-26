@@ -1,23 +1,30 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTheme } from 'styled-components';
 
 import {IoIosArrowDown} from "react-icons/io"
 
 import { Route } from '../../../routes/interfaces';
+import { privateRoutes } from '../../../routes/routes';
 
 import { 
-  Tab, Toggle
+  ToggleContainer
 } from './styles';
+import Navtab from './Tab';
 
-const Navtab: React.FC<{route:Route}> = ({route}) => {
+const Toggle: React.FC<{route:Route}> = ({route}) => {
   const { animations, transitions } = useTheme();
 
   const [isOpen, setIsOpen] = useState(false)
 
+  const handleClick = useCallback((e: any)=>{
+    e.preventDefault();
+    setIsOpen(!isOpen)
+  },[setIsOpen, isOpen])
+
   return (
     <div>
-      <Toggle onClick={()=>setIsOpen(!isOpen)}>
+      <ToggleContainer onClick={handleClick}>
         <img src={require(`../../../assets/icons/${route.icon}`)}  alt={`${route.title} Icon`}/>
         <p>{route.title}</p>
         <motion.div
@@ -26,17 +33,21 @@ const Navtab: React.FC<{route:Route}> = ({route}) => {
             >
           <IoIosArrowDown/>
         </motion.div>
-      </Toggle>
+      </ToggleContainer>
       <AnimatePresence>
         {isOpen && 
           <motion.div
             layoutId="toggle-routes"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ height: 0, opacity:0 }}
+            animate={{ height: 'fit-content', opacity:1 }}
+            exit={{ height: 0, opacity:0 }}
             transition={{ duration: animations.navabar ?  transitions.motionDefault : 0}}
           >
-            <IoIosArrowDown/>
+            {
+              route.subRoutes?.map((subRouteIndex)=>(
+                <Navtab key={subRouteIndex} route={{onNavBar:true,...privateRoutes[subRouteIndex]}} sub={true}/>
+              ))
+            }
           </motion.div>
         }
       </AnimatePresence>
@@ -45,4 +56,4 @@ const Navtab: React.FC<{route:Route}> = ({route}) => {
   );
 }
 
-export default Navtab;
+export default Toggle;

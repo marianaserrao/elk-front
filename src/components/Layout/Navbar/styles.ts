@@ -65,7 +65,7 @@ img{
   position: relative;
 }
 `;
-export const Toggle = styled.button`
+export const ToggleContainer = styled.button`
 /* width:100% ; */
 display: flex;
 color: ${({theme})=>theme.colors.light};

@@ -15,7 +15,6 @@ const Dashboard: React.FC = () => {
     })
     return colors
   },[])
-  console.log(dataColors)
 
   return (
     <S.Container>

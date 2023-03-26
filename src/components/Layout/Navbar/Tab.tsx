@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {HTMLAttributes} from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from 'styled-components';
 
@@ -11,7 +11,12 @@ import {
   Tab
 } from './styles';
 
-const Navtab: React.FC<{route:Route}> = ({route}) => {
+interface TabProps extends HTMLAttributes<HTMLDivElement>{
+  route:Route,
+  sub?: boolean
+}
+
+const Navtab: React.FC<TabProps> = ({route, sub=false}) => {
   const location = useLocation()
   const { colors, opacities, animations, transitions } = useTheme();
 
@@ -25,6 +30,7 @@ const Navtab: React.FC<{route:Route}> = ({route}) => {
             transition={{ duration: animations.navabar ?  transitions.motionDefault : 0}}
         />
       }
+      {sub && <img src={require(`../../../assets/icons/subroute.png`)}  alt={`${route.title} Icon`}/>}
       <img src={require(`../../../assets/icons/${route.icon}`)}  alt={`${route.title} Icon`}/>
       <p>{route.title}</p>
     </Tab>

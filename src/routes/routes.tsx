@@ -17,7 +17,7 @@ export const privateRoutes = [
   {
     path: '/management', 
     title: 'Gerenciamento',
-    icon: 'equipaments.png',
+    icon: 'socket.png',
     element:  <Management />,
     onNavBar: true
   },
@@ -28,49 +28,31 @@ export const privateRoutes = [
     element:  <Dashboard />,
     onNavBar: true,
     isToggle: true,
-    subRoutes: [
-      {
-        path: '/suggestions/tariffs', 
-        title: 'Tarifários',
-        icon: 'spaces.png',
-        element:  <TariffChange/>,
-        onNavBar: true
-      },
-      {
-        path: '/suggestions/equipament-change', 
-        title: 'Equipamentos',
-        icon: 'spaces.png',
-        element:  <EquipamentChange />,
-        onNavBar: true
-      },
-      {
-        path: '/suggestions/usage-period-change', 
-        title: 'Horário de Uso',
-        icon: 'spaces.png',
-        element:  <PeriodChange />,
-        onNavBar: true
-      },
-    ]
+    subRoutes: [3,4,5]
   },
   {
     path: '/suggestions/tariffs', 
     title: 'Tarifários',
-    icon: 'spaces.png',
+    icon: 'eletricity.png',
     element:  <TariffChange/>,
-    onNavBar: true
   },
   {
     path: '/suggestions/equipament-change', 
     title: 'Equipamentos',
-    icon: 'spaces.png',
+    icon: 'equipament.png',
     element:  <EquipamentChange />,
-    onNavBar: true
   },
   {
     path: '/suggestions/usage-period-change', 
     title: 'Horário de Uso',
-    icon: 'spaces.png',
+    icon: 'watch.png',
     element:  <PeriodChange />,
+  },
+  {
+    path: '/sustainability', 
+    title: 'Sustentabilidade',
+    icon: 'sustainability.png',
+    element:  <EquipamentDetail/>,
     onNavBar: true
   },
   {

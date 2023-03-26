@@ -74,11 +74,10 @@ const Table: React.FC<TableProps> = ({
               key={0}
               disableGutters={false}
               onClick={() => {
-                console.info('View Profile', row);
                 let item = row.original as Equipament
                 navigate(
                   '/management/equipament',
-                  {state:{from: location, equipament: row.original, title: item.name}}
+                  {state:{from: location, equipament: item, title: item.name}}
                 );
               }}
             >

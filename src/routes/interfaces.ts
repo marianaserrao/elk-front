@@ -9,5 +9,5 @@ export type Route = {
   icon?: string,
   onNavBar?: boolean,
   isToggle?:boolean,
-  subRoutes?: Route[]
+  subRoutes?: number[]
 }
