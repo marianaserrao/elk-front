@@ -8,13 +8,13 @@ import * as S from './styles';
 interface CardProps extends HTMLAttributes<HTMLDivElement>{
   mainText: string,
   description: string,
-  percentage: number,
+  percentage?: number,
   realtime?: boolean
 }
 
-const AnalyticCard: React.FC<CardProps> = ({mainText, description, percentage, realtime=false, ...rest}) => {
+const AnalyticCard: React.FC<CardProps> = ({mainText, description, percentage,realtime=false, ...rest}) => {
   const {colors} = useTheme()
-  const improved = useMemo(()=>(percentage<0),[percentage])
+  const improved = useMemo(()=>(percentage? percentage<0 : 0),[percentage])
   
   const getSuperstringSentenceComponent = useCallback((str: string)=>{
     let sentenceArray = str.split('_')
@@ -38,6 +38,8 @@ const AnalyticCard: React.FC<CardProps> = ({mainText, description, percentage, r
         <h3>{getSuperstringSentenceComponent(mainText)}</h3>
       </S.CardMain>  
 
+      {percentage? 
+      
       <S.CardInfo>
         <motion.div
           className="improvement-arrow"
@@ -45,7 +47,7 @@ const AnalyticCard: React.FC<CardProps> = ({mainText, description, percentage, r
             rotate: improved ? 180 : 0
           }}
         >
-          <BiUpArrowAlt size={14} color={improved?colors.success:colors.error}/>
+          <BiUpArrowAlt size={14} color={improved? colors.success:colors.error}/>
         </motion.div>
         <span
           style={{
@@ -55,6 +57,8 @@ const AnalyticCard: React.FC<CardProps> = ({mainText, description, percentage, r
         >{Math.abs(percentage)}%&nbsp;</span>
         <span>{realtime ? 'vs média mensal' : 'vs último mês'}</span>
       </S.CardInfo>
+      :
+      <></>}
       
     </S.Container>
   );
