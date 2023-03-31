@@ -6,35 +6,9 @@ export const Container = styled.div`
   gap: ${({theme})=>theme.spacings.large};
 `;
 
-export const CardContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-
-    height: 200px;
-
-    background-color: ${({theme})=>theme.colors.cardBackground};
-    box-shadow: ${({theme})=>theme.shadows.default};
-
-    border-radius: ${({theme})=>theme.radius.default};
-    padding: 15px;
-`;
-
 export const CardMain = styled.div`
   display: flex;
-  flex-direction:column ;
-  width: 50%;
-
-  h3{
-    font-size: 16px;
-    font-weight: 600;
-
-    margin-bottom: 30px;
-  }
-
-  div{
-    display: flex;
-    /* align-items:center ; */
-  }
+  margin-top: -15px;
 `;
 
 export const CardImageContainer = styled.div`
@@ -61,9 +35,3 @@ export const CardInfoContainer = styled.div`
     }
   }
 `
-
-export const CardChart = styled.div`
-  display: flex;
-  width: 45%;
-  height: 180px;
-`;

@@ -1,8 +1,8 @@
 import React, { useCallback, useMemo } from 'react';
 import { MRT_ColumnDef } from 'material-react-table';
 
-import Table from './GenericTable'
-import Switch from '../Switch';
+import Table from '../../components/Table'
+import Switch from '../../components/Switch';
 
 import { categoryData } from './service';
 

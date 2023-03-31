@@ -1,8 +1,7 @@
-import React, { useCallback, useMemo, useState} from 'react';
+import React, { useCallback, useMemo} from 'react';
 import { Bar, BarChart, Cell } from 'recharts';
-import { tariffs, usageByTime} from '../../pages/Dashboard/service';
+import { tariffs} from '../../pages/Dashboard/service';
 
-import CustomHeader from './Header';
 import GenericChart from './GenericChart'
 
 import * as S from './styles'
@@ -10,29 +9,18 @@ import * as S from './styles'
 import { ChartProps } from './interfaces';
 
 const BarChartCard: React.FC<ChartProps> = ({
-  title='', 
   data, 
   xAxis,
   yUnit='kW',
-  initialPeriodIndex=1,
-  showHeader=true,
+  colors,
   ...rest
 }) => {
 
-  const periodOptions = useMemo(()=>(Object.keys(data)),[])
-
-  const [period, setPeriod] = useState(periodOptions[initialPeriodIndex])
-
-  const selectedData = useMemo(()=>(data[period as keyof typeof data]),[period])
-
   //function to define bar color for each entry
-  const timeDataColors = useMemo(()=>{
-    let colors = {} as Record<string,string[]>
-    Object.keys(data).forEach(period=>{
-      colors[period]=selectedData.map((entry)=>(tariffs[entry.tariff as keyof typeof tariffs].color))
-    })
+  const hourlyColors = useMemo(()=>{
+    let colors=data.map((entry)=>(tariffs[entry.tariff as keyof typeof tariffs].color))
     return colors
-  },[period, selectedData])
+  },[data])
 
   //function for custom tooltip label
   const formatTimeTooltipLabel = useCallback((label:string)=>{
@@ -42,18 +30,8 @@ const BarChartCard: React.FC<ChartProps> = ({
 
   return (
     <S.ChartContainer {...rest}>
-      {
-        showHeader &&
-        <CustomHeader 
-          title={title}
-          legend={Object.values(tariffs)} 
-          chartPeriod={period} 
-          chartPeriodOptions={periodOptions} 
-          setChartPeriod={setPeriod}
-        />
-      }
       <GenericChart
-        data={selectedData}
+        data={data}
         xAxis={xAxis}
         yUnit={yUnit}
         ChartNode={BarChart}
@@ -65,10 +43,10 @@ const BarChartCard: React.FC<ChartProps> = ({
         }}
       >
         <Bar dataKey="amt" type="stepAfter" animationDuration={1800}>
-          {selectedData.map((entry, index) => (
+          {data.map((entry, index) => (
             <Cell  
               key={index} 
-              fill={timeDataColors[period][index]}
+              fill={hourlyColors[index]}
               />
           ))}
         </Bar>

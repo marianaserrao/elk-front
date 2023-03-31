@@ -1,14 +1,33 @@
 import React, { useState } from 'react';
-import { useTheme } from 'styled-components';
 import Select from '../../../components/Select';
-import Card from './Card';
 
 import { equipamentChangeData } from './service';
 
 import { CardListContainer, SelectContainer } from './styles';
+import { ChartEntry, LegendItem } from '../../../components/Charts/interfaces';
+import LineChart from '../../../components/Charts/LineChart';
+import ChartHeader from '../components/ChartHeader';
+import { getLabelsAndLegend } from '../../../components/Charts/utils';
+import SuggestionCard from '../components/SuggestionCard';
 
-const PeriodChange: React.FC = () => {
-  const {spacings} = useTheme();
+const Chart: React.FC<{chartData: ChartEntry[], xAxis:string}>=({
+  chartData, xAxis
+})=>{
+  return (
+    <>
+      <ChartHeader 
+        title='Consumo' 
+        legend={getLabelsAndLegend(chartData, xAxis)[1] as LegendItem[]} 
+      />
+      <LineChart
+        data={chartData}
+        xAxis={xAxis}
+      />
+    </>
+  )
+}
+
+const EquipamentChange: React.FC = () => {
   const [rankingPriority, setRankingPriority] = useState('')
   const options = ['Sustentáveis', 'Econômicas', 'Semelhantes ao meu perfil']
   return (
@@ -37,12 +56,17 @@ const PeriodChange: React.FC = () => {
             payback,
             savings
           })=>(
-            <Card
-              chartData={chartData}
-              equipament={equipament}
-              payback={payback}
-              savings={savings}
-            />
+            <SuggestionCard
+              title = {`${equipament.name} - ${equipament.id}`}
+              link={{
+                href: 'www.google.com',
+                text: 'Ver recomandações'
+              }}
+              chart = {<Chart chartData={chartData} xAxis='date'/> }
+            >
+              <span>Poupe até <b>{`${savings}\u20AC mensais`}</b> com a troca do equipamento!</span>
+              <span>Payback a partir de <b>{payback}</b>!</span>
+            </SuggestionCard>
           ))
         }
       </CardListContainer>
@@ -50,4 +74,4 @@ const PeriodChange: React.FC = () => {
   );
 }
 
-export default PeriodChange;
+export default EquipamentChange;

@@ -1,18 +1,13 @@
 import styled from 'styled-components';
+import Card from '../Card'
 
-export const Container = styled.div`
+export const Container = styled(Card)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     width: 200px;
     height: 100px;
-
-    background-color: ${({theme})=>theme.colors.cardBackground};
-    box-shadow: ${({theme})=>theme.shadows.default};
-
-    border-radius: ${({theme})=>theme.radius.default};
-    padding: 15px;
 `;
 
 export const CardMain = styled.div`

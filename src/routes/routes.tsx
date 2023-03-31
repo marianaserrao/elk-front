@@ -1,10 +1,11 @@
 import Dashboard from '../pages/Dashboard'
 import Management from '../pages/Management'
 import Home from '../pages/Home';
-import { EquipamentDetail } from '../pages/EquipamentDetail';
+import EquipamentDetail from '../pages/EquipamentDetail';
 import PeriodChange from '../pages/Sugestions/PeriodChange';
 import TariffChange from '../pages/Sugestions/TariffChange';
 import EquipamentChange from '../pages/Sugestions/EquipamentChange';
+
 import { Navigate } from 'react-router-dom';
 
 export const privateRoutes = [

@@ -4,8 +4,8 @@ import { MRT_ColumnDef } from 'material-react-table';
 import {RiErrorWarningLine} from 'react-icons/ri'
 import {FiCheck} from 'react-icons/fi'
 
-import Table from './GenericTable'
-import Switch from '../Switch';
+import Table from '../../components/Table'
+import Switch from '../../components/Switch';
 
 import { equipamentData, categories } from './service';
 import { useLocation } from 'react-router-dom';

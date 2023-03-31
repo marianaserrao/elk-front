@@ -2,15 +2,16 @@ import React, { useCallback, useState } from 'react';
 import Switch from '../../components/Switch';
 import { HBox, VBox } from '../../styles/spacing';
 import { Row } from '../Home/styles';
-import { mainAnalytics, usageByCategory } from './dummyData';
+import { mainAnalytics, usageByCategory } from './service';
 import ReactSpeedometer from "react-d3-speedometer"
 import AnalyticCard from '../../components/AnalyticCard';
 import Position from '../../components/Position/styles';
 import api from '../../services/api';
-import LineChart from '../../components/Charts/LineChart';
 
 import * as S from "./style"
 import Card from '../../components/Card';
+import LineChart from '../../components/Charts/LineChart';
+import SelectableChart from '../../components/Charts/SelectableChart';
 
 interface Information {
     power: number;
@@ -18,7 +19,7 @@ interface Information {
     equipment: string;
 }
 
-export const EquipamentDetail: React.FC = () => {
+const EquipamentDetail: React.FC = () => {
     const [information, setInformation] =useState<Information>();
     
     const switchEquipament = useCallback((switchState: boolean, id: string)=>{
@@ -26,7 +27,7 @@ export const EquipamentDetail: React.FC = () => {
         
         let updatedState=switchState
         request.then(response => {
-            if(response.status == 200){
+            if(response.status === 200){
                 updatedState = !switchState
             }
             console.log(response)
@@ -43,14 +44,14 @@ export const EquipamentDetail: React.FC = () => {
     
     React.useEffect(() => {
         fetchData();
-    }, [])
+    }, [fetchData])
 
     React.useEffect(() => {
         const intervalId = setInterval(() => { 
             fetchData();
         }, 10000);
         return () => clearInterval(intervalId);//
-    }, []);
+    }, [fetchData]);
 
     return(<div>
         <Position type={'absolute'} top={16} right={60}> 
@@ -90,13 +91,16 @@ export const EquipamentDetail: React.FC = () => {
                 </S.Padding>
             </S.Card>
             <Card>          
-                <LineChart 
+                <SelectableChart 
                     title='Uso por categoria' 
                     xAxis='date'
                     data={usageByCategory}
                     initialPeriodIndex={0}
+                    Chart = {LineChart}
                 />
             </Card>
         </S.MainCardContainer>
     </div>)
 }
+
+export default EquipamentDetail

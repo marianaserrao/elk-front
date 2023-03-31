@@ -2,8 +2,8 @@ import React, { useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTheme } from 'styled-components';
 
-import EquipamentTable from '../../components/Tables/EquipamentTable'
-import CategoryTable from '../../components/Tables/CategoryTable';
+import EquipamentTable from './EquipamentTable'
+import CategoryTable from './CategoryTable';
 
 import * as S from './styles';
 

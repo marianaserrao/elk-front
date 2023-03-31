@@ -6,8 +6,9 @@ import AnalyticCard from '../../components/AnalyticCard';
 
 import * as S from './styles';
 import Card from '../../components/Card';
+import SelectableChart from '../../components/Charts/SelectableChart';
 import LineChart from '../../components/Charts/LineChart';
-import BarChart from '../../components/Charts/BarChart';
+import HourlyUsageChart from '../../components/Charts/HourlyUsageChart';
 
 const Dashboard: React.FC = () => {
   return (
@@ -29,19 +30,22 @@ const Dashboard: React.FC = () => {
         <Card        
           style={{height: '400px'}}
         >          
-          <LineChart 
+          <SelectableChart 
             title='Uso por categoria' 
             xAxis='date'
             data={usageByCategory}
+            Chart={LineChart}
           />
         </Card>
         <Card
             style={{height: '400px'}}
         >  
-          <BarChart 
+          <SelectableChart 
             title='Uso médio por horário do dia' 
             xAxis='hour'
-            data={usageByTime}             
+            data={usageByTime} 
+            Chart={HourlyUsageChart}
+            legend={Object.values(tariffs)}       
             />
         </Card>
       </S.ChartContainer>

@@ -1,8 +1,8 @@
-import React, { HTMLAttributes} from 'react';
+import React from 'react';
 import { useTheme } from 'styled-components';
 
 import { 
-  ChartEntry
+  GenericChartProps
 } from './interfaces';
 
 import { 
@@ -11,27 +11,16 @@ import {
   CartesianGrid, 
   Tooltip, 
   ResponsiveContainer, 
-  TooltipProps,
-  BarChart,
 } from 'recharts';
 
 import { ChartContainer } from './styles';
-import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 
 const tick = {
   margin: 8,
   size: 12
 }
 
-interface ChartProps extends HTMLAttributes<HTMLDivElement>{
-  xAxis: string,
-  yUnit?: string,
-  data: ChartEntry[],
-  ChartNode: typeof BarChart,
-  tooltip?: TooltipProps<ValueType,NameType>
-}
-
-const Chart: React.FC<ChartProps> = ({
+const Chart: React.FC<GenericChartProps> = ({
   ChartNode,
   xAxis,
   yUnit = 'kW',

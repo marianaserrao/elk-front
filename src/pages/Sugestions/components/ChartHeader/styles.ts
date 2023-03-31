@@ -8,6 +8,7 @@ export const Title = styled.p`
 export const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding-left: 12px;
   margin-bottom:20px ;

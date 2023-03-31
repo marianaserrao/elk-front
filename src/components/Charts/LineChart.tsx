@@ -1,54 +1,27 @@
-import React, { HTMLAttributes, useMemo, useState} from 'react';
-import { Line, LineChart } from 'recharts';
+import React, { useMemo} from 'react';
+import { Line, LineChart as LineRechart } from 'recharts';
 
-import CustomHeader from './Header';
 import GenericChart from './GenericChart'
 
 import * as S from './styles'
-import { ChartProps } from './interfaces';
-import { useTheme } from 'styled-components';
+import { ChartProps, LegendItem } from './interfaces';
+import { getLabelsAndLegend } from './utils';
 
-const LineChartCard: React.FC<ChartProps> = ({
-  title='', 
+const LineChart: React.FC<ChartProps> = ({
   data, 
   xAxis,
   yUnit='kW',
-  initialPeriodIndex=1,
-  showHeader=true,
   ...rest
 }) => {
-  const {colors} = useTheme()
-
-  const periodOptions = useMemo(()=>(Object.keys(data)),[])
-  const [period, setPeriod] = useState(periodOptions[initialPeriodIndex])
-
-  const selectedData = useMemo(()=>(data[period as keyof typeof data]),[period])
-
-  const labels = useMemo(()=>(Object.keys(selectedData[0]).filter((label)=>(label!=xAxis))),[selectedData])
-  const legend = useMemo(()=>(
-    labels.map((label, index)=>({
-      value: label,
-      color: colors.chart[index]
-    }))
-  ),[labels])
+  const [labels, legend] = useMemo(()=>(getLabelsAndLegend(data,xAxis)), [data,xAxis]) as [string[], LegendItem[]]
 
   return (
     <S.ChartContainer {...rest}>
-      {
-        showHeader &&
-        <CustomHeader 
-          title={title} 
-          legend={legend} 
-          chartPeriod={period} 
-          chartPeriodOptions={periodOptions} 
-          setChartPeriod={setPeriod}
-        />
-      }
       <GenericChart
-        data={selectedData}
+        data={data}
         xAxis={xAxis}
         yUnit={yUnit}
-        ChartNode={LineChart}
+        ChartNode={LineRechart}
       >
         {
           labels.map((label, index)=>(
@@ -69,4 +42,4 @@ const LineChartCard: React.FC<ChartProps> = ({
   );
 }
 
-export default LineChartCard;
+export default LineChart;
