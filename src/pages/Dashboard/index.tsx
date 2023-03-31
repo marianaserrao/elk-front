@@ -3,19 +3,13 @@ import React, { useMemo } from 'react';
 import { mainAnalytics, tariffs, usageByTime, usageByCategory  } from './service';
 
 import AnalyticCard from '../../components/AnalyticCard';
-import Chart from '../../components/Chart';
 
 import * as S from './styles';
+import Card from '../../components/Card';
+import LineChart from '../../components/Charts/LineChart';
+import BarChart from '../../components/Charts/BarChart';
 
 const Dashboard: React.FC = () => {
-  const dataColors = useMemo(()=>{
-    let colors = {} as Record<string,string[]>
-    Object.keys(usageByTime).forEach(period=>{
-      colors[period]=usageByTime[period as keyof typeof usageByTime].map((entry)=>(tariffs[entry.tariff as keyof typeof tariffs].color))
-    })
-    return colors
-  },[])
-
   return (
     <S.Container>
       <S.AnalyticsContainer>
@@ -32,23 +26,25 @@ const Dashboard: React.FC = () => {
           }
       </S.AnalyticsContainer>
       <S.ChartContainer>
-        <Chart 
-          title='Uso por categoria' 
-          xAxis='date'
-          type='line' 
-          data={usageByCategory}
-          style={{width:'100%', height: 400}}
-        />
-        <Chart 
-          title='Uso médio por horário do dia' 
-          xAxis='hour'
-          type='bar' 
-          customLegend={Object.values(tariffs)}
-          data={usageByTime} 
-          style={{width:'100%', height: 400}}
-          dataColors={dataColors}
+        <Card        
+          style={{height: '400px'}}
+        >          
+          <LineChart 
+            title='Uso por categoria' 
+            xAxis='date'
+            data={usageByCategory}
           />
-        </S.ChartContainer>
+        </Card>
+        <Card
+            style={{height: '400px'}}
+        >  
+          <BarChart 
+            title='Uso médio por horário do dia' 
+            xAxis='hour'
+            data={usageByTime}             
+            />
+        </Card>
+      </S.ChartContainer>
     </S.Container>
   );
 }

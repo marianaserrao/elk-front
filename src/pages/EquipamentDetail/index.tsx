@@ -1,15 +1,16 @@
 import React, { useCallback, useState } from 'react';
-import { ResponsiveContainer, LineChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Line } from 'recharts';
 import Switch from '../../components/Switch';
 import { HBox, VBox } from '../../styles/spacing';
 import { Row } from '../Home/styles';
-import { data, mainAnalytics, usageByCategory } from './dummyData';
-import { Card, MainCardContainer, Padding, SwitchContainer} from "./style"
+import { mainAnalytics, usageByCategory } from './dummyData';
 import ReactSpeedometer from "react-d3-speedometer"
-import Chart from '../../components/Chart';
 import AnalyticCard from '../../components/AnalyticCard';
 import Position from '../../components/Position/styles';
 import api from '../../services/api';
+import LineChart from '../../components/Charts/LineChart';
+
+import * as S from "./style"
+import Card from '../../components/Card';
 
 interface Information {
     power: number;
@@ -53,10 +54,10 @@ export const EquipamentDetail: React.FC = () => {
 
     return(<div>
         <Position type={'absolute'} top={16} right={60}> 
-            <SwitchContainer>
+            <S.SwitchContainer>
                 <h3>ON/OFF</h3>
                 <Switch requestFunction={switchEquipament} initialState={information?.status as boolean} itemId={''} />
-            </SwitchContainer>
+            </S.SwitchContainer>
         </Position>
         <Row>
         {
@@ -75,10 +76,10 @@ export const EquipamentDetail: React.FC = () => {
           }
         </Row>
         <VBox />
-        <MainCardContainer>
-            <Card fullSize={true} >
+        <S.MainCardContainer>
+            <S.Card fullSize={true} >
                 <p>Uso em tempo real (Watts)</p>
-                <Padding top={100}>            
+                <S.Padding top={100}>            
                     <ReactSpeedometer
                     maxValue={60}
                     value={information?.power}
@@ -86,16 +87,16 @@ export const EquipamentDetail: React.FC = () => {
                     segments={3}
                     needleTransitionDuration={1000}
                     />
-                </Padding>
+                </S.Padding>
+            </S.Card>
+            <Card>          
+                <LineChart 
+                    title='Uso por categoria' 
+                    xAxis='date'
+                    data={usageByCategory}
+                    initialPeriodIndex={0}
+                />
             </Card>
-            <Chart 
-                title='Uso por categoria' 
-                xAxis='date'
-                type='line' 
-                data={usageByCategory}
-                style={{width:'100%', height: 500}}
-                initialPeriodIndex={0}
-            />
-        </MainCardContainer>
+        </S.MainCardContainer>
     </div>)
 }

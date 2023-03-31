@@ -10,6 +10,7 @@ export const MainCardContainer = styled(Row)`
     >div{
         flex: 1;
         max-height: 370px;
+        height: 370px;
     }
 `;
 

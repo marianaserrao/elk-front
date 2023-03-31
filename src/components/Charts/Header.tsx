@@ -2,24 +2,24 @@ import React from 'react';
 
 import * as S from './styles';
 
-import { HeaderProps } from './interfaces';
 import Select from '../Select';
+import Legend from './Legend';
+import { LegendItem } from './interfaces';
+
+export interface HeaderProps{
+  legend: LegendItem[],
+  title: string,
+  chartPeriodOptions: string[],
+  chartPeriod: string,
+  setChartPeriod: (period:string)=>void
+}
 
 const Header: React.FC<HeaderProps> = ({legend, title, setChartPeriod, chartPeriod, chartPeriodOptions}) => {
   return (
     <S.HeaderContainer>
       <div>
         <S.Title>{title}</S.Title>
-        <S.LegendContainer>
-          {
-            legend.map((entry, index) => (
-              <S.LegendItemContainer key={index}>
-                <span style={{backgroundColor: entry.color}}/>
-                <li key={`item-${index}`}>{entry.value}</li>
-              </S.LegendItemContainer>
-            ))
-          }
-        </S.LegendContainer>
+        <Legend legend={legend}/>
       </div>
       <S.PeriodSelectorContainer>
         <Select

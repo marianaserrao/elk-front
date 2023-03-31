@@ -3,7 +3,7 @@ import React, { useCallback, SelectHTMLAttributes } from 'react';
 import { Container } from './styles';
 
 interface InputProps extends SelectHTMLAttributes<HTMLSelectElement> {
-    setFunction(text: string): void;
+    setFunction(opt: string | number| React.SetStateAction<string> | React.SetStateAction<number> ): void;
     labelText?: string;
 }
 
