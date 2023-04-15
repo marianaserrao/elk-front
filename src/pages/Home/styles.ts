@@ -236,6 +236,7 @@ export const ImageDisplay = styled(AnimatedContainer)`
 `;
 
 export const LabelCollapse = styled.div`
+& { display: none;}
 button{
     border: none;
     background-color: transparent;
@@ -243,6 +244,7 @@ button{
 
 @media (max-width: 600px) {
     & {
+        display: flex;
         position: fixed;
         z-index: 2;
         top: 1rem;
