@@ -5,10 +5,14 @@ import SloganLogo from '../../assets/images/slogan-logo.png';
 import AnimatedContainer from '../../components/AnimatedContainers/Generic';
 
 
-export const Menu = styled.aside`
+interface MenuInterface{
+    show: boolean;
+}
+
+export const Menu = styled.aside<MenuInterface>`
 @media screen and (max-width: 600px) {
     &{
-        display:none;
+        display: ${props => props.show? 'block': 'none' };
     }
 }
 `;
@@ -230,46 +234,27 @@ export const ImageDisplay = styled(AnimatedContainer)`
 
 `;
 
-export const Collapse = styled.input`
-    &{
-        display: none;
-    }
+export const LabelCollapse = styled.div`
+button{
+    border: none;
+    background-color: transparent;
+  }
 
-    @media screen and (max-width: 600px) {
-        &:checked~.menu{
-            display: block;
-            
-        }
-        &:checked~.close-menu-label::after {
-            content: '×';
-        }
-        &:checked~.content{
-            display: none;
-        }
-    }
-`;
-
-export const LabelCollapse = styled.label`
 @media (max-width: 600px) {
-    &:after {
-        content: '☰';
+    & {
         position: fixed;
         z-index: 2;
         top: 1rem;
         right: 1rem;
         color: ${theme.colors.dark};
-        font-size: 3rem;
-        line-height: 3rem;
-        width: 2.5rem;
-        height: 2.5rem;
-        text-align: center;
         padding: 0.5rem;
         cursor: pointer;
     }
 }
 `;
 
-export const Content = styled.div`
+export const Content = styled.div<MenuInterface>`
+    display: ${props => props.show ? 'none': 'block'};
 `;
 
 export const PaddingRight = styled.div`
