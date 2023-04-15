@@ -10,6 +10,16 @@ export const SelectContainer = styled.div`
     color: ${({theme})=>theme.colors.dark};
     font-weight: 600;
   }
+
+  @media(max-width: 800px){
+    position: fixed;
+    bottom: ${({theme})=>theme.spacings.medium};
+    top: auto;
+    z-index: 1;
+    select{
+      background-color:${({theme})=>theme.colors.background} ;
+    }
+  }
 `;
 
 export const CardListContainer = styled.div`

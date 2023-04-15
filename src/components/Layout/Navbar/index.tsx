@@ -31,7 +31,7 @@ const Navbar: React.FC<NavbarProps> = ({onNav, ...rest}) => {
           privateRoutes.map((route, index) => (
             route.onNavBar && (
               route.isToggle
-              ? <Toggle key={index} route={route}/>
+              ? <Toggle key={index} route={route} onNav={onNav}/>
               : <Navtab key={index} route={route} onClick={onNav as any}/>
             )
             ))
