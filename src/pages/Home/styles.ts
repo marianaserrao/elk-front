@@ -94,8 +94,14 @@ export const LogoDefault = styled(AnimatedContainer)`
         background-image: url(${SloganLogo});
         background-size: contain;
         background-repeat: no-repeat;
+    }    
+    @media screen and (min-width: 600px) and (max-width: 810px){
+        &{
+            height: 10vw;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
     }
-    
     @media screen and (max-width: 500px){
         &{
             height: 58px;
@@ -110,26 +116,6 @@ export const LogoDefault = styled(AnimatedContainer)`
         }
     }
 
-    @media screen and (min-width: 811px) and (max-width: 930px){
-        &{
-            height: 10vh;
-            margin-top: 40px;
-        }
-    }
-
-    @media screen and (min-width: 770px) and (max-width: 810px){
-        &{
-            height: 10vh;
-            margin-top: 20px;
-        }
-    }
-
-    @media screen and (min-width: 600px) and (max-width: 770px){
-        &{
-            height: 10vh;
-            margin-top: 20px;
-        }
-    }
 
     @media screen and (min-width: 200px) and (max-width: 360px){
         &{
@@ -211,36 +197,34 @@ export const Row = styled(AnimatedContainer)`
 `;
 
 export const ImageDisplay = styled(AnimatedContainer)`
-    &{
-        justify-content: end;
-        display: flex;
-        bottom: 0;
-        right: 0;
-        position: absolute;
+    justify-content: end;
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    right: 0;
+
+    img:first-child{
         height: 85vh;
+        min-height:60vh ;
+        max-height:50vw ;
+
+        position: absolute;
+        bottom: 0;
+    }
+
+    img+img{
+        height: 62vh;
+        min-height:45vh ;
+        max-height:40vw ;
+
+        position: absolute;
+        bottom: 7vh;
+        right: 7vw;
     }
 
     @media screen and (max-width: 600px) {
         &{
             display:none;
-        }
-    }
-
-    @media screen and (max-width: 880px) and (min-width: 800px){
-        &{
-            height: 70vh;
-        }
-    }
-
-    @media screen and (max-width: 800px) and (min-width: 700px){
-        &{
-            height: 70vh;
-        }
-    }
-
-    @media screen and (max-width: 700px) and (min-width: 600px){
-        &{
-            height: 60vh;
         }
     }
 
