@@ -17,11 +17,11 @@ const Dashboard: React.FC = () => {
           {
             mainAnalytics.map((item, index)=>(
               <AnalyticCard 
-              key={index}
-              mainText={item.value}
-              description={item.description}
-              percentage={item.variation}
-              realtime={item.realtime}
+                key={index}
+                mainText={item.value}
+                description={item.description}
+                percentage={item.variation}
+                realtime={item.realtime}
               />
             ))
           }

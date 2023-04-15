@@ -12,10 +12,10 @@ import {
 } from './styles';
 import Navtab from './Tab';
 
-const Toggle: React.FC<{route:Route}> = ({route}) => {
+const Toggle: React.FC<{route:Route, onNav?:Function}> = ({route, onNav}) => {
   const { animations, transitions } = useTheme();
 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
 
   const handleClick = useCallback((e: any)=>{
     e.preventDefault();
@@ -45,7 +45,7 @@ const Toggle: React.FC<{route:Route}> = ({route}) => {
           >
             {
               route.subRoutes?.map((subRouteIndex)=>(
-                <Navtab key={subRouteIndex} route={{onNavBar:true,...privateRoutes[subRouteIndex]}} sub={true}/>
+                <Navtab key={subRouteIndex} route={{onNavBar:true,...privateRoutes[subRouteIndex]}} sub={true} onClick={onNav as any}/>
               ))
             }
           </motion.div>

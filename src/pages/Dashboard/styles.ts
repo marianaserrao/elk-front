@@ -9,11 +9,17 @@ export const Container = styled.div`
 
 export const AnalyticsContainer = styled.div`
   display: flex;
-  width: fit-content;
+  width: 100%;
 
   margin-bottom: ${({theme})=>theme.spacings.default};
 
   gap: ${({theme})=>theme.spacings.default};
+
+  overflow-x: auto;
+
+  >div{
+    min-width: 150px;
+  }
 `;
 
 export const ChartContainer = styled.div`

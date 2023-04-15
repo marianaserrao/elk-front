@@ -7,7 +7,6 @@ export const getLabels = ((chartData: ChartEntry[], xAxis: string)=>(
 
 export const getLabelsAndLegend=(chartData: ChartEntry[], xAxis: string)=>{
   let labels = getLabels(chartData, xAxis)
-  console.log(labels)
   let legend = labels.map((label, index)=>({
     value: label,
     color: theme.colors.chart[index]

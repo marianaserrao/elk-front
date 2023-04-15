@@ -37,6 +37,11 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   padding: 10px 10px 10px 20px;
   margin-bottom: 20px;
+
+  @media(max-width:500px){
+    flex-direction: column;
+    gap: 5px;
+  }
 `;
 
 export const Title = styled.p`

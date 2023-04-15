@@ -20,6 +20,10 @@ export const CardImageContainer = styled.div`
  background-position:center ;
  background-size:contain ;
  background-repeat:no-repeat ;
+
+ @media(max-width:1100px){
+  display: none;
+ }
 `;
 
 export const CardInfoContainer = styled.div`
@@ -29,6 +33,10 @@ export const CardInfoContainer = styled.div`
   p{
     font-size: 14px;
     margin-left:20px ;
+
+    @media(max-width:1100px){
+      margin: 0;
+    }
 
     b{
       color: ${({theme})=>theme.colors.primary}
