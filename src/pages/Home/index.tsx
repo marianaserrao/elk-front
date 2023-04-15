@@ -37,8 +37,8 @@ const Home: React.FC = () => {
           <Button color={colors.dark} border='none'><p>Blog</p></Button>
           <Button color={colors.dark} border='none'><p>Contact Us</p></Button>
           <NavbarEnd>
-            <Button color={colors.dark} border='none' onClick={handleLogin}><p>Log In</p></Button>
-            <Button background={colors.dark}>Sign Up</Button>
+            <Button color={colors.primary} border={`${colors.primary} 2px solid;`} onClick={handleLogin}><p>Log In</p></Button>
+            <Button background={colors.dark}>Sign Up</Button>   
           </NavbarEnd>
         </NavBarHome>
       </Menu>
@@ -58,11 +58,10 @@ const Home: React.FC = () => {
           <p>Make the smart choice for sustainability with Elk Sockets. Our smart sockets <b>can increase your business's energy efficiency by up to 30% and reduce CO2 emissions by up to 20%.</b></p>
           <br/>
           <p>By optimizing your electrical demands, Elk Sockets help you save money on your energy bills and do your part for the environment.</p>
-        </Description>
+        </Description>      
 
         <VBox /><VBox />
         <PaddingRight>
-
         <Row
           duration={animation.duration}
           animateEntry={animations.home}
@@ -70,10 +69,9 @@ const Home: React.FC = () => {
           initialOpacity={animation.opacity} 
         >
 
-            <Button color={colors.primary} border={`${colors.primary} 4px solid`}>Our products</Button>
+            <Button color={colors.dark} border='none' onClick={handleLogin}><p>Log In</p></Button>
             <HBox />
-            <Button background={colors.primary}  border={`${colors.primary}`}>Contact us!</Button>
-          
+            <Button background={colors.primary} border='none'>Sign Up</Button>   
         </Row>
         </PaddingRight>
         <ImageDisplay
