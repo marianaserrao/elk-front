@@ -109,7 +109,7 @@ export const LogoDefault = styled(AnimatedContainer)`
 
     @media screen and (min-width: 500px) and (max-width: 600px){
         &{
-            height: 80px;
+            height: 70px;
             margin-top: 17px;
         }
     }
@@ -135,9 +135,9 @@ export const LogoDefault = styled(AnimatedContainer)`
         }
     }
 
-    @media screen and (min-width: 200px) and (max-width: 360px){
+    @media screen and (min-width: 200px) and (max-width: 500px){
         &{
-            height: 8vh;
+            height: 6.0vh;
         }
     }
 `;
@@ -185,12 +185,13 @@ export const Description = styled(AnimatedContainer)`
 
 export const Row = styled(AnimatedContainer)`
     &{
-        display: flex;
+        display: none;
         flex-direction: row;
     }
 
     @media screen and (max-width: 600px) {
         &{
+            display: flex;
             flex-direction: column;
             justify-content: center;
             gap: 8px;
