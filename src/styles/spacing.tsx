@@ -6,4 +6,10 @@ export const HBox = styled.div`
 
 export const VBox = styled.div`
     height: 16px;
+
+    @media screen and (max-width: 800px) {
+        &{
+            height: 8px;
+        }
+    }
 `
