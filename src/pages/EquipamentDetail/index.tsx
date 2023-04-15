@@ -12,6 +12,7 @@ import * as S from "./style"
 import Card from '../../components/Card';
 import LineChart from '../../components/Charts/LineChart';
 import SelectableChart from '../../components/Charts/SelectableChart';
+import { AnalyticsContainer, Container } from '../Dashboard/styles';
 
 interface Information {
     power: number;
@@ -59,10 +60,9 @@ const EquipamentDetail: React.FC = () => {
                 <Switch requestFunction={switchEquipament} initialState={information?.status as boolean} itemId={''} />
             </S.SwitchContainer>
         </Position>
-        <Row>
+        <AnalyticsContainer>
         {
             mainAnalytics.map((item, index)=>(
-                <>
               <AnalyticCard 
               key={index}
               mainText={item.value}
@@ -70,11 +70,9 @@ const EquipamentDetail: React.FC = () => {
               percentage={item.variation}
               realtime={item.realtime}
               />
-              {index === mainAnalytics.length-1 ?<></> : <HBox />}
-              </>
             ))
           }
-        </Row>
+        </AnalyticsContainer>
         <VBox />
         <S.MainCardContainer>
             <S.Card fullSize={true} >

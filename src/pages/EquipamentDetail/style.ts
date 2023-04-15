@@ -1,11 +1,17 @@
 import styled from "styled-components";
-import { Row } from "../Home/styles";
+import AnimatedContainer from "../../components/AnimatedContainers/Generic";
 
 interface CardInterface {
     fullSize? : boolean;
 }
 
-export const MainCardContainer = styled(Row)`
+export const MainCardContainer = styled(AnimatedContainer)`
+
+    &{
+        display: flex;
+        flex-direction: row;
+    }
+
     gap: ${({theme})=>theme.spacings.large};
     >div{
         flex: 1;
@@ -14,7 +20,13 @@ export const MainCardContainer = styled(Row)`
     }
 `;
 
-export const SwitchContainer = styled(Row)`
+export const SwitchContainer = styled(AnimatedContainer)`
+
+    &{
+        display: flex;
+        flex-direction: row;
+    }
+
     align-items:center;
 
     h3{
