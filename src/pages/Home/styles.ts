@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import theme from '../../styles/theme';
-import NameLogo from '../../assets/images/name-logo-default.png';
+import SloganLogo from '../../assets/images/slogan-logo.png';
 
 import AnimatedContainer from '../../components/AnimatedContainers/Generic';
 
@@ -91,7 +91,7 @@ export const LogoDefault = styled(AnimatedContainer)`
 
         margin-top: 72px;
     
-        background-image: url(${NameLogo});
+        background-image: url(${SloganLogo});
         background-size: contain;
         background-repeat: no-repeat;
     }

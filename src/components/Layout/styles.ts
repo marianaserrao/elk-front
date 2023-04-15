@@ -3,7 +3,7 @@ import LogoImage from '../../assets/images/logo-primary.png'
 
 export const Container = styled.div`
   display:flex;
-  min-height: flex; 
+  min-height: 100vh; 
   background-color:${({theme})=>theme.colors.background};
   //Desktop Navbar
   >div:first-child{
