@@ -31,12 +31,11 @@ const Card: React.FC<CardProps> = ({
         <S.CardInfoContainer>
           {children}
         </S.CardInfoContainer>
-        {link && <a href={link?.href}>{link?.text}</a>}
       </S.CardMain>
       <S.CardChart>
         {chart}
       </S.CardChart>
-
+      {link && <a href={link?.href}>{link?.text}</a>}
     </S.CardContainer>
   );
 }

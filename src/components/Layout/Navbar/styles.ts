@@ -25,7 +25,7 @@ export const Logo = styled.div`
   width: 80%;
   height: 40px;
 
-  margin: 35px auto;
+  margin: 30px auto;
 
   background-image: url(${NameLogo});
   background-size: contain;

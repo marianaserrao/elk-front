@@ -2,6 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import {Outlet, useLocation} from "react-router-dom"
 import { useTheme } from 'styled-components';
 import MenuIcon from '@mui/icons-material/MenuRounded';
+import Drawer from '@mui/material/Drawer';
 
 import {privateRoutes} from '../../routes/routes'
 import { removeLastBar } from '../../utils/paths';
@@ -9,8 +10,7 @@ import { removeLastBar } from '../../utils/paths';
 import RouteSlidingContainer from '../AnimatedContainers/RouteSlidingContainer';
 import PageTitle from './PageTitle';
 import Navbar from "./Navbar"
-import { Container, DrawerContainer, Header } from './styles';
-import Drawer from '@mui/material/Drawer';
+import { Container, DrawerContainer, Header, Logo, TitleContainer } from './styles';
 
 const Layout: React.FC = () => {
   const {colors} = useTheme()
@@ -32,7 +32,10 @@ const Layout: React.FC = () => {
       <Navbar/>
       <RouteSlidingContainer>
         <Header>
-          <PageTitle title={route.title}/>
+          <TitleContainer>
+            <Logo/>
+            <PageTitle title={route.title}/>
+          </TitleContainer>
           <DrawerContainer>
             <button onClick={toggleNavbar}>
               <MenuIcon fontSize='large'/>

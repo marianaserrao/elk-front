@@ -4,12 +4,15 @@ import Card from '../../../../components/Card'
 export const CardContainer = styled(Card)`
     display: flex;
     justify-content: space-between;
+    position:relative ;
 
     a{
       color:${({theme})=>theme.colors.grey};
       font-size: 12px;
 
-      margin-top: 50px;
+      position: absolute;
+      bottom:15px ;
+      left: 15px;
     }
 
     @media(max-width:600px){
@@ -21,6 +24,7 @@ export const CardMain = styled.div`
   display: flex;
   flex-direction:column ;
   width: 50%;
+  padding-bottom: 30px;
 
   @media(max-width:600px){
     width: 100%;
@@ -30,7 +34,7 @@ export const CardMain = styled.div`
 export const CardTitle = styled.div`
   display:flex ;
   align-items:center ;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 
   div{
     height: 20px;
@@ -46,6 +50,9 @@ export const CardTitle = styled.div`
     font-size: 16px;
     font-weight: 600;
 
+  }
+  @media(max-width:600px){
+    margin-bottom:0 ;
   }
 `;
 
@@ -84,5 +91,7 @@ export const CardChart = styled.div`
 
   @media(max-width:600px){
     width: 100%;
+    padding: 0 0 30px 0;
+    margin-left: -10px;
   }
 `;
