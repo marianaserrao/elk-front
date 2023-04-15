@@ -11,12 +11,20 @@ export const CardContainer = styled(Card)`
 
       margin-top: 50px;
     }
+
+    @media(max-width:600px){
+      flex-direction: column;
+    }
 `;
 
 export const CardMain = styled.div`
   display: flex;
   flex-direction:column ;
   width: 50%;
+
+  @media(max-width:600px){
+    width: 100%;
+  }
 `;
 
 export const CardTitle = styled.div`
@@ -72,5 +80,9 @@ export const CardChart = styled.div`
       font-size:10px ;
       color:${({theme})=>theme.colors.dark} ;
     }
+  }
+
+  @media(max-width:600px){
+    width: 100%;
   }
 `;

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import theme from './theme' 
 
 export default createGlobalStyle`
 	* {
@@ -48,5 +49,31 @@ export default createGlobalStyle`
 
 	.ReactModal__Overlay--before-close{
 		opacity: 0;
+	}
+
+	//scrollbar
+		div{
+			::-webkit-scrollbar {
+				height: 8px;
+		}
+
+		/* Track */
+		::-webkit-scrollbar-track {
+			border-radius: 5px;
+			background: ${theme.colors.cardBackground};
+  	}
+
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+      background: ${theme.colors.grey};
+      border-radius: 5px;
+      transition: 0.6;
+  	}
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+      background: ${theme.colors.dark};
+      cursor: pointer;
+  	}
 	}
 `;

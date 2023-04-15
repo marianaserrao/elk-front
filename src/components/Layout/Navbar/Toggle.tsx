@@ -15,7 +15,7 @@ import Navtab from './Tab';
 const Toggle: React.FC<{route:Route}> = ({route}) => {
   const { animations, transitions } = useTheme();
 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
 
   const handleClick = useCallback((e: any)=>{
     e.preventDefault();

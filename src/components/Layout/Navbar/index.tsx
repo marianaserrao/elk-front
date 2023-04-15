@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { HTMLAttributes, useCallback } from 'react';
 import {BiLogOut} from 'react-icons/bi'
 import { useTheme } from 'styled-components';
 
@@ -10,7 +10,11 @@ import Toggle from './Toggle'
 
 import * as S from './styles';
 
-const Navbar: React.FC = () => {
+interface NavbarProps extends HTMLAttributes<HTMLDivElement>{
+  onNav?: Function;
+}
+
+const Navbar: React.FC<NavbarProps> = ({onNav, ...rest}) => {
   const {logout}=useAuth()
   const {colors} = useTheme();
 
@@ -21,15 +25,14 @@ const Navbar: React.FC = () => {
 
   return (
     <S.Container>
-      <S.Content>        
+      <S.Content {...rest}>        
         <S.Logo/>
         {
           privateRoutes.map((route, index) => (
             route.onNavBar && (
               route.isToggle
               ? <Toggle key={index} route={route}/>
-              : <Navtab key={index} route={route}/>
-              
+              : <Navtab key={index} route={route} onClick={onNav as any}/>
             )
             ))
         }

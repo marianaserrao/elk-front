@@ -30,7 +30,6 @@ const EquipamentDetail: React.FC = () => {
             if(response.status === 200){
                 updatedState = !switchState
             }
-            console.log(response)
         })
         return updatedState
       },[]);

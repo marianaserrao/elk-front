@@ -94,7 +94,6 @@ const Table: React.FC<TableProps> = ({
               key={1}
               disableGutters={false}
               onClick={() => {
-                console.info('Delete', row);
                 closeMenu()
               }}
             >
