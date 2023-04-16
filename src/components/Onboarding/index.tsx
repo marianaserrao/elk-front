@@ -118,6 +118,10 @@ const Onboarding: React.FC = () => {
         else{
           //end of tour
           setOnboarded();
+          navigate(
+            'dashboard/',
+            {state:{from: location}}
+          );
           break navegation;
         }
       }
@@ -127,8 +131,8 @@ const Onboarding: React.FC = () => {
       }
 
       let nextRoute = privateRoutes.filter(route=>route.id===nextTarget.replace('#',''))
-      if(nextRoute.length!=0){
-        setState({ run: index===0, stepIndex: nextIndex })  
+      if(nextRoute.length!=0 && index!=0){
+        setState({ run: false, stepIndex: nextIndex })  
         const {path} = nextRoute[0]
         navigate(
           path,
@@ -141,6 +145,10 @@ const Onboarding: React.FC = () => {
 
     if (finishedStatuses.includes(status)||action==='close') {
       setOnboarded()
+      navigate(
+        'dashboard/',
+        {state:{from: location}}
+      );
     }
   },[setState, steps, run, stepIndex]);
 

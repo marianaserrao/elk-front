@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useOnboardingContext } from '../../../hooks/onboarding';
-import { useLocation } from 'react-router-dom';
 import { useMount } from 'react-use';
 
 // import { Container } from './styles';
@@ -26,7 +25,7 @@ const PageTitle: React.FC<TitleProps> = ({title, onboardingId}) => {
     if (tourActive && stepIndex!=0) {
       setTimeout(() => {
         setState({ run: true});
-      }, 800);
+      }, 900);
     }
   });
 

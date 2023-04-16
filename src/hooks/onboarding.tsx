@@ -21,15 +21,20 @@ OnboardingContext.displayName = 'OnboardingContext';
 
 export const OnboardingProvider: React.FC<PropsWithChildren> = ({children}) => {
   const [state, setState] = useSetState({
-    run: !localStorage.getItem('@Elk:onboard'),
+    // run: !localStorage.getItem('@Elk:onboard'),
     stepIndex: 0,
     steps: [],
-    tourActive: !localStorage.getItem('@Elk:onboard'),
+    // tourActive: !localStorage.getItem('@Elk:onboard'),
+    run: true,
+    tourActive: true
   });
 
   const setOnboarded = useCallback(()=>{
-    localStorage.setItem('@Elk:onboard', 'elk-sockets');
-    setState({...state, tourActive:false, run: false})
+    // localStorage.setItem('@Elk:onboard', 'elk-sockets');
+    setState({
+      // tourActive:false, 
+      run: false
+    })
   },[state])
 
   const value = useMemo(
