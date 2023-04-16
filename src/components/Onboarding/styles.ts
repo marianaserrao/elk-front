@@ -6,6 +6,10 @@ export const Container = styled.div`
     position: absolute;
     top: -40px;
     right: -30px;
+    @media(max-width:450px){
+      right: 0;
+      top: -45px;
+    }
   }
   h2{
     font-size: 16px;
