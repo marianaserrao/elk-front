@@ -57,6 +57,7 @@ const EquipamentChange: React.FC = () => {
             savings
           })=>(
             <SuggestionCard
+              key={equipament.id}
               title = {`${equipament.name} - ${equipament.id}`}
               link={{
                 href: 'www.google.com',

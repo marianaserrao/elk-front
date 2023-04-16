@@ -17,6 +17,7 @@ const PeriodChange: React.FC = () => {
           equipament
       }, index)=>(
         <SuggestionCard
+          key={index}
           title = {`${equipament.name} - ${equipament.id}`}
           chart = {
             <HourlyUsageChart 

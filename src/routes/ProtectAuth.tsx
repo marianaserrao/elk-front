@@ -17,7 +17,7 @@ const ProtectAuth: React.FC<RouteProps> = ({ isPrivate = false, ...rest }) => {
     if (!user === isPrivate){
       return (
         isPrivate
-        ? <Navigate to='/home' state={{from: location}} replace/>
+        ? <Navigate to='/' state={{from: location}} replace/>
         : <Navigate to='/dashboard' state={{from: location}} replace/>
       )
     }

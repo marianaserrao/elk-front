@@ -10,10 +10,11 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 export const AuthProvider: React.FC<PropsWithChildren> = ({children}) => {
 
-    const [user, setUser] = useState<boolean>(() => {
-        const user = localStorage.getItem('@Elk:user');
-        return !!user;
-    });
+    // const [user, setUser] = useState<boolean>(() => {
+    //     const user = localStorage.getItem('@Elk:user');
+    //     return !!user;
+    // });
+    const [user, setUser] = useState(true);
 
     const logout = useCallback(() => {
         localStorage.removeItem('@Elk:user');

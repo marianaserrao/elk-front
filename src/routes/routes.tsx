@@ -10,6 +10,7 @@ import { Navigate } from 'react-router-dom';
 
 export const privateRoutes = [
   {
+    id: 'dashboard',
     path: '/dashboard', 
     title: 'Dashboard',
     icon: 'dashboard.png',
@@ -17,6 +18,7 @@ export const privateRoutes = [
     onNavBar: true
   },
   {
+    id: 'management',
     path: '/management', 
     title: 'Gerenciamento',
     icon: 'socket.png',
@@ -24,6 +26,7 @@ export const privateRoutes = [
     onNavBar: true
   },
   {
+    id: 'suggestions',
     path: '/suggestions', 
     title: 'Sugestões',
     icon: 'suggestions.png',
@@ -33,24 +36,28 @@ export const privateRoutes = [
     subRoutes: [3,4,5]
   },
   {
+    id: 'equipament-suggestions',
     path: '/suggestions/equipament-change', 
     title: 'Equipamentos',
     icon: 'equipament.png',
     element:  <EquipamentChange />,
   },
   {
+    id: 'tarriff-suggestions',
     path: '/suggestions/tariffs', 
     title: 'Tarifários',
     icon: 'eletricity.png',
     element:  <TariffChange/>,
   },
   {
+    id: 'period-suggestions',
     path: '/suggestions/usage-period-change', 
     title: 'Horário de Uso',
     icon: 'watch.png',
     element:  <PeriodChange />,
   },
   {
+    id: 'sustainability',
     path: '/sustainability', 
     title: 'Sustentabilidade',
     icon: 'sustainability.png',
@@ -58,6 +65,7 @@ export const privateRoutes = [
     onNavBar: true
   },
   {
+    id: 'equipament-detail',
     path: '/management/equipament', 
     title: 'Equipament Details',
     element:  <EquipamentDetail/>,
@@ -66,7 +74,7 @@ export const privateRoutes = [
 
 export const publicRoutes = [
   {
-    path: '/home', 
+    path: '/', 
     title: 'Home',
     element:  <Home />
   }

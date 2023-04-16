@@ -12,7 +12,7 @@ import HourlyUsageChart from '../../components/Charts/HourlyUsageChart';
 
 const Dashboard: React.FC = () => {
   return (
-    <S.Container>
+    <S.Container id='dashboardd'>
       <S.AnalyticsContainer>
           {
             mainAnalytics.map((item, index)=>(

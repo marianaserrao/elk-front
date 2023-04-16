@@ -28,29 +28,29 @@ const Layout: React.FC = () => {
   },[openedMenu])
 
   return (
-    <Container>
-      <Navbar/>
-      <RouteSlidingContainer>
-        <Header>
-          <TitleContainer>
-            <Logo/>
-            <PageTitle title={route.title}/>
-          </TitleContainer>
-          <DrawerContainer>
-            <button onClick={toggleNavbar}>
-              <MenuIcon fontSize='large'/>
-            </button>
-            <Drawer
-              open={openedMenu}
-              onClose={toggleNavbar}
-            >
-              <Navbar style={{backgroundColor: colors.primary}} onNav={toggleNavbar}/>
-            </Drawer>
-          </DrawerContainer>
-        </Header>
-        <Outlet/>
-      </RouteSlidingContainer>
-    </Container>
+      <Container>
+        <Navbar className='navbar'/>
+        <RouteSlidingContainer>
+          <Header>
+            <TitleContainer id={route.id}>
+              <Logo/>
+              <PageTitle title={route.title} onboardingId={route.id}/>
+            </TitleContainer>
+            <DrawerContainer className='navbar'>
+              <button onClick={toggleNavbar}>
+                <MenuIcon fontSize='large'/>
+              </button>
+              <Drawer
+                open={openedMenu}
+                onClose={toggleNavbar}
+              >
+                <Navbar style={{backgroundColor: colors.primary}} onNav={toggleNavbar}/>
+              </Drawer>
+            </DrawerContainer>
+          </Header>
+          <Outlet/>
+        </RouteSlidingContainer>
+      </Container>
   );
 }
 
