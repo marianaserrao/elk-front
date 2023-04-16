@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({
       {chart === '' ? <></>:<S.CardChart>
         {chart}
       </S.CardChart>}
-      {link && <a href={link?.href}>{link?.text}</a>}
+      {link && <a href={link?.href} target="_blank">{link?.text}</a>}
     </S.CardContainer>
   );
 }
