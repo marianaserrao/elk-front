@@ -20,10 +20,14 @@ export const CardContainer = styled(Card)`
     }
 `;
 
-export const CardMain = styled.div`
+interface CardMainInterface {
+  fullSize?: boolean;
+}
+
+export const CardMain = styled.div<CardMainInterface>`
   display: flex;
   flex-direction:column ;
-  width: 50%;
+  width: ${(props)=> props.fullSize ? '100%' : '50%'};
   padding-bottom: 30px;
 
   @media(max-width:600px){

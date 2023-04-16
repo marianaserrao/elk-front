@@ -10,7 +10,7 @@ interface MenuInterface{
 }
 
 export const Menu = styled.aside<MenuInterface>`
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 635px) {
     &{
         display: ${props => props.show? 'block': 'none' };
     }
@@ -25,7 +25,7 @@ export const NavBarHome = styled(AnimatedContainer)`
         padding-top: 30px;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 635px) {
         &{
             flex-direction: column;
             justify-content: center;
@@ -34,7 +34,7 @@ export const NavBarHome = styled(AnimatedContainer)`
             padding-top: 30px;
         }
     }
-    @media screen and (min-width: 600px) and (max-width: 1100px) {
+    @media screen and (min-width: 635px) and (max-width: 1100px) {
         &{
             padding-right: 8px;
             gap: 0px;
@@ -53,7 +53,7 @@ export const NavbarEnd = styled.div`
         padding-right: 16px;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 635px) {
         &{
             flex-direction: column;
             justify-content: flex-start;
@@ -82,7 +82,7 @@ export const Button = styled.button<ButtonProps>`
         border: ${(props) => props.border};
     }
 
-    @media screen and (max-width: 773px){
+    @media screen and (max-width: 826px){
         padding-left: 8px;
         padding-right: 8px;
     }
@@ -91,7 +91,7 @@ export const Button = styled.button<ButtonProps>`
 export const LogoDefault = styled(AnimatedContainer)`
     &{
         display: flex;
-        height: 18vh;
+        height: 8vw;
 
         margin-top: 72px;
     
@@ -99,9 +99,9 @@ export const LogoDefault = styled(AnimatedContainer)`
         background-size: contain;
         background-repeat: no-repeat;
     }    
-    @media screen and (min-width: 600px) and (max-width: 810px){
+    @media screen and (min-width: 635px) and (max-width: 810px){
         &{
-            height: 10vw;
+            height: 8vw;
             margin-top: 20px;
             margin-bottom: 10px;
         }
@@ -113,7 +113,7 @@ export const LogoDefault = styled(AnimatedContainer)`
         }
     }
 
-    @media screen and (min-width: 500px) and (max-width: 600px){
+    @media screen and (min-width: 500px) and (max-width: 635px){
         &{
             height: 70px;
             margin-top: 17px;
@@ -133,13 +133,13 @@ export const Container = styled.div`
         margin-left: 100px;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 635px) {
         &{
         margin-left: 16px;
         }
     }
 
-    @media screen and (min-width: 600px) and (max-width: 1015px) {
+    @media screen and (min-width: 635px) and (max-width: 1015px) {
         &{
             margin-left: 32px;
             padding-right: 0px;
@@ -154,7 +154,7 @@ export const Description = styled(AnimatedContainer)`
         text-align: justify;
     }
 
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 635px){
         &{
             width: 94vw;
             padding-top: 40px;    
@@ -175,7 +175,7 @@ export const Row = styled(AnimatedContainer)`
         flex-direction: row;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 635px) {
         &{
             display: flex;
             flex-direction: column;
@@ -183,18 +183,6 @@ export const Row = styled(AnimatedContainer)`
             gap: 8px;
             width: 90%; 
             bottom: 32px;
-            position: fixed;
-
-        }
-    }
-
-    @media screen and (min-width: 800px) and (max-width: 600px)  {
-        &{
-            flex-direction: column;
-            justify-content: center;
-            gap: 8px;
-            width: 95%; 
-            bottom: 0%;
             position: fixed;
 
         }
@@ -209,9 +197,8 @@ export const ImageDisplay = styled(AnimatedContainer)`
     right: 0;
 
     img:first-child{
-        height: 85vh;
-        min-height:60vh ;
-        max-height:50vw ;
+        height: 81vh;
+        width: 40vw;
 
         position: absolute;
         bottom: 0;
@@ -219,15 +206,14 @@ export const ImageDisplay = styled(AnimatedContainer)`
 
     img+img{
         height: 62vh;
-        min-height:45vh ;
-        max-height:40vw ;
+        width: 25vw;
 
         position: absolute;
         bottom: 7vh;
         right: 7vw;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 635px) {
         &{
             display:none;
         }
@@ -236,13 +222,15 @@ export const ImageDisplay = styled(AnimatedContainer)`
 `;
 
 export const LabelCollapse = styled.div`
+& { display: none;}
 button{
     border: none;
     background-color: transparent;
   }
 
-@media (max-width: 600px) {
+@media (max-width: 635px) {
     & {
+        display: flex;
         position: fixed;
         z-index: 2;
         top: 1rem;
