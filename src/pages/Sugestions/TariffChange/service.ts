@@ -4,7 +4,7 @@ export const tariffChangeData = [
     suggestion: {
       name: 'Galp',
       logo: 'https://seeklogo.com/images/G/Galp_Energia-logo-50CA3B8788-seeklogo.com.png',
-      url: 'https://seeklogo.com/images/G/Galp_Energia-logo-50CA3B8788-seeklogo.com.png',
+      url: 'https://casa.galp.pt/planos-eletricidade-e-gas',
       description: 'Energia 100% limpa!'
     },
     chartData:[
@@ -30,7 +30,7 @@ export const tariffChangeData = [
     suggestion: {
       name: 'Plenitude',
       logo: 'https://upload.wikimedia.org/wikipedia/it/thumb/5/54/Eni_Plenitude.svg/2094px-Eni_Plenitude.svg.png',
-      url: 'https://upload.wikimedia.org/wikipedia/it/thumb/5/54/Eni_Plenitude.svg/2094px-Eni_Plenitude.svg.png',
+      url: 'https://eniplenitude.pt/',
       description: 'Oferta indexada!'
     },
     chartData:[
@@ -56,7 +56,7 @@ export const tariffChangeData = [
     suggestion: {
       name: 'Repsol',
       logo: 'https://www.citypng.com/public/uploads/small/11662412338uj33wndgevetpnocwqeyvypqyip29nhjqcjb3pu1tbjxlzqzjddhlgiyx8n2lwfzg6xr5pb7o9813aehtqyi80ydmcipftiiz4lw.png',
-      url: 'https://www.citypng.com/public/uploads/small/11662412338uj33wndgevetpnocwqeyvypqyip29nhjqcjb3pu1tbjxlzqzjddhlgiyx8n2lwfzg6xr5pb7o9813aehtqyi80ydmcipftiiz4lw.png',
+      url: 'https://www.repsol.pt/landings2/eletricidadeegas/',
       description: 'Energia 100% limpa!'
     },
     chartData:[

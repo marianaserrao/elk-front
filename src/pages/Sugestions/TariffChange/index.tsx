@@ -56,12 +56,12 @@ const PeriodChange: React.FC = () => {
           tariffChangeData.map(({
             chartData,
             savings,
-            suggestion
+            suggestion,
           }, index)=>(
             <SuggestionCard
               title = {suggestion.name}
               link={{
-                href: 'www.google.com',
+                href: suggestion.url,
                 text: 'Ver recomandações'
               }}
               iconUrl={suggestion.logo}

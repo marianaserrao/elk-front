@@ -36,10 +36,6 @@ const Navbar: React.FC<NavbarProps> = ({onNav, ...rest}) => {
             )
             ))
         }
-        <S.LogoutButton onClick={handleLogout}>
-          <BiLogOut size={22} color={colors.light}/>
-          Logout
-        </S.LogoutButton>
       </S.Content>
     </S.Container>
   );
