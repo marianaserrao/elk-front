@@ -39,7 +39,7 @@ const Onboarding: React.FC = () => {
           content: (
             <Container key='navbar'>
               <img src={require('../../assets/images/elk-mascote.png')}/>
-              <h2>Essa é a barra de navegação, é por aqui que tu entenderás mais do teu negócio!</h2>
+              <h2>Essa é a barra de navegação, é por aqui que tu entenderás mais do teu negócio. Vamos navegar!</h2>
             </Container>
           ),
           placement: 'right',
