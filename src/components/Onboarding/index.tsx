@@ -64,7 +64,7 @@ const Onboarding: React.FC = () => {
           content: (
             <Container key='tarriff'>
               <img src={require('../../assets/images/elk-mascote.png')}/>
-              <h2>Economize dinheiro a longo prazo trocando equipamentos ineficientes!</h2>
+              <h2>Saiba se o tarifário elétrico contratado para sua empresa é o ideal.</h2>
             </Container>
           ),
           target: '#tarriff-suggestions',
@@ -73,7 +73,7 @@ const Onboarding: React.FC = () => {
           content: (
             <Container key='period'>
               <img src={require('../../assets/images/elk-mascote.png')}/>
-              <h2>Economize dinheiro a longo prazo trocando equipamentos ineficientes!</h2>
+              <h2>Economize dinheiro ao utilizar energia em horários que são mais baratos.</h2>
             </Container>
           ),
           target: '#period-suggestions',
