@@ -108,11 +108,9 @@ const Onboarding: React.FC = () => {
     console.log(data)
 
     navegation: if(type === 'step:after'){
-      let nextTarget = ''
       let nextIndex = 0
       if(action==='next'){
         if(index<size-1){
-          nextTarget = steps[index+1].target as string
           nextIndex = index+1
         }
         else{
@@ -126,18 +124,18 @@ const Onboarding: React.FC = () => {
         }
       }
       else if(action==='prev' && index>1){
-        nextTarget = steps[index-1].target as string 
         nextIndex = index-1 
       }
-
+      
+      let nextTarget = steps[nextIndex].target as string 
       let nextRoute = privateRoutes.filter(route=>route.id===nextTarget.replace('#',''))
       if(nextRoute.length!=0){
-        setState({ run: false, stepIndex: nextIndex })  
+        setState({ run: index===0, stepIndex: nextIndex })  
         const {path} = nextRoute[0]
         navigate(
           path,
           {state:{from: location}}
-        );
+          );
       }else{
         setState({ stepIndex: nextIndex })  
       }
