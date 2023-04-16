@@ -1,14 +1,18 @@
-import React, { useCallback, useMemo } from 'react';
-import { NavbarEnd, NavBarHome, Button, LogoDefault, Container, Description, Row, ImageDisplay, Collapse, LabelCollapse, Menu, Content, PaddingRight } from './styles';
+import React, { useCallback, useMemo, useState } from 'react';
+import { NavbarEnd, NavBarHome, Button, LogoDefault, Container, Description, Row, ImageDisplay, LabelCollapse, Menu, Content, PaddingRight } from './styles';
 import { HBox, VBox } from '../../styles/spacing';
 import { useTheme } from 'styled-components';
 import { useAuth } from '../../hooks/auth';
+import MenuIcon from '@mui/icons-material/MenuRounded';
+import CloseIcon from '@mui/icons-material/Close';
 
 const disloc = 100
 
 const Home: React.FC = () => {
   const { colors, animations } = useTheme();
   const { login } = useAuth();
+
+  const [openedMenu, setOpenedMenu] = useState(false)
 
   const animation = useMemo(()=>({
     xLeft: -disloc,
@@ -22,27 +26,37 @@ const Home: React.FC = () => {
     login()
   },[login])
 
+  
+  const toggleNavbar = useCallback((event: any)=>{
+    event.preventDefault();    
+    setOpenedMenu(!openedMenu)
+  },[openedMenu])
+
+
   return (
     <Container>
-      <Collapse id="close-menu" className="close-menu" type="checkbox" aria-label="Close menu" role="button" />
-      <LabelCollapse className="close-menu-label" htmlFor="close-menu" title="close menu" />
-      <Menu className='menu'>
+      <LabelCollapse className="close-menu-label" >
+        <button onClick={toggleNavbar}>
+                {openedMenu ? <CloseIcon fontSize='large' /> : <MenuIcon fontSize='large'/>} 
+        </button>
+      </LabelCollapse>
+      <Menu className='menu' show={openedMenu}>
         <NavBarHome
           duration={animation.duration}
           animateEntry={animations.home}
           initialOpacity={animation.opacity}
         >
-          <Button color={colors.dark} border='none'><p><b>About Us</b></p></Button>
-          <Button color={colors.dark} border='none'><p>Our Products</p></Button>
+          <Button color={colors.dark} border='none'><p><b>Sobre nós</b></p></Button>
+          <Button color={colors.dark} border='none'><p>Nossos produtos</p></Button>
           <Button color={colors.dark} border='none'><p>Blog</p></Button>
-          <Button color={colors.dark} border='none'><p>Contact Us</p></Button>
+          <Button color={colors.dark} border='none'><p>Contate-nos</p></Button>
           <NavbarEnd>
             <Button color={colors.primary} border={`${colors.primary} 2px solid;`} onClick={handleLogin}><p>Log In</p></Button>
             <Button background={colors.dark}>Sign Up</Button>   
           </NavbarEnd>
         </NavBarHome>
       </Menu>
-      <Content className='content'>
+      <Content className='content' show={openedMenu}>
         <LogoDefault 
           duration={animation.duration}
           animateEntry={animations.home}
@@ -55,9 +69,9 @@ const Home: React.FC = () => {
           initialX={animation.xLeft}   
           initialOpacity={animation.opacity} 
         >
-          <p>Make the smart choice for sustainability with Elk Sockets. Our smart sockets <b>can increase your business's energy efficiency by up to 30% and reduce CO2 emissions by up to 20%.</b></p>
+          <p>Faça a escolha inteligente para a sustentabilidade com Elk Sockets. As nossas tomadas inteligentes <b>podem aumentar a eficiência energética da sua empresa até 30% e reduzir as emissões de CO2 até 20%.</b></p>
           <br/>
-          <p>By optimizing your electrical demands, Elk Sockets help you save money on your energy bills and do your part for the environment.</p>
+          <p>Ao otimizar suas demandas elétricas, os soquetes Elk ajudam você a economizar dinheiro em suas contas de energia e fazer sua parte pelo meio ambiente.</p>
         </Description>      
 
         <VBox /><VBox />

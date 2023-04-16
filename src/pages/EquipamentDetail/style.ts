@@ -13,10 +13,21 @@ export const MainCardContainer = styled(AnimatedContainer)`
     }
 
     gap: ${({theme})=>theme.spacings.large};
-    >div{
-        flex: 1;
-        max-height: 370px;
-        height: 370px;
+    @media screen and (min-width: 930px) {
+        
+        >div{
+            flex: 1;
+            max-height: 370px;
+            height: 370px;
+        }
+            
+    }
+
+    @media screen and (max-width: 930px) {
+        &{
+            flex-direction: column;
+        }
+
     }
 `;
 
@@ -35,21 +46,27 @@ export const SwitchContainer = styled(AnimatedContainer)`
 `;
 
 export const Card = styled.div<CardInterface>`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    &{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-    width: ${(props) => props.fullSize ? "497px" : "175px"};
-    height:${(props) => props.fullSize ? "368px" : "120px"};
+        width: ${(props) => props.fullSize ? "497px" : "175px"};
+        height:${(props) => props.fullSize ? "368px" : "120px"};
 
-    background-color: ${({theme})=>theme.colors.cardBackground};
-    box-shadow: ${({theme})=>theme.shadows.default};
+        background-color: ${({theme})=>theme.colors.cardBackground};
+        box-shadow: ${({theme})=>theme.shadows.default};
 
-    border-radius: ${({theme})=>theme.radius.default};
-    padding: 15px;
-    text-align: center;
-    align-items:center;
-    align-content:center;
+        border-radius: ${({theme})=>theme.radius.default};
+        padding: 15px;
+        align-items:center;
+        align-content:center;
+    }
+
+    @media screen and (max-width: 930px) {
+        width: 100%;
+        height: 400px;
+    }
 `;
 
 interface PaddingInterface{

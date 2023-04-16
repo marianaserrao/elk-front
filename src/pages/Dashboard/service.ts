@@ -21,306 +21,306 @@ export const usageByCategory = {
     {
       date: 'segunda-feira',
       frigobar: 4000,
-      televisão: 2400,
       aquecedor: 2400,
+      televisão: 2400,
     },
     {
       date: 'terça-feira',
       frigobar: 3000,
-      televisão: 1398,
-      aquecedor: 2210,
+      aquecedor: 1398,
+      televisão: 2210,
     },
     {
       date: 'quarta-feira',
       frigobar: 2000,
-      televisão: 9800,
-      aquecedor: 2290,
+      aquecedor: 9800,
+      televisão: 2290,
     },
     {
       date: 'quinta-feira',
       frigobar: 2780,
-      televisão: 3908,
-      aquecedor: 2000,
+      aquecedor: 3908,
+      televisão: 2000,
     },
     {
       date: 'sexta-feira',
       frigobar: 1890,
-      televisão: 4800,
-      aquecedor: 2181,
+      aquecedor: 4800,
+      televisão: 2181,
     },
     {
       date: 'sábado',
       frigobar: 2390,
-      televisão: 3800,
-      aquecedor: 2500,
+      aquecedor: 3800,
+      televisão: 2500,
     },
     {
       date: 'domingo',
       frigobar: 3490,
-      televisão: 4300,
-      aquecedor: 2100,
+      aquecedor: 4300,
+      televisão: 2100,
     },
   ],
   'Último mês' : [
     {
       date: '01/set',
       frigobar: 7000,
-      televisão: 2400,
       aquecedor: 2400,
+      televisão: 2400,
     },
     {
       date: '02/set',
       frigobar: 3000,
-      televisão: 1398,
-      aquecedor: 2210,
+      aquecedor: 1398,
+      televisão: 2210,
     },
     {
       date: '03/set',
       frigobar: 2000,
-      televisão: 9800,
-      aquecedor: 2290,
+      aquecedor: 9800,
+      televisão: 2290,
     },
     {
       date: '04/set',
       frigobar: 2780,
-      televisão: 3908,
-      aquecedor: 2000,
+      aquecedor: 3908,
+      televisão: 2000,
     },
     {
       date: '05/set',
       frigobar: 1890,
-      televisão: 4800,
-      aquecedor: 2181,
+      aquecedor: 4800,
+      televisão: 2181,
     },
     {
       date: '06/set',
       frigobar: 2390,
-      televisão: 3800,
-      aquecedor: 2500,
+      aquecedor: 3800,
+      televisão: 2500,
     },
     {
       date: '07/set',
       frigobar: 3490,
-      televisão: 3500,
-      aquecedor: 2100,
+      aquecedor: 3500,
+      televisão: 2100,
     },
     {
       date: '08/set',
-      frigobar: 3490,
-      televisão: 3700,
-      aquecedor: 2100,
+      frigobar: 3090,
+      aquecedor: 3700,
+      televisão: 2400,
     },
     {
       date: '09/set',
       frigobar: 3490,
-      televisão: 3200,
-      aquecedor: 2100,
+      aquecedor: 3200,
+      televisão: 2300,
     },
     {
       date: '10/set',
-      frigobar: 3490,
-      televisão: 4098,
-      aquecedor: 2100,
+      frigobar: 2800,
+      aquecedor: 4098,
+      televisão: 1700,
     },
     {
       date: '11/set',
-      frigobar: 3490,
-      televisão: 4200,
-      aquecedor: 2100,
+      frigobar: 2900,
+      aquecedor: 4200,
+      televisão: 2200,
     },
     {
       date: '12/set',
-      frigobar: 3490,
-      televisão: 3800,
-      aquecedor: 2100,
+      frigobar: 4200,
+      aquecedor: 3800,
+      televisão: 1200,
     },
     {
       date: '13/set',
-      frigobar: 3490,
-      televisão: 3200,
-      aquecedor: 2100,
+      frigobar: 4300,
+      aquecedor: 3200,
+      televisão: 800,
     },
     {
       date: '14/set',
-      frigobar: 3490,
-      televisão: 2800,
-      aquecedor: 2100,
+      frigobar: 4500,
+      aquecedor: 2800,
+      televisão: 900,
     },
     {
       date: '15/set',
-      frigobar: 3490,
-      televisão: 2500,
-      aquecedor: 2100,
+      frigobar: 4590,
+      aquecedor: 2500,
+      televisão: 400,
     },
     {
       date: '16/set',
-      frigobar: 3490,
-      televisão: 2399,
-      aquecedor: 2100,
+      frigobar: 4650,
+      aquecedor: 2399,
+      televisão: 1200,
     },
     {
       date: '17/set',
-      frigobar: 3490,
-      televisão: 2300,
-      aquecedor: 2100,
+      frigobar: 4650,
+      aquecedor: 2300,
+      televisão: 1050,
     },
     {
       date: '18/set',
-      frigobar: 3490,
-      televisão: 2400,
-      aquecedor: 2100,
+      frigobar: 4400,
+      aquecedor: 2400,
+      televisão: 405,
     },
     {
       date: '19/set',
-      frigobar: 3490,
-      televisão: 700,
-      aquecedor: 2100,
+      frigobar: 5000,
+      aquecedor: 1500,
+      televisão: 900,
     },
     {
       date: '20/set',
-      frigobar: 3490,
-      televisão: 400,
-      aquecedor: 2100,
+      frigobar: 5200,
+      aquecedor: 1600,
+      televisão: 2000,
     },
     {
       date: '21/set',
-      frigobar: 3490,
-      televisão: 500,
-      aquecedor: 2100,
+      frigobar: 5050,
+      aquecedor: 1400,
+      televisão: 2100,
     },
     {
       date: '22/set',
-      frigobar: 3490,
-      televisão: 2800,
-      aquecedor: 2100,
+      frigobar: 2600,
+      aquecedor: 2800,
+      televisão: 2100,
     },
     {
       date: '23/set',
-      frigobar: 3490,
-      televisão: 9000,
-      aquecedor: 2100,
+      frigobar: 400,
+      aquecedor: 9000,
+      televisão: 2040,
     },
     {
       date: '24/set',
-      frigobar: 3490,
-      televisão: 7320,
-      aquecedor: 2100,
+      frigobar: 200,
+      aquecedor: 7320,
+      televisão: 2800,
     },
     {
       date: '25/set',
-      frigobar: 3490,
-      televisão: 5020,
-      aquecedor: 2100,
+      frigobar: 230,
+      aquecedor: 5020,
+      televisão: 2230,
     },
     {
       date: '26/set',
-      frigobar: 3490,
-      televisão: 4000,
-      aquecedor: 2100,
+      frigobar: 500,
+      aquecedor: 4000,
+      televisão: 2900,
     },
     {
       date: '27/set',
-      frigobar: 3490,
-      televisão: 3700,
-      aquecedor: 2100,
+      frigobar: 800,
+      aquecedor: 3700,
+      televisão: 2500,
     },
     {
       date: '28/set',
-      frigobar: 3490,
-      televisão: 3400,
-      aquecedor: 2100,
+      frigobar: 1200,
+      aquecedor: 3400,
+      televisão: 2100,
     },
     {
       date: '29/set',
-      frigobar: 3490,
-      televisão: 2800,
-      aquecedor: 2100,
+      frigobar: 1500,
+      aquecedor: 2800,
+      televisão: 2240,
     },
     {
       date: '30/set',
-      frigobar: 3490,
-      televisão: 4300,
-      aquecedor: 2100,
+      frigobar: 2200,
+      aquecedor: 4300,
+      televisão: 2900,
     },
     {
       date: '31/set',
-      frigobar: 3490,
-      televisão: 4300,
-      aquecedor: 2100,
+      frigobar: 300,
+      aquecedor: 4300,
+      televisão:  3400,
     },
   ],
   'Último ano' : [
     {
       date: 'janeiro',
       frigobar: 400,
-      televisão: 2400,
       aquecedor: 2400,
+      televisão: 2400,
     },
     {
       date: 'fevereiro',
       frigobar: 3000,
-      televisão: 1398,
-      aquecedor: 2210,
+      aquecedor: 1398,
+      televisão: 2210,
     },
     {
       date: 'março',
       frigobar: 2000,
-      televisão: 9800,
-      aquecedor: 2290,
+      aquecedor: 9800,
+      televisão: 2290,
     },
     {
       date: 'abril',
       frigobar: 2780,
-      televisão: 3908,
-      aquecedor: 2000,
+      aquecedor: 3908,
+      televisão: 2000,
     },
     {
       date: 'maio',
       frigobar: 1890,
-      televisão: 4800,
-      aquecedor: 2181,
+      aquecedor: 4800,
+      televisão: 2181,
     },
     {
       date: 'junho',
       frigobar: 2390,
-      televisão: 3800,
-      aquecedor: 2500,
+      aquecedor: 3800,
+      televisão: 2500,
     },
     {
       date: 'julho',
       frigobar: 3490,
-      televisão: 4300,
-      aquecedor: 2100,
+      aquecedor: 4300,
+      televisão: 2100,
     },
     {
       date: 'agosto',
       frigobar: 3490,
-      televisão: 4300,
-      aquecedor: 2100,
+      aquecedor: 4300,
+      televisão: 2100,
     },
     {
       date: 'setembro',
       frigobar: 3490,
-      televisão: 4300,
-      aquecedor: 2100,
+      aquecedor: 4300,
+      televisão: 2100,
     },
     {
       date: 'outubro',
       frigobar: 3490,
-      televisão: 4300,
-      aquecedor: 2100,
+      aquecedor: 4300,
+      televisão: 2100,
     },
     {
       date: 'novembro',
       frigobar: 3490,
-      televisão: 4300,
-      aquecedor: 2100,
+      aquecedor: 4300,
+      televisão: 2100,
     },
     {
       date: 'dezembro',
       frigobar: 3490,
-      televisão: 4300,
-      aquecedor: 2100,
+      aquecedor: 4300,
+      televisão: 2100,
     },
   ]
 };
@@ -454,32 +454,32 @@ export const usageByTime = {
   'Último mês' : [
     {
       hour: '1h',
-      amt: 2400,
+      amt: 400,
       tariff: 'high'
     },
     {
       hour: '2h',
-      amt: 2210,
+      amt: 400,
       tariff: 'high'
     },
     {
       hour: '3h',
-      amt: 2290,
+      amt: 400,
       tariff: 'normal'
     },
     {
       hour: '4h',
-      amt: 2000,
+      amt: 400,
       tariff: 'normal'
     },
     {
       hour: '5h',
-      amt: 2181,
+      amt: 700,
       tariff: 'low'
     },
     {
       hour: '6h',
-      amt: 2500,
+      amt: 800,
       tariff: 'normal'
     },
     {
@@ -490,28 +490,28 @@ export const usageByTime = {
     
     {
       hour: '8h',
-      amt: 2400,
+      amt: 2300,
       tariff: 'high'
     },
     {
       hour: '9h',
-      amt: 2210,
+      amt: 2500,
       tariff: 'high'
     },
     {
       hour: '10h',
-      amt: 2290,
-      tariff: 'high'
+      amt: 1800,
+      tariff: 'normal'
     },
     {
       hour: '11h',
-      amt: 2000,
+      amt: 1500,
       tariff: 'normal'
     },
     {
       hour: '12h',
-      amt: 2181,
-      tariff: 'low'
+      amt: 2100,
+      tariff: 'normal'
     },
     {
       hour: '13h',
@@ -520,23 +520,23 @@ export const usageByTime = {
     },
     {
       hour: '14h',
-      amt: 2100,
+      amt: 1500,
       tariff: 'high'
     },
     
     {
       hour: '15h',
-      amt: 2400,
+      amt: 2800,
       tariff: 'high'
     },
     {
       hour: '16h',
-      amt: 2210,
+      amt: 3500,
       tariff: 'high'
     },
     {
       hour: '17h',
-      amt: 2290,
+      amt: 2400,
       tariff: 'normal'
     },
     {
@@ -546,35 +546,35 @@ export const usageByTime = {
     },
     {
       hour: '19h',
-      amt: 2181,
+      amt: 1500,
       tariff: 'low'
     },
     {
       hour: '20h',
-      amt: 2500,
+      amt: 1300,
       tariff: 'normal'
     },
     {
       hour: '21h',
-      amt: 2100,
+      amt: 700,
       tariff: 'high'
     },
     
     {
       hour: '22h',
-      amt: 2181,
+      amt: 400,
       tariff: 'low'
     },
     {
       hour: '23h',
-      amt: 2500,
+      amt: 400,
       tariff: 'normal'
     },
     {
       hour: '24h',
-      amt: 2100,
+      amt: 400,
       tariff: 'high'
-    },
+    }
   ],
   'Último ano' : [
     {
@@ -705,13 +705,13 @@ export const usageByTime = {
 
 export const mainAnalytics = [
   {
-    value:'90 kW',
+    value:'416 kW',
     description:'Consumo Atual',
     variation:-12,
     realtime: true
   },
   {
-    value:'250 kWh',
+    value:'1250 kWh',
     description:'Consumo Mensal',
     variation:-24,
     realtime: false

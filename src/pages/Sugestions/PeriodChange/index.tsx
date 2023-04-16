@@ -35,7 +35,7 @@ const PeriodChange: React.FC = () => {
                 Tente utilizar no horário de menor custo, das 
                 <b> {suggestedInterval[0]} horas às {suggestedInterval[1]} horas </b> 
                 e poupe até 
-                <b> {savings + '\u20AC'} mensais</b>.
+                <b> {savings.toFixed(2) + '\u20AC'} mensais</b>.
               </p>
             </S.CardInfoContainer>
           </S.CardMain>

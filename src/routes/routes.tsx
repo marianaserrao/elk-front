@@ -7,6 +7,7 @@ import TariffChange from '../pages/Sugestions/TariffChange';
 import EquipamentChange from '../pages/Sugestions/EquipamentChange';
 
 import { Navigate } from 'react-router-dom';
+import Sustentability from '../pages/Sustentability';
 
 export const privateRoutes = [
   {
@@ -61,7 +62,7 @@ export const privateRoutes = [
     path: '/sustainability', 
     title: 'Sustentabilidade',
     icon: 'sustainability.png',
-    element:  <EquipamentDetail/>,
+    element:  <Sustentability/>,
     onNavBar: true
   },
   {

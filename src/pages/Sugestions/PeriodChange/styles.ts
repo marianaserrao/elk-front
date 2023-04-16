@@ -11,7 +11,11 @@ export const CardMain = styled.div`
   margin-top: -15px;
 `;
 
-export const CardImageContainer = styled.div`
+interface CardImageContainerInterface {
+  showImage?: boolean;
+}
+
+export const CardImageContainer = styled.div<CardImageContainerInterface>`
  height: 100px;
  width: 100px;
 
@@ -22,7 +26,7 @@ export const CardImageContainer = styled.div`
  background-repeat:no-repeat ;
 
  @media(max-width:1100px){
-  display: none;
+  display: ${props=> props.showImage ? 'block' : 'none'};
  }
 `;
 

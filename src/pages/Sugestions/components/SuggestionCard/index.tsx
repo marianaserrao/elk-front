@@ -10,6 +10,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement>{
     text: string
   }
   iconUrl?: string
+  fullSize?: boolean
 }
 
 const Card: React.FC<CardProps> = ({
@@ -23,7 +24,7 @@ const Card: React.FC<CardProps> = ({
   
   return (
     <S.CardContainer {...rest}>
-      <S.CardMain>
+      <S.CardMain fullSize={rest.fullSize}>
         <S.CardTitle>  
           {iconUrl && <div style={{backgroundImage: `url(${iconUrl})`}}/>}
           <h3>{title}</h3>
@@ -32,10 +33,10 @@ const Card: React.FC<CardProps> = ({
           {children}
         </S.CardInfoContainer>
       </S.CardMain>
-      <S.CardChart>
+      {chart === '' ? <></>:<S.CardChart>
         {chart}
-      </S.CardChart>
-      {link && <a href={link?.href}>{link?.text}</a>}
+      </S.CardChart>}
+      {link && <a href={link?.href} target="_blank">{link?.text}</a>}
     </S.CardContainer>
   );
 }
