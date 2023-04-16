@@ -72,7 +72,6 @@ const EquipamentDetail: React.FC = () => {
             ))
           }
         </AnalyticsContainer>
-        <VBox />
         <S.MainCardContainer>
             <S.Card fullSize={true} >
                 <Title>{"Uso em tempo real (Watts)"}</Title>

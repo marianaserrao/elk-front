@@ -20,7 +20,7 @@ export const periodChangeSuggestions = [
   {
     currentInterval: [12,16],
     suggestedInterval: [10,14],
-    savings: 300,
+    savings: 300/26,
     equipament:{
       name:'Máquina de Lavar',
       id: 'HR-0231',
@@ -155,7 +155,7 @@ export const periodChangeSuggestions = [
   {
     currentInterval: [14,16],
     suggestedInterval: [16,18],
-    savings: 200,
+    savings: 200/27,
     equipament:{
       name:'Aquecedor',
       id: 'HR-0288',
@@ -290,7 +290,7 @@ export const periodChangeSuggestions = [
   {
     currentInterval: [16,18],
     suggestedInterval: [18,20],
-    savings: 80,
+    savings: 80/27,
     equipament:{
       name:'Máquina de Lavar',
       id: 'FR-1397',
@@ -425,7 +425,7 @@ export const periodChangeSuggestions = [
   {
     currentInterval: [12,15],
     suggestedInterval: [10,13],
-    savings: 50,
+    savings: 50/27,
     equipament:{
       name:'Forno Elétrico',
       id: 'MS-1032',

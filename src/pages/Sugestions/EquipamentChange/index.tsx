@@ -54,17 +54,18 @@ const EquipamentChange: React.FC = () => {
             chartData,
             equipament,
             payback,
-            savings
+            savings,
+            url
           })=>(
             <SuggestionCard
               title = {`${equipament.name} - ${equipament.id}`}
               link={{
-                href: 'www.google.com',
+                href: url,
                 text: 'Ver recomandações'
               }}
               chart = {<Chart chartData={chartData} xAxis='date'/> }
             >
-              <span>Poupe até <b>{`${savings}\u20AC mensais`}</b> com a troca do equipamento!</span>
+              <span>Poupe até <b>{`${savings}\u20AC anuais`}</b> com a troca do equipamento!</span>
               <span>Payback a partir de <b>{payback}</b>!</span>
             </SuggestionCard>
           ))
