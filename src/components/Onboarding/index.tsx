@@ -132,7 +132,7 @@ const Onboarding: React.FC = () => {
 
       let nextRoute = privateRoutes.filter(route=>route.id===nextTarget.replace('#',''))
       if(nextRoute.length!=0){
-        setState({ run: index===0, stepIndex: nextIndex })  
+        setState({ run: false, stepIndex: nextIndex })  
         const {path} = nextRoute[0]
         navigate(
           path,
