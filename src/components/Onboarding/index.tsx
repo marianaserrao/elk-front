@@ -21,6 +21,8 @@ const Onboarding: React.FC = () => {
   } = useOnboardingContext();
 
   useMount(() => {
+    const isDesktop = window.innerWidth >= 800;
+    let navbarTarget = isDesktop ? '#desktop-navbar' : '#mobile-navbar'
     setState({
       steps:[
         {
@@ -32,6 +34,16 @@ const Onboarding: React.FC = () => {
           ),
           placement: 'center',
           target: 'body',
+        },
+        {
+          content: (
+            <Container key='navbar'>
+              <img src={require('../../assets/images/elk-mascote.png')}/>
+              <h2>Essa é a barra de navegação, é por aqui que tu entenderás mais do teu negócio!</h2>
+            </Container>
+          ),
+          placement: 'right',
+          target: navbarTarget,
         },
         {
           content: (
@@ -130,7 +142,7 @@ const Onboarding: React.FC = () => {
       let nextTarget = steps[nextIndex].target as string 
       let nextRoute = privateRoutes.filter(route=>route.id===nextTarget.replace('#',''))
       if(nextRoute.length!=0){
-        setState({ run: index===0, stepIndex: nextIndex })  
+        setState({ run: index<2, stepIndex: nextIndex })  
         const {path} = nextRoute[0]
         navigate(
           path,

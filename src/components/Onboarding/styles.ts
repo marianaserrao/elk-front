@@ -6,6 +6,7 @@ export const Container = styled.div`
     position: absolute;
     top: -40px;
     right: -30px;
+    z-index:1 ;
     @media(max-width:450px){
       right: 0;
       top: -45px;

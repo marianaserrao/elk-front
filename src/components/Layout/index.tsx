@@ -29,14 +29,14 @@ const Layout: React.FC = () => {
 
   return (
       <Container>
-        <Navbar className='navbar'/>
+        <Navbar id='desktop-navbar'/>
         <RouteSlidingContainer>
           <Header>
             <TitleContainer id={route.id}>
               <Logo/>
               <PageTitle title={route.title} onboardingId={route.id}/>
             </TitleContainer>
-            <DrawerContainer className='navbar'>
+            <DrawerContainer id='mobile-navbar'>
               <button onClick={toggleNavbar}>
                 <MenuIcon fontSize='large'/>
               </button>
