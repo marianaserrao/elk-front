@@ -2,79 +2,79 @@ export const tariffChangeData = [
   {
     savings: 300,
     suggestion: {
-      name: 'Galp',
-      logo: 'https://seeklogo.com/images/G/Galp_Energia-logo-50CA3B8788-seeklogo.com.png',
-      url: 'https://casa.galp.pt/planos-eletricidade-e-gas',
-      description: 'Energia 100% limpa!'
+      name: "Galp",
+      logo: "https://seeklogo.com/images/G/Galp_Energia-logo-50CA3B8788-seeklogo.com.png",
+      url: "https://casa.galp.pt/planos-eletricidade-e-gas",
+      description: "100% clean energy!",
     },
-    chartData:[
+    chartData: [
       {
-        date: 'set',
-        atual: 1000,
-        nova: 700,
+        date: "sep",
+        current: 1000,
+        new: 700,
       },
       {
-        date: 'out',
-        atual: 800,
-        nova: 590,
+        date: "oct",
+        current: 800,
+        new: 590,
       },
       {
-        date: 'nov',
-        atual: 950,
-        nova: 650,
-      }
-    ]
+        date: "nov",
+        current: 950,
+        new: 650,
+      },
+    ],
   },
   {
     savings: 280,
     suggestion: {
-      name: 'Plenitude',
-      logo: 'https://upload.wikimedia.org/wikipedia/it/thumb/5/54/Eni_Plenitude.svg/2094px-Eni_Plenitude.svg.png',
-      url: 'https://eniplenitude.pt/',
-      description: 'Oferta indexada!'
+      name: "Plenitude",
+      logo: "https://upload.wikimedia.org/wikipedia/it/thumb/5/54/Eni_Plenitude.svg/2094px-Eni_Plenitude.svg.png",
+      url: "https://eniplenitude.pt/",
+      description: "Indexed offering!",
     },
-    chartData:[
+    chartData: [
       {
-        date: 'set',
-        atual: 1000,
-        nova: 750,
+        date: "sep",
+        current: 1000,
+        new: 750,
       },
       {
-        date: 'out',
-        atual: 800,
-        nova: 600,
+        date: "oct",
+        current: 800,
+        new: 600,
       },
       {
-        date: 'nov',
-        atual: 950,
-        nova: 670,
-      }
-    ]
+        date: "nov",
+        current: 950,
+        new: 670,
+      },
+    ],
   },
   {
     savings: 170,
     suggestion: {
-      name: 'Repsol',
-      logo: 'https://www.citypng.com/public/uploads/small/11662412338uj33wndgevetpnocwqeyvypqyip29nhjqcjb3pu1tbjxlzqzjddhlgiyx8n2lwfzg6xr5pb7o9813aehtqyi80ydmcipftiiz4lw.png',
-      url: 'https://www.repsol.pt/landings2/eletricidadeegas/',
-      description: 'Energia 100% limpa!'
+      name: "Repsol",
+      logo: "https://www.citypng.com/public/uploads/small/11662412338uj33wndgevetpnocwqeyvypqyip29nhjqcjb3pu1tbjxlzqzjddhlgiyx8n2lwfzg6xr5pb7o9813aehtqyi80ydmcipftiiz4lw.png",
+      url: "https://www.repsol.pt/landings2/eletricidadeegas/",
+      description: "100% clean energy!",
     },
-    chartData:[
+    chartData: [
       {
-        date: 'set',
-        atual: 1000,
-        nova: 830,
+        date: "sep",
+        current: 1000,
+        new: 830,
       },
       {
-        date: 'out',
-        atual: 800,
-        nova: 700,
+        date: "oct",
+        current: 800,
+        new: 700,
       },
       {
-        date: 'nov',
-        atual: 950,
-        nova: 800,
-      }
-    ]
+        date: "nov",
+        current: 950,
+        new: 800,
+      },
+    ],
   },
-]
+];
