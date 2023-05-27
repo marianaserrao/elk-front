@@ -86,7 +86,7 @@ const Table: React.FC<TableProps> = ({
                 color={colors.grey}
                 style={{marginRight:5}}
               /> 
-              Ver Detalhes
+              View Details
             </MenuItem>
           )
           allowDelete && actionButtons.push(
@@ -102,7 +102,7 @@ const Table: React.FC<TableProps> = ({
                 color={colors.grey} 
                 style={{marginRight:5}}
               /> 
-              Deletar
+              Delete
             </MenuItem>
           )
           return(actionButtons)

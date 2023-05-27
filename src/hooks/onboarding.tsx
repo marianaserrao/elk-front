@@ -11,37 +11,48 @@ export interface OnboardingStateProps {
 }
 
 interface OnboardingData {
-  state: OnboardingStateProps,
-  setState: Function,
-  setOnboarded(): void
+  onboarding: OnboardingStateProps,
+  setOnboarding: Function,
+  stopOnboarding(): void,
+  showOnboarding(): void
 }
 
 export const OnboardingContext = createContext<OnboardingData>({} as OnboardingData);
 OnboardingContext.displayName = 'OnboardingContext';
 
 export const OnboardingProvider: React.FC<PropsWithChildren> = ({children}) => {
-  const [state, setState] = useSetState({
+  const [onboarding, setOnboarding] = useSetState({
     run: !localStorage.getItem('@Elk:onboard'),
     stepIndex: 0,
     steps: [],
     tourActive: !localStorage.getItem('@Elk:onboard'),
   });
 
-  const setOnboarded = useCallback(()=>{
+  const stopOnboarding = useCallback(()=>{
     localStorage.setItem('@Elk:onboard', 'elk-sockets');
-    setState({
+    setOnboarding({
       tourActive:false, 
       run: false
     })
-  },[state])
+  },[onboarding])
+
+  const showOnboarding = useCallback(() => {
+    localStorage.removeItem('@Elk:user');
+    setOnboarding({
+      tourActive:true, 
+      run: true
+    })
+  }, [onboarding]);
+
 
   const value = useMemo(
     () => ({
-      state,
-      setState,
-      setOnboarded
+      onboarding,
+      setOnboarding,
+      stopOnboarding,
+      showOnboarding
     }),
-    [setState, state],
+    [setOnboarding, onboarding],
   );
 
   return (

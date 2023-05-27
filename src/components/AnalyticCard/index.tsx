@@ -43,32 +43,28 @@ const AnalyticCard: React.FC<CardProps> = ({
         <h3>{getSuperstringSentenceComponent(mainText)}</h3>
       </S.CardMain>
 
-      {percentage ? (
-        <S.CardInfo>
-          <motion.div
-            className="improvement-arrow"
-            animate={{
-              rotate: improved ? 180 : 0,
-            }}
-          >
-            <BiUpArrowAlt
-              size={14}
-              color={improved ? colors.success : colors.error}
-            />
-          </motion.div>
-          <span
-            style={{
-              color: improved ? colors.success : colors.error,
-              fontWeight: 600,
-            }}
-          >
-            {Math.abs(percentage)}%&nbsp;
-          </span>
-          <span>{realtime ? "vs monthly mean" : "vs last month"}</span>
-        </S.CardInfo>
-      ) : (
-        <></>
-      )}
+      {percentage? 
+      
+      <S.CardInfo>
+        <motion.div
+          className="improvement-arrow"
+          animate={{
+            rotate: improved ? 180 : 0
+          }}
+        >
+          <BiUpArrowAlt size={14} color={improved? colors.success:colors.error}/>
+        </motion.div>
+        <span
+          style={{
+            color:improved?colors.success:colors.error,
+            fontWeight: 600
+          }}
+        >{Math.abs(percentage)}%&nbsp;</span>
+        <span>{realtime ? 'vs monthly average' : 'vs last month'}</span>
+      </S.CardInfo>
+      :
+      <></>}
+      
     </S.Container>
   );
 };
