@@ -30,12 +30,12 @@ const EquipamentTable: React.FC = () => {
       },
       {
         accessorKey: 'name',
-        header: 'Nome',
+        header: 'Name',
         size: 150
       },
       {
         accessorKey: 'usage',
-        header: 'Uso esse mês',
+        header: 'Usage this month',
         Cell: ({renderedCellValue}) => {
           return renderedCellValue+' kWh';
         },
@@ -43,7 +43,7 @@ const EquipamentTable: React.FC = () => {
       },
       {
         accessorKey: 'categoryId',
-        header: 'Categoria',
+        header: 'Category',
         Cell: ({cell}) => {
           return categories[cell.getValue() as keyof typeof categories];
         },
@@ -79,7 +79,7 @@ const EquipamentTable: React.FC = () => {
     <Table
         columns={columns} 
         data={equipamentData.data}
-        title='Equipamentos'
+        title='Equipaments'
     />
   )
 };

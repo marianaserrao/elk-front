@@ -55,7 +55,7 @@ const AnalyticCard: React.FC<CardProps> = ({mainText, description, percentage,re
             fontWeight: 600
           }}
         >{Math.abs(percentage)}%&nbsp;</span>
-        <span>{realtime ? 'vs média mensal' : 'vs último mês'}</span>
+        <span>{realtime ? 'vs monthly average' : 'vs last month'}</span>
       </S.CardInfo>
       :
       <></>}

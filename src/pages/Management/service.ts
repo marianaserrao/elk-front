@@ -47,7 +47,7 @@ export const categoryData = {
   data: [
     {
       id: 0,
-      name: 'Televisão',
+      name: 'Televison',
       equipamentTotal: 32,
       equipamentOn: 31,
       equipamentInefficient: 2,
@@ -58,7 +58,7 @@ export const categoryData = {
     },
     {
       id: 1,
-      name: 'Aquecedor',
+      name: 'Heator',
       equipamentTotal: 20,
       equipamentOn: 11,
       equipamentInefficient: 8,
@@ -69,7 +69,7 @@ export const categoryData = {
     },
     {
       id: 2,
-      name: 'Frigobar',
+      name: 'Minibar',
       equipamentTotal: 38,
       equipamentOn: 35,
       equipamentInefficient: 2,
@@ -82,7 +82,7 @@ export const categoryData = {
 }
 
 export const categories = {
-  0: 'Televisão',
-  1: 'Aquecedor',
-  2: 'Frigobar'
+  0: 'Televison',
+  1: 'Heator',
+  2: 'Minibar'
 }

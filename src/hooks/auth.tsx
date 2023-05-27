@@ -23,7 +23,6 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({children}) => {
 
     const login = useCallback(() => {
         localStorage.setItem('@Elk:user', 'elk-sockets');
-
         setUser(true);
     }, []);
 

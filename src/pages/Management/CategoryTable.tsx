@@ -18,27 +18,27 @@ const CategoryTable: React.FC = () => {
     () => [
       {
         accessorKey: 'name',
-        header: 'Nome',
+        header: 'Name',
         size: 150
       },
       {
         accessorKey: 'equipamentTotal',
-        header: 'Equipamentos',
+        header: 'Equipaments',
         size: 50
       },
       {
         accessorKey: 'equipamentOn',
-        header: 'Ligados',
+        header: 'On',
         size: 50
       },
       {
         accessorKey: 'equipamentInefficient',
-        header: 'Ineficientes',
+        header: 'Ineficient',
         size: 50
       },
       {
         accessorKey: 'usageTotal',
-        header: 'Total de Uso',
+        header: 'Total Usage',
         Cell: ({renderedCellValue}) => {
           return renderedCellValue+' kWh';
         },
@@ -46,7 +46,7 @@ const CategoryTable: React.FC = () => {
       },
       {
         accessorKey: 'usageMean',
-        header: 'Média de Uso',
+        header: 'Usage Average',
         Cell: ({renderedCellValue}) => {
           return renderedCellValue+' kWh';
         },
@@ -54,7 +54,7 @@ const CategoryTable: React.FC = () => {
       },
       {
         accessorKey: 'montlhyLoss',
-        header: 'Perda Mensal',
+        header: 'Monthly Loss',
         Cell: ({renderedCellValue}) => {
           return <span>&#8364; {renderedCellValue}</span>;
         },
@@ -78,7 +78,7 @@ const CategoryTable: React.FC = () => {
     <Table
         columns={columns} 
         data={categoryData.data}
-        title='Categorias'
+        title='Categories'
         allowView={false}
         initialColumnVisibility={{
           usageMean:false,

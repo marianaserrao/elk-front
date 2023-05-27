@@ -17,14 +17,14 @@ const Title = styled.p`
 
 const PageTitle: React.FC<TitleProps> = ({title, onboardingId}) => {
   const {
-    setState,
-    state: { stepIndex, tourActive},
+    setOnboarding,
+    onboarding: { stepIndex, tourActive},
   } = useOnboardingContext();
 
   useMount(() => {
     if (tourActive && stepIndex!=0) {
       setTimeout(() => {
-        setState({ run: true});
+        setOnboarding({ run: true});
       }, 900);
     }
   });

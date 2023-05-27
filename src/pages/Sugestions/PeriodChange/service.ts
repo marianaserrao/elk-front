@@ -157,9 +157,9 @@ export const periodChangeSuggestions = [
     suggestedInterval: [16,18],
     savings: 200/27,
     equipament:{
-      name:'Aquecedor',
+      name:'Heator',
       id: 'HR-0288',
-      image: 'https://www.electrofun.pt/26840-large_default/aquecedor-eletrico-mi-smart-space-heater-s-xiaomi.jpg',
+      image: 'https://www.electrofun.pt/26840-large_default/Heator-eletrico-mi-smart-space-heater-s-xiaomi.jpg',
     },
     chartData: [
       {

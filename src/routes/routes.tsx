@@ -21,7 +21,7 @@ export const privateRoutes = [
   {
     id: 'management',
     path: '/management', 
-    title: 'Gerenciamento',
+    title: 'Management',
     icon: 'socket.png',
     element:  <Management />,
     onNavBar: true
@@ -29,7 +29,7 @@ export const privateRoutes = [
   {
     id: 'suggestions',
     path: '/suggestions', 
-    title: 'Sugestões',
+    title: 'Suggestions',
     icon: 'suggestions.png',
     element:   <Navigate to='/suggestions/equipament-change'/>,
     onNavBar: true,
@@ -39,28 +39,28 @@ export const privateRoutes = [
   {
     id: 'equipament-suggestions',
     path: '/suggestions/equipament-change', 
-    title: 'Equipamentos',
+    title: 'Equipaments',
     icon: 'equipament.png',
     element:  <EquipamentChange />,
   },
   {
     id: 'tarriff-suggestions',
     path: '/suggestions/tariffs', 
-    title: 'Tarifários',
+    title: 'Tariffs',
     icon: 'eletricity.png',
     element:  <TariffChange/>,
   },
   {
     id: 'period-suggestions',
     path: '/suggestions/usage-period-change', 
-    title: 'Horário de Uso',
+    title: 'Period of Usage',
     icon: 'watch.png',
     element:  <PeriodChange />,
   },
   {
     id: 'sustainability',
     path: '/sustainability', 
-    title: 'Sustentabilidade',
+    title: 'Sustainability',
     icon: 'sustainability.png',
     element:  <Sustentability/>,
     onNavBar: true

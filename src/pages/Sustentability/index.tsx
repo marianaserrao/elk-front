@@ -12,7 +12,7 @@ const Sustentability: React.FC = () => {
             <CardImageContainer showImage={true} style={{backgroundImage: `url(https://media.adeo.com/marketplace/LMPT/84130456/2856091.png?width=650&height=650&format=jpg&quality=80&fit=bounds)`}}/>
             <CardInfoContainer>
             <p>Quer economizar mais ainda? Vem com a gente!<br/> 
-            <br/>Percebemos que a maior parte do seu consumo se encontra no período diurno, então que tal aderir a um painel solar próprio?!
+            <br/>Percebemos que a mayr parte do seu consumo se encontra no período diurno, então que tal aderir a um painel solar próprio?!
             Com um painel solar, você pode economizar até <b>20 euros mensais, </b>com seu atual perfil de consumo.</p>
 
             </CardInfoContainer>
@@ -35,7 +35,7 @@ const Sustentability: React.FC = () => {
                     <CardMain>
             <CardImageContainer showImage={true}style={{backgroundImage: `url(https://cookeletroraro.vteximg.com.br/arquivos/ids/173041-1000-1000/geladeira-samsung.jpg)`}}/>
             <CardInfoContainer>
-              <p>Parabéns 🎉🎉🎉 Maior economia no seu bolso!<br /><br /> Suas geladeiras gastaram <b>30 euros a menos</b> do que na semana passada!</p>
+              <p>Parabéns 🎉🎉🎉 mayr economia no seu bolso!<br /><br /> Suas geladeiras gastaram <b>30 euros a menos</b> do que na semana passada!</p>
             </CardInfoContainer>
           </CardMain>
         </SuggestionCard>

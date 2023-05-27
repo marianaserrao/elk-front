@@ -98,12 +98,22 @@ img{
 }
 `;
 
-export const LogoutButton = styled.button`
+export const ActionButonsContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+
+  width: inherit;
+
+  position: absolute;
+  bottom: 0;
+`;
+
+export const ActionButton = styled.button`
   display: flex;
   align-items: center;
 
-  position:absolute;
-  bottom: 0;
+  /* position:absolute;
+  bottom: 0; */
 
   background-color:transparent ;
   text-decoration:none ;

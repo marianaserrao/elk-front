@@ -63,7 +63,7 @@ export const data = [
   ]
 
   export const usageByCategory = {
-    'Último dia': [
+    'Last day': [
       {
         date: '08:00',
         consumo: 2400,
@@ -317,75 +317,75 @@ export const data = [
         
       },
     ],
-    'Último ano' : [
+    'Last year' : [
       {
-        date: 'janeiro',
+        date: 'january',
         consumo: 400,
         
         
       },
       {
-        date: 'fevereiro',
+        date: 'february',
         consumo: 3000,
         
         
       },
       {
-        date: 'março',
+        date: 'march',
         consumo: 2000,
         
         
       },
       {
-        date: 'abril',
+        date: 'april',
         consumo: 2780,
         
         
       },
       {
-        date: 'maio',
+        date: 'may',
         consumo: 1890,
         
         
       },
       {
-        date: 'junho',
+        date: 'june',
         consumo: 2390,
         
         
       },
       {
-        date: 'julho',
+        date: 'july',
         consumo: 3490,
         
         
       },
       {
-        date: 'agosto',
+        date: 'august',
         consumo: 3490,
         
         
       },
       {
-        date: 'setembro',
+        date: 'september',
         consumo: 3490,
         
         
       },
       {
-        date: 'outubro',
+        date: 'october',
         consumo: 3490,
         
         
       },
       {
-        date: 'novembro',
+        date: 'november',
         consumo: 3490,
         
         
       },
       {
-        date: 'dezembro',
+        date: 'december',
         consumo: 3490,
         
         

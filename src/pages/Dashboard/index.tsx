@@ -12,7 +12,7 @@ import HourlyUsageChart from '../../components/Charts/HourlyUsageChart';
 
 const Dashboard: React.FC = () => {
   return (
-    <S.Container id='dashboardd'>
+    <S.Container id='dashboard'>
       <S.AnalyticsContainer>
           {
             mainAnalytics.map((item, index)=>(
@@ -31,7 +31,7 @@ const Dashboard: React.FC = () => {
           style={{height: '400px'}}
         >          
           <SelectableChart 
-            title='Uso por categoria' 
+            title='Usage by category' 
             xAxis='date'
             data={usageByCategory}
             Chart={LineChart}
@@ -41,7 +41,7 @@ const Dashboard: React.FC = () => {
             style={{height: '400px'}}
         >  
           <SelectableChart 
-            title='Uso médio por horário do dia' 
+            title='Avarage usage by time of day' 
             xAxis='hour'
             data={usageByTime} 
             Chart={HourlyUsageChart}
