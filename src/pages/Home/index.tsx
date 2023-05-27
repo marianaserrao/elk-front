@@ -46,10 +46,10 @@ const Home: React.FC = () => {
           animateEntry={animations.home}
           initialOpacity={animation.opacity}
         >
-          <Button color={colors.dark} border='none'><p><b>Sobre nós</b></p></Button>
-          <Button color={colors.dark} border='none'><p>Nossos produtos</p></Button>
+          <Button color={colors.dark} border='none'><p><b>About Us</b></p></Button>
+          <Button color={colors.dark} border='none'><p>Our product</p></Button>
           <Button color={colors.dark} border='none'><p>Blog</p></Button>
-          <Button color={colors.dark} border='none'><p>Contate-nos</p></Button>
+          <Button color={colors.dark} border='none'><p>Contact us</p></Button>
           <NavbarEnd>
             <Button color={colors.primary} border={`${colors.primary} 2px solid;`} onClick={handleLogin}><p>Log In</p></Button>
             <Button background={colors.dark}>Sign Up</Button>   
@@ -69,9 +69,11 @@ const Home: React.FC = () => {
           initialX={animation.xLeft}   
           initialOpacity={animation.opacity} 
         >
-          <p>Faça a escolha inteligente para a sustentabilidade com Elk Sockets. As nossas tomadas inteligentes <b>podem aumentar a eficiência energética da sua empresa até 30% e reduzir as emissões de CO2 até 20%.</b></p>
-          <br/>
-          <p>Ao otimizar suas demandas elétricas, os soquetes Elk ajudam você a economizar dinheiro em suas contas de energia e fazer sua parte pelo meio ambiente.</p>
+
+        <p>Make the smart choice for sustainability with Elk Suggestions. Our intelligent system enhances energy efficiency, reduces costs, and minimizes environmental impact. By optimizing electrical demands, Elk Suggestions helps you save money on energy bills while driving progress towards a greener world.</p>
+        <br></br>
+        <p>Efficiency made effortless: With Elk Suggestions, achieving energy efficiency is a breeze. Our innovative smart sockets can <b>enhance your company's energy efficiency by up to 30%</b>, resulting in a remarkable 20% reduction in CO2 emissions. Additionally, Elk Suggestions can <b>help reduce your electric bill by 10%</b>. Empowered by Elk Suggestions, you can make informed decisions that not only benefit your bottom line but also contribute to a greener environment, simplifying your path towards sustainability.</p>
+        
         </Description>      
 
         <VBox /><VBox />
