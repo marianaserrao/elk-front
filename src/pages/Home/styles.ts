@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import theme from '../../styles/theme';
-import SloganLogo from '../../assets/images/slogan-logo.png';
-
+import SloganLogo from '../../assets/images/slogan-logo2.png';
 import AnimatedContainer from '../../components/AnimatedContainers/Generic';
-
 
 interface MenuInterface{
     show: boolean;
@@ -152,7 +150,16 @@ export const Description = styled(AnimatedContainer)`
         width: 45vw;
         padding-top: 47px;
         text-align: justify;
+        font-size:14px;
     }
+
+    @media screen and (max-width: 1024px) {    
+        &{
+            width: 50vw;
+            padding-top: 47px;
+            text-align: justify;
+            font-size:14px;
+    }}
 
     @media screen and (max-width: 635px){
         &{
@@ -197,20 +204,86 @@ export const ImageDisplay = styled(AnimatedContainer)`
     right: 0;
 
     img:first-child{
-        height: 81vh;
-        width: 40vw;
-
+        width: 30vw;
+        max-height: 60vh;
+        
         position: absolute;
         bottom: 0;
     }
-
+    
     img+img{
-        height: 62vh;
-        width: 25vw;
+        height: 20vw;
+        max-height: 360px;
+        max-width: 300px;
 
         position: absolute;
         bottom: 7vh;
-        right: 7vw;
+        right: 5vw;
+    }
+
+
+
+
+    @media screen and (min-height: 1000px) {
+        img:first-child{
+        width: 350px !important;
+        max-height: 60vh;
+        
+        position: fixed !important;
+        bottom: auto !important;
+        top: 300px !important;
+    }
+    img+img{
+        height: 300px !important;
+        position: fixed !important;
+        bottom: auto !important;
+        top: 300px !important;
+        }
+    }
+
+    @media screen and (max-width: 1440px) {
+        img:first-child {
+            width: 40vw;
+            /* height: auto; */
+    
+            position: absolute;
+            bottom: 0;
+        }
+
+        img+img{
+            height: 60vh;
+
+            position: absolute;
+            bottom: 7vh;
+            right: 7vw;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        img:first-child {
+            width: 40vw;
+            /* height: auto; */
+    
+            position: absolute;
+            bottom: 0;
+        }
+
+        img+img{
+            height: 50vh;
+
+            position: absolute;
+            bottom: 7vh;
+            right: 5vw;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        img:first-child {
+            width: 40vw;
+    
+            position: absolute;
+            bottom: 0;
+        }
     }
 
     @media screen and (max-width: 635px) {
