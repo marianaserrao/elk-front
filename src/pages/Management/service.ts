@@ -1,4 +1,4 @@
-export const equipamentData = {
+export const equipmentData = {
   data: [
     {
       id: 'ASD2143H2',
@@ -48,9 +48,9 @@ export const categoryData = {
     {
       id: 0,
       name: 'Televison',
-      equipamentTotal: 32,
-      equipamentOn: 31,
-      equipamentInefficient: 2,
+      equipmentTotal: 32,
+      equipmentOn: 31,
+      equipmentInefficient: 2,
       usageTotal: 450,
       usageMean: 30,
       montlhyLoss: 100,
@@ -58,10 +58,10 @@ export const categoryData = {
     },
     {
       id: 1,
-      name: 'Heator',
-      equipamentTotal: 20,
-      equipamentOn: 11,
-      equipamentInefficient: 8,
+      name: 'Heater',
+      equipmentTotal: 20,
+      equipmentOn: 11,
+      equipmentInefficient: 8,
       usageTotal: 2000,
       usageMean: 245,
       montlhyLoss: 675,
@@ -70,9 +70,9 @@ export const categoryData = {
     {
       id: 2,
       name: 'Minibar',
-      equipamentTotal: 38,
-      equipamentOn: 35,
-      equipamentInefficient: 2,
+      equipmentTotal: 38,
+      equipmentOn: 35,
+      equipmentInefficient: 2,
       usageTotal: 900,
       usageMean: 78,
       montlhyLoss: 2000,
@@ -83,6 +83,6 @@ export const categoryData = {
 
 export const categories = {
   0: 'Televison',
-  1: 'Heator',
+  1: 'Heater',
   2: 'Minibar'
 }

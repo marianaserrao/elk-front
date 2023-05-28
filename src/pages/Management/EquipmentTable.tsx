@@ -7,14 +7,14 @@ import {FiCheck} from 'react-icons/fi'
 import Table from '../../components/Table'
 import Switch from '../../components/Switch';
 
-import { equipamentData, categories } from './service';
+import { equipmentData, categories } from './service';
 import { useLocation } from 'react-router-dom';
 
-const EquipamentTable: React.FC = () => {
+const EquipmentTable: React.FC = () => {
   const location = useLocation()
   const {colors} = useTheme()
 
-  const switchEquipament = useCallback((switchState: boolean, id: string)=>{
+  const switchEquipment = useCallback((switchState: boolean, id: string)=>{
     //request to switch equpament
     let updatedState=!switchState
     return updatedState
@@ -65,23 +65,23 @@ const EquipamentTable: React.FC = () => {
         accessorKey: 'isOn',
         header: 'On/Off',
         Cell: ({row}) => {
-          let cell=row.original as typeof equipamentData.data[0]
-          return <Switch requestFunction={switchEquipament} initialState={cell.isOn} itemId={cell.id} />;
+          let cell=row.original as typeof equipmentData.data[0]
+          return <Switch requestFunction={switchEquipment} initialState={cell.isOn} itemId={cell.id} />;
         },
         size:80,
         
       },
     ],
-    [switchEquipament, colors],
+    [switchEquipment, colors],
   );
 
   return (
     <Table
         columns={columns} 
-        data={equipamentData.data}
-        title='Equipaments'
+        data={equipmentData.data}
+        title='Equipments'
     />
   )
 };
 
-export default EquipamentTable;
+export default EquipmentTable;

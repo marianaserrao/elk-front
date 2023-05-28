@@ -22,18 +22,18 @@ const CategoryTable: React.FC = () => {
         size: 150
       },
       {
-        accessorKey: 'equipamentTotal',
-        header: 'Equipaments',
+        accessorKey: 'equipmentTotal',
+        header: 'Equipments',
         size: 50
       },
       {
-        accessorKey: 'equipamentOn',
+        accessorKey: 'equipmentOn',
         header: 'On',
         size: 50
       },
       {
-        accessorKey: 'equipamentInefficient',
-        header: 'Ineficient',
+        accessorKey: 'equipmentInefficient',
+        header: 'Inefficient',
         size: 50
       },
       {
@@ -82,7 +82,7 @@ const CategoryTable: React.FC = () => {
         allowView={false}
         initialColumnVisibility={{
           usageMean:false,
-          equipamentOn:false
+          equipmentOn:false
         }}
     />
   )

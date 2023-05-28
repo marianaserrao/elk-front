@@ -15,13 +15,13 @@ const PeriodChange: React.FC = () => {
             currentInterval,
             savings,
             suggestedInterval,
-            equipament,
+            equipment,
           },
           index
         ) => (
           <SuggestionCard
             key={index}
-            title={`${equipament.name} - ${equipament.id}`}
+            title={`${equipment.name} - ${equipment.id}`}
             chart={
               <HourlyUsageChart
                 data={chartData}
@@ -34,11 +34,11 @@ const PeriodChange: React.FC = () => {
           >
             <S.CardMain>
               <S.CardImageContainer
-                style={{ backgroundImage: `url(${equipament.image})` }}
+                style={{ backgroundImage: `url(${equipment.image})` }}
               />
               <S.CardInfoContainer>
                 <p>
-                  You are using the {equipament.name} at the highest cost time,
+                  You are using the {equipment.name} at the highest cost time,
                   from
                   <b>
                     {" "}

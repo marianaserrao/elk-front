@@ -1,10 +1,10 @@
 import Dashboard from "../pages/Dashboard";
 import Management from "../pages/Management";
 import Home from "../pages/Home";
-import EquipamentDetail from "../pages/EquipamentDetail";
+import EquipmentDetail from "../pages/EquipmentDetail";
 import PeriodChange from "../pages/Sugestions/PeriodChange";
 import TariffChange from "../pages/Sugestions/TariffChange";
-import EquipamentChange from "../pages/Sugestions/EquipamentChange";
+import EquipmentChange from "../pages/Sugestions/EquipmentChange";
 
 import { Navigate } from "react-router-dom";
 import Sustentability from "../pages/Sustentability";
@@ -31,17 +31,17 @@ export const privateRoutes = [
     path: '/suggestions', 
     title: 'Suggestions',
     icon: 'suggestions.png',
-    element:   <Navigate to='/suggestions/equipament-change'/>,
+    element:   <Navigate to='/suggestions/equipment-change'/>,
     onNavBar: true,
     isToggle: true,
     subRoutes: [3, 4, 5],
   },
   {
-    id: 'equipament-suggestions',
-    path: '/suggestions/equipament-change', 
-    title: 'Equipaments',
-    icon: 'equipament.png',
-    element:  <EquipamentChange />,
+    id: 'equipment-suggestions',
+    path: '/suggestions/equipment-change', 
+    title: 'Equipments',
+    icon: 'equipment.png',
+    element:  <EquipmentChange />,
   },
   {
     id: 'tarriff-suggestions',
@@ -66,10 +66,10 @@ export const privateRoutes = [
     onNavBar: true
   },
   {
-    id: "equipament-detail",
-    path: "/management/equipament",
-    title: "Equipament Details",
-    element: <EquipamentDetail />,
+    id: "equipment-detail",
+    path: "/management/equipment",
+    title: "Equipment Details",
+    element: <EquipmentDetail />,
   },
 ];
 

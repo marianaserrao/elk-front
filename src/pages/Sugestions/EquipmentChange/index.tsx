@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Select from "../../../components/Select";
 
-import { equipamentChangeData } from "./service";
+import { equipmentChangeData } from "./service";
 
 import { CardListContainer, SelectContainer } from "./styles";
 import { ChartEntry, LegendItem } from "../../../components/Charts/interfaces";
@@ -25,7 +25,7 @@ const Chart: React.FC<{ chartData: ChartEntry[]; xAxis: string }> = ({
   );
 };
 
-const EquipamentChange: React.FC = () => {
+const EquipmentChange: React.FC = () => {
   const [rankingPriority, setRankingPriority] = useState("");
   const options = ["Sustainable", "Economic", "Similar to my profile"];
   return (
@@ -45,11 +45,11 @@ const EquipamentChange: React.FC = () => {
         </Select>
       </SelectContainer>
       <CardListContainer>
-        {equipamentChangeData.map(
-          ({ chartData, equipament, payback, savings, url }) => (
+        {equipmentChangeData.map(
+          ({ chartData, equipment, payback, savings, url }) => (
             <SuggestionCard
-              key={equipament.id}
-              title={`${equipament.name} - ${equipament.id}`}
+              key={equipment.id}
+              title={`${equipment.name} - ${equipment.id}`}
               link={{
                 href: url,
                 text: "View Recommendations",
@@ -71,4 +71,4 @@ const EquipamentChange: React.FC = () => {
   );
 };
 
-export default EquipamentChange;
+export default EquipmentChange;

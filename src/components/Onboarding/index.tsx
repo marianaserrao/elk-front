@@ -58,25 +58,25 @@ const Onboarding: React.FC = () => {
           content: (
             <Container key='management'>
               <img src={require('../../assets/images/elk-mascote.png')}/>
-              <h2>In Management, you can remotely control your equipaments and identify the inefficient ones.</h2>
+              <h2>In Management, you can remotely control your devices and identify the inefficient ones.</h2>
             </Container>
           ),
           target: '#management',
         },
         {
           content: (
-            <Container key='equipament'>
+            <Container key='equipment'>
               <img src={require('../../assets/images/elk-mascote.png')}/>
-              <h2>Here in the Equipament tab you can save money in the long run by replacing inefficient equipment!</h2>
+              <h2>Here in the Equipment tab you can save money in the long run by replacing inefficient devices!</h2>
             </Container>
           ),
-          target: '#equipament-suggestions',
+          target: '#equipment-suggestions',
         },
         {
           content: (
-            <Container key='tarriff'>
+            <Container key='tarriffs'>
               <img src={require('../../assets/images/elk-mascote.png')}/>
-              <h2>In Tariff, find out if the electric tariff chosen by your company is the ideal one.</h2>
+              <h2>In Tariffs, find out if the electric tariff chosen by your company is the ideal one.</h2>
             </Container>
           ),
           target: '#tarriff-suggestions',
@@ -85,7 +85,7 @@ const Onboarding: React.FC = () => {
           content: (
             <Container key='period'>
               <img src={require('../../assets/images/elk-mascote.png')}/>
-              <h2>In the Time of Day tab, you can save money by using energy when it's cheaper.</h2>
+              <h2>In the Period of Usage tab, you can save money by using energy when it's cheaper.</h2>
             </Container>
           ),
           target: '#period-suggestions',
@@ -103,7 +103,7 @@ const Onboarding: React.FC = () => {
           content: (
             <Container key='goodbye'>
               <img src={require('../../assets/images/elk-mascote.png')}/>
-              <h2>Sustainability start with smart choices, always pay attention to our suggestions!</h2>
+              <h2>Sustainability starts with smart choices, always pay attention to our suggestions!</h2>
             </Container>
           ),
           placement: 'center',
