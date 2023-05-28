@@ -21,7 +21,7 @@ export const periodChangeSuggestions = [
     currentInterval: ["12 pm", "4 pm"],
     suggestedInterval: ["10 am", "2 pm"],
     savings: 300 / 26,
-    equipament: {
+    equipment: {
       name: "Washing Machine",
       id: "HR-0231",
       image:
@@ -157,7 +157,7 @@ export const periodChangeSuggestions = [
     currentInterval: ["2 pm", "4 pm"],
     suggestedInterval: ["4pm ", "6 pm"],
     savings: 200 / 27,
-    equipament: {
+    equipment: {
       name: "Heater",
       id: "HR-0288",
       image:
@@ -293,7 +293,7 @@ export const periodChangeSuggestions = [
     currentInterval: ["4 pm", "6 pm"],
     suggestedInterval: ["6 pm", "8 pm"],
     savings: 80 / 27,
-    equipament: {
+    equipment: {
       name: "Washing Machine",
       id: "FR-1397",
       image:
@@ -429,7 +429,7 @@ export const periodChangeSuggestions = [
     currentInterval: ["12 pm", "3 pm"],
     suggestedInterval: ["10 am", "1 pm"],
     savings: 50 / 27,
-    equipament: {
+    equipment: {
       name: "Electric Oven",
       id: "MS-1032",
       image:

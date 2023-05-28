@@ -6,7 +6,7 @@ import { HiOutlineEye } from 'react-icons/hi';
 import { createTheme, MenuItem, ThemeProvider } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import {Equipament} from './interfaces'
+import {Equipment} from './interfaces'
 
 interface TableProps{
   columns: MRT_ColumnDef[],
@@ -74,10 +74,10 @@ const Table: React.FC<TableProps> = ({
               key={0}
               disableGutters={false}
               onClick={() => {
-                let item = row.original as Equipament
+                let item = row.original as Equipment
                 navigate(
-                  '/management/equipament',
-                  {state:{from: location, equipament: item, title: item.name}}
+                  '/management/equipment',
+                  {state:{from: location, equipment: item, title: item.name}}
                 );
               }}
             >

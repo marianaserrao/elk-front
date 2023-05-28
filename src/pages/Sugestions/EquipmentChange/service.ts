@@ -1,9 +1,9 @@
-export const equipamentChangeData = [
+export const equipmentChangeData = [
   {
     savings: 50,
     payback: "6 months",
     url: "https://www.worten.pt/produtos/maquina-de-lavar-roupa-whirlpool-ffb-8469-bvspt-8-kg-1200-rpm-branco-7581611?gclid=EAIaIQobChMI2JmFjaSt_gIVgc13Ch03pwWHEAQYBSABEgK9cvD_BwE",
-    equipament: {
+    equipment: {
       name: "Washing Machine",
       id: "FR-1397",
     },
@@ -29,7 +29,7 @@ export const equipamentChangeData = [
     savings: 30,
     payback: "3 months",
     url: "https://www.worten.pt/produtos/mini-forno-h-koenig-fo45-45-l-2000-w-mrkean-3760124955392",
-    equipament: {
+    equipment: {
       name: "Electric Oven",
       id: "HR-1250",
     },
@@ -55,7 +55,7 @@ export const equipamentChangeData = [
     savings: 50,
     payback: "4 months",
     url: "https://www.worten.pt/produtos/monitor-lg-24gq50f-b-24-full-hd-amd-freesync-7678443",
-    equipament: {
+    equipment: {
       name: "Display",
       id: "ML-1420",
     },
@@ -81,7 +81,7 @@ export const equipamentChangeData = [
     savings: 80,
     payback: "1 year",
     url: "https://www.worten.pt/produtos/Heator-termoventilador-tristar-ka-5037-2000-w-5391130",
-    equipament: {
+    equipment: {
       name: "Heator",
       id: "HP-2324",
     },

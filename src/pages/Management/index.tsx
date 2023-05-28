@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTheme } from 'styled-components';
 
-import EquipamentTable from './EquipamentTable'
+import EquipmentTable from './EquipmentTable'
 import CategoryTable from './CategoryTable';
 
 import * as S from './styles';
@@ -31,7 +31,7 @@ const Management: React.FC = () => {
 };
 
   const tables = useMemo(()=>([
-    <EquipamentTable/>,
+    <EquipmentTable/>,
     <CategoryTable/>,
   ]),[])
 

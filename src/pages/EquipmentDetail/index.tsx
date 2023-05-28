@@ -19,10 +19,10 @@ interface Information {
   equipment: string;
 }
 
-const EquipamentDetail: React.FC = () => {
+const EquipmentDetail: React.FC = () => {
   const [information, setInformation] = useState<Information>();
 
-  const switchEquipament = useCallback((switchState: boolean, id: string) => {
+  const switchEquipment = useCallback((switchState: boolean, id: string) => {
     const request = api.get("/toggle");
 
     let updatedState = switchState;
@@ -58,7 +58,7 @@ const EquipamentDetail: React.FC = () => {
         <S.SwitchContainer>
           <h3>ON/OFF</h3>
           <Switch
-            requestFunction={switchEquipament}
+            requestFunction={switchEquipment}
             initialState={information?.status as boolean}
             itemId={""}
           />
@@ -102,4 +102,4 @@ const EquipamentDetail: React.FC = () => {
   );
 };
 
-export default EquipamentDetail;
+export default EquipmentDetail;
