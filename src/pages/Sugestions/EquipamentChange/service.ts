@@ -79,11 +79,11 @@ export const equipamentChangeData = [
   },
   {
     savings: 80,
-    payback: '1 ano',
-    url: 'https://www.worten.pt/produtos/Heator-termoventilador-tristar-ka-5037-2000-w-5391130',
+    payback: "1 year",
+    url: "https://www.worten.pt/produtos/Heator-termoventilador-tristar-ka-5037-2000-w-5391130",
     equipament: {
-      name:'Heator',
-      id: 'HP-2324',
+      name: "Heator",
+      id: "HP-2324",
     },
     chartData: [
       {

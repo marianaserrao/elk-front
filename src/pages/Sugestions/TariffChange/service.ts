@@ -1,6 +1,6 @@
 export const tariffChangeData = [
   {
-    savings: 300,
+    savings: 300 / 15,
     suggestion: {
       name: "Galp",
       logo: "https://seeklogo.com/images/G/Galp_Energia-logo-50CA3B8788-seeklogo.com.png",
@@ -26,7 +26,7 @@ export const tariffChangeData = [
     ],
   },
   {
-    savings: 280,
+    savings: 280 / 8,
     suggestion: {
       name: "Plenitude",
       logo: "https://upload.wikimedia.org/wikipedia/it/thumb/5/54/Eni_Plenitude.svg/2094px-Eni_Plenitude.svg.png",
@@ -52,7 +52,7 @@ export const tariffChangeData = [
     ],
   },
   {
-    savings: 170,
+    savings: 170 / 10,
     suggestion: {
       name: "Repsol",
       logo: "https://www.citypng.com/public/uploads/small/11662412338uj33wndgevetpnocwqeyvypqyip29nhjqcjb3pu1tbjxlzqzjddhlgiyx8n2lwfzg6xr5pb7o9813aehtqyi80ydmcipftiiz4lw.png",

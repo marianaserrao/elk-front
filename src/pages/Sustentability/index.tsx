@@ -29,7 +29,7 @@ const Sustentability: React.FC = () => {
               <br />
               We realize that most of your consumption is in the daytime, so how
               about getting your own solar panel?! you can save up to{" "}
-              <b>20 euros per month,</b>with your current consumption profile.
+              <b>20€ per month,</b>with your current consumption profile.
             </p>
           </CardInfoContainer>
         </CardMain>
@@ -51,7 +51,7 @@ const Sustentability: React.FC = () => {
               Your machine emitted 1.8 kg of carbon dioxide this week! <br />
               <br /> From 10 hours of washing machine use,{" "}
               <b>2 hours came from sustainable sources,</b> while the rest
-              equals <b>1.8 kg of CO2.</b>
+              equals <b>1.8 kg of CO².</b>
             </p>
           </CardInfoContainer>
         </CardMain>
@@ -73,8 +73,8 @@ const Sustentability: React.FC = () => {
             <p>
               Congratulations 🎉🎉🎉 Bigger savings in your pocket!
               <br />
-              <br /> Your refrigerators have spent <b>30 euros less</b> than
-              last week!
+              <br /> Your refrigerators have spent <b>30€ less</b> than last
+              week!
             </p>
           </CardInfoContainer>
         </CardMain>
@@ -98,7 +98,7 @@ const Sustentability: React.FC = () => {
               <br />
               <br />
               <b> Only 20 minutes came from sustainable sources,</b> the other
-              100 minutes are associated with a 1.2 kg CO2 emission with your
+              100 minutes are associated with a 1.2 kg CO² emission with your
               with your current fare plan.
             </p>
           </CardInfoContainer>
