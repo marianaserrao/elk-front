@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import NameLogo from "../../../assets/images/name-logo-light2.png";
+import NameLogo from "../../../assets/images/name-logo-light2-se.png";
 
 export const Container = styled.div`
   display: flex;

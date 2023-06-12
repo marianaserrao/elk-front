@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import LogoImage from '../../assets/images/logo-primary.png'
+import LogoImage from "../../assets/images/logo-primary-se.png";
 
 export const Container = styled.div`
-  display:flex;
-  min-height: 100vh; 
-  background-color:${({theme})=>theme.colors.background};
+  display: flex;
+  min-height: 100vh;
+  background-color: ${({ theme }) => theme.colors.background};
   //Desktop Navbar
-  >div:first-child{
-      @media(max-width: 800px) {
+  > div:first-child {
+    @media (max-width: 800px) {
       display: none;
       max-width: 0;
     }
@@ -28,35 +28,35 @@ export const Logo = styled.div`
   background-image: url(${LogoImage});
   background-size: contain;
   background-repeat: no-repeat;
-  display:none ;
+  display: none;
 
-  @media(max-width:800px){
+  @media (max-width: 800px) {
     display: initial;
   }
 `;
 
 export const TitleContainer = styled.div`
- display: flex;
- align-items: center;
+  display: flex;
+  align-items: center;
 
-  @media(max-width: 800px){
-    padding-bottom: ${({theme})=>theme.spacings.default};
-    p{
-      margin:0;
-      padding:0 10px;
-      color:${({theme})=>theme.colors.primary};
-    }  
+  @media (max-width: 800px) {
+    padding-bottom: ${({ theme }) => theme.spacings.default};
+    p {
+      margin: 0;
+      padding: 0 10px;
+      color: ${({ theme }) => theme.colors.primary};
+    }
   }
 `;
 
 export const DrawerContainer = styled.div`
-  button{
+  button {
     border: none;
     background-color: transparent;
   }
   display: none;
 
-  @media(max-width: 800px) {
-    display: initial
-  } 
+  @media (max-width: 800px) {
+    display: initial;
+  }
 `;

@@ -1,325 +1,320 @@
-import styled from 'styled-components';
-import theme from '../../styles/theme';
-import SloganLogo from '../../assets/images/slogan-logo2.png';
-import AnimatedContainer from '../../components/AnimatedContainers/Generic';
+import styled from "styled-components";
+import theme from "../../styles/theme";
+import SloganLogo from "../../assets/images/slogan-logo-se.png";
+import AnimatedContainer from "../../components/AnimatedContainers/Generic";
 
-interface MenuInterface{
-    show: boolean;
+interface MenuInterface {
+  show: boolean;
 }
 
 export const Menu = styled.aside<MenuInterface>`
-@media screen and (max-width: 635px) {
-    &{
-        display: ${props => props.show? 'block': 'none' };
+  @media screen and (max-width: 635px) {
+    & {
+      display: ${(props) => (props.show ? "block" : "none")};
     }
-}
+  }
 `;
 
 export const NavBarHome = styled(AnimatedContainer)`
-    &{
-        flex-direction: row;
-        display: flex;  
-        gap: 45px;
-        padding-top: 30px;
-    }
+  & {
+    flex-direction: row;
+    display: flex;
+    gap: 45px;
+    padding-top: 30px;
+  }
 
-    @media screen and (max-width: 635px) {
-        &{
-            flex-direction: column;
-            justify-content: center;
-            padding-right: 16px;
-            gap: ${theme.spacings.default};
-            padding-top: 30px;
-        }
+  @media screen and (max-width: 635px) {
+    & {
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 16px;
+      gap: ${theme.spacings.default};
+      padding-top: 30px;
     }
-    @media screen and (min-width: 635px) and (max-width: 1100px) {
-        &{
-            padding-right: 8px;
-            gap: 0px;
-            padding-top: 30px;
-        }
+  }
+  @media screen and (min-width: 635px) and (max-width: 1100px) {
+    & {
+      padding-right: 8px;
+      gap: 0px;
+      padding-top: 30px;
     }
+  }
 `;
 
 export const NavbarEnd = styled.div`
-    &{
-        flex-direction: row;
-        display: flex;
-        gap: ${theme.spacings.default};
-        justify-content: flex-end;
-        flex-grow: 1;
-        padding-right: 16px;
-    }
+  & {
+    flex-direction: row;
+    display: flex;
+    gap: ${theme.spacings.default};
+    justify-content: flex-end;
+    flex-grow: 1;
+    padding-right: 16px;
+  }
 
-    @media screen and (max-width: 635px) {
-        &{
-            flex-direction: column;
-            justify-content: flex-start;
-            flex-grow: 0;
-            padding-right: 0px;
-        }
+  @media screen and (max-width: 635px) {
+    & {
+      flex-direction: column;
+      justify-content: flex-start;
+      flex-grow: 0;
+      padding-right: 0px;
     }
+  }
 `;
 
 interface ButtonProps {
-    background?: string;
-    color?: string;
-    border?: string;
+  background?: string;
+  color?: string;
+  border?: string;
 }
 
 export const Button = styled.button<ButtonProps>`
-    
-    &{
-        padding-top: ${theme.spacings.small};
-        padding-bottom: ${theme.spacings.small};
-        color: ${(props) => props.color ?? theme.colors.light};
-        background: ${(props) => props.background ?? theme.colors.light};
-        padding-left: ${theme.spacings.large};
-        padding-right: ${theme.spacings.large};
-        border-radius: ${theme.spacings.default};
-        border: ${(props) => props.border};
-    }
+  & {
+    padding-top: ${theme.spacings.small};
+    padding-bottom: ${theme.spacings.small};
+    color: ${(props) => props.color ?? theme.colors.light};
+    background: ${(props) => props.background ?? theme.colors.light};
+    padding-left: ${theme.spacings.large};
+    padding-right: ${theme.spacings.large};
+    border-radius: ${theme.spacings.default};
+    border: ${(props) => props.border};
+  }
 
-    @media screen and (max-width: 826px){
-        padding-left: 8px;
-        padding-right: 8px;
-    }
+  @media screen and (max-width: 826px) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 `;
 
 export const LogoDefault = styled(AnimatedContainer)`
-    &{
-        display: flex;
-        height: 8vw;
+  & {
+    display: flex;
+    height: 8vw;
 
-        margin-top: 72px;
-    
-        background-image: url(${SloganLogo});
-        background-size: contain;
-        background-repeat: no-repeat;
-    }    
-    @media screen and (min-width: 635px) and (max-width: 810px){
-        &{
-            height: 8vw;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-    }
-    @media screen and (max-width: 500px){
-        &{
-            height: 58px;
-            margin-top: 17px;
-        }
-    }
+    margin-top: 72px;
 
-    @media screen and (min-width: 500px) and (max-width: 635px){
-        &{
-            height: 70px;
-            margin-top: 17px;
-        }
+    background-image: url(${SloganLogo});
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  @media screen and (min-width: 635px) and (max-width: 810px) {
+    & {
+      height: 8vw;
+      margin-top: 20px;
+      margin-bottom: 10px;
     }
-
-
-    @media screen and (min-width: 200px) and (max-width: 500px){
-        &{
-            height: 6.0vh;
-        }
+  }
+  @media screen and (max-width: 500px) {
+    & {
+      height: 58px;
+      margin-top: 17px;
     }
+  }
+
+  @media screen and (min-width: 500px) and (max-width: 635px) {
+    & {
+      height: 70px;
+      margin-top: 17px;
+    }
+  }
+
+  @media screen and (min-width: 200px) and (max-width: 500px) {
+    & {
+      height: 6vh;
+    }
+  }
 `;
 
 export const Container = styled.div`
-    &{
-        margin-left: 100px;
-    }
+  & {
+    margin-left: 100px;
+  }
 
-    @media screen and (max-width: 635px) {
-        &{
-        margin-left: 16px;
-        }
+  @media screen and (max-width: 635px) {
+    & {
+      margin-left: 16px;
     }
+  }
 
-    @media screen and (min-width: 635px) and (max-width: 1015px) {
-        &{
-            margin-left: 32px;
-            padding-right: 0px;
-        }
+  @media screen and (min-width: 635px) and (max-width: 1015px) {
+    & {
+      margin-left: 32px;
+      padding-right: 0px;
     }
+  }
 `;
 
 export const Description = styled(AnimatedContainer)`
-    &{
-        width: 45vw;
-        padding-top: 47px;
-        text-align: justify;
-        font-size:14px;
-    }
+  & {
+    width: 45vw;
+    padding-top: 47px;
+    text-align: justify;
+    font-size: 14px;
+  }
 
-    @media screen and (max-width: 1024px) {    
-        &{
-            width: 50vw;
-            padding-top: 47px;
-            text-align: justify;
-            font-size:14px;
-    }}
-
-    @media screen and (max-width: 635px){
-        &{
-            width: 94vw;
-            padding-top: 40px;    
-            padding-right: 20px;
-        }
+  @media screen and (max-width: 1024px) {
+    & {
+      width: 50vw;
+      padding-top: 47px;
+      text-align: justify;
+      font-size: 14px;
     }
+  }
 
-    @media screen and (min-width: 601px) and (max-width: 1100px){
-        &{
-            padding-top: 20px;
-        }
+  @media screen and (max-width: 635px) {
+    & {
+      width: 94vw;
+      padding-top: 40px;
+      padding-right: 20px;
     }
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 1100px) {
+    & {
+      padding-top: 20px;
+    }
+  }
 `;
 
 export const Row = styled(AnimatedContainer)`
-    &{
-        display: none;
-        flex-direction: row;
-    }
+  & {
+    display: none;
+    flex-direction: row;
+  }
 
-    @media screen and (max-width: 635px) {
-        &{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 8px;
-            width: 90%; 
-            bottom: 32px;
-            position: fixed;
-
-        }
+  @media screen and (max-width: 635px) {
+    & {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      width: 90%;
+      bottom: 32px;
+      position: fixed;
     }
+  }
 `;
 
 export const ImageDisplay = styled(AnimatedContainer)`
-    justify-content: end;
+  justify-content: end;
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  right: 0;
+
+  img:first-child {
+    width: 30vw;
+    max-height: 60vh;
+
     position: absolute;
-    display: flex;
     bottom: 0;
-    right: 0;
+  }
 
-    img:first-child{
-        width: 30vw;
-        max-height: 60vh;
-        
-        position: absolute;
-        bottom: 0;
+  img + img {
+    height: 20vw;
+    max-height: 360px;
+    max-width: 300px;
+
+    position: absolute;
+    bottom: 7vh;
+    right: 5vw;
+  }
+
+  @media screen and (min-height: 1000px) {
+    img:first-child {
+      width: 350px !important;
+      max-height: 60vh;
+
+      position: fixed !important;
+      bottom: auto !important;
+      top: 300px !important;
     }
-    
-    img+img{
-        height: 20vw;
-        max-height: 360px;
-        max-width: 300px;
-
-        position: absolute;
-        bottom: 7vh;
-        right: 5vw;
+    img + img {
+      height: 300px !important;
+      position: fixed !important;
+      bottom: auto !important;
+      top: 300px !important;
     }
+  }
 
+  @media screen and (max-width: 1440px) {
+    img:first-child {
+      width: 40vw;
+      /* height: auto; */
 
-
-
-    @media screen and (min-height: 1000px) {
-        img:first-child{
-        width: 350px !important;
-        max-height: 60vh;
-        
-        position: fixed !important;
-        bottom: auto !important;
-        top: 300px !important;
-    }
-    img+img{
-        height: 300px !important;
-        position: fixed !important;
-        bottom: auto !important;
-        top: 300px !important;
-        }
+      position: absolute;
+      bottom: 0;
     }
 
-    @media screen and (max-width: 1440px) {
-        img:first-child {
-            width: 40vw;
-            /* height: auto; */
-    
-            position: absolute;
-            bottom: 0;
-        }
+    img + img {
+      height: 60vh;
 
-        img+img{
-            height: 60vh;
+      position: absolute;
+      bottom: 7vh;
+      right: 7vw;
+    }
+  }
 
-            position: absolute;
-            bottom: 7vh;
-            right: 7vw;
-        }
+  @media screen and (max-width: 1024px) {
+    img:first-child {
+      width: 40vw;
+      /* height: auto; */
+
+      position: absolute;
+      bottom: 0;
     }
 
-    @media screen and (max-width: 1024px) {
-        img:first-child {
-            width: 40vw;
-            /* height: auto; */
-    
-            position: absolute;
-            bottom: 0;
-        }
+    img + img {
+      height: 50vh;
 
-        img+img{
-            height: 50vh;
-
-            position: absolute;
-            bottom: 7vh;
-            right: 5vw;
-        }
+      position: absolute;
+      bottom: 7vh;
+      right: 5vw;
     }
+  }
 
-    @media screen and (max-width: 1000px) {
-        img:first-child {
-            width: 40vw;
-    
-            position: absolute;
-            bottom: 0;
-        }
+  @media screen and (max-width: 1000px) {
+    img:first-child {
+      width: 40vw;
+
+      position: absolute;
+      bottom: 0;
     }
+  }
 
-    @media screen and (max-width: 635px) {
-        &{
-            display:none;
-        }
+  @media screen and (max-width: 635px) {
+    & {
+      display: none;
     }
-
+  }
 `;
 
 export const LabelCollapse = styled.div`
-& { display: none;}
-button{
+  & {
+    display: none;
+  }
+  button {
     border: none;
     background-color: transparent;
   }
 
-@media (max-width: 635px) {
+  @media (max-width: 635px) {
     & {
-        display: flex;
-        position: fixed;
-        z-index: 2;
-        top: 1rem;
-        right: 1rem;
-        color: ${theme.colors.dark};
-        padding: 0.5rem;
-        cursor: pointer;
+      display: flex;
+      position: fixed;
+      z-index: 2;
+      top: 1rem;
+      right: 1rem;
+      color: ${theme.colors.dark};
+      padding: 0.5rem;
+      cursor: pointer;
     }
-}
+  }
 `;
 
 export const Content = styled.div<MenuInterface>`
-    display: ${props => props.show ? 'none': 'block'};
+  display: ${(props) => (props.show ? "none" : "block")};
 `;
 
 export const PaddingRight = styled.div`
-    padding-right: 16px;
+  padding-right: 16px;
 `;
-
