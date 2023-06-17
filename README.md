@@ -1,8 +1,8 @@
 # Elk Suggestions - Sustainability starts with smart choices
 
-Front-end with mocked data of project developed by master's students during technology competitions.
+Front-end, with mocked data, of our project: Elk Suggestions. Created by our team of four engineering master's students, to be presented at a technology competition.
 
-Online platform for tracking and suggesting energy habits for small businesses. Creates simple and personalized recommendations with a clear impact for customers to become more sustainable while saving money and becoming more energy efficient.
+An online platform for tracking and suggesting energy habits for small businesses. It creates simple and personalized recommendations with a clear impact for customers to become more sustainable, save money, and improve energy efficiency.
 
 ## Authors
 - [Mariana Serrão](https://github.com/marianaserrao)
